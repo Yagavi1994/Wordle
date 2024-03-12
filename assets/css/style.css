@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* General Styles */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: 'Karla', sans-serif;
+}
+
+/* Game Board Grid */
+
+#game-board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center ;
+    justify-content: center;
+    max-width: 350px;
+    max-height: 350px;
+    margin: auto;
+    margin-top: 70px;
+
+}
+
+.grid {
+    border: 1px solid rgb(249, 246, 246);
+    border-radius: 15%;
+    margin: 2px;
+    height: 15vw;
+    width: 15vw;
+    max-width: 55px;
+    max-height: 55px;
+    font-size: 30px;
+    text-align: center;
+    background-color: #46B7C3;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+/* Header */
+
+#game-container {
+    
+}
+
+h1 {
+    font-size: xx-large;
+    color:black
+}
