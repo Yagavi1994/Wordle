@@ -9,24 +9,42 @@
 </head>
 
 <body>
-    <div id="htp-container"></div>
-    <h2 id="htp">How To Play</h2>
-    <p>Guess the word in 6 tries.</p>
-    <br>
-    <ul>
-        <li>Each guess must be a valid 5-letter word.</li>
-        <li>The color of the tiles will change to show how close your guess was to the word.</li>
-    </ul>
-    <br>
-    <p>Examples</p>
-    <p><span id="W">W</span>EARY</p>
-    <p>W is in the word and in the correct spot.</p>
-    <br>
-    <p>P<span id="I">I</span>LLS</p>
-    <p>I is in the word but in the wrong spot.</p>
-    <br>
-    <p>VAGUE</p>
-    <p>All the letters in your guess in not in the word</p>
+    <div id="htp-container">
+        <h2 id="htp">How To Play</h2>
+        <p><em>Guess the word in 6 tries.</em></p>
+        <br>
+        <ul class="list">
+            <li>Each guess must be a valid 5-letter word.</li>
+            <li>The color of the tiles will change to show how close your guess was to the word.</li>
+        </ul>
+        <br>
+        <p>Examples:</p>
+        <div id="weary">
+            <p id="W">W</p>
+            <p>E</p>
+            <p>A</p>
+            <p>R</p>
+            <p>Y</p>
+        </div>
+        <p><strong>'W'</strong> is in the word and in the correct spot.</p>
+        <br>
+        <div id="pills">
+            <p>P</p>
+            <p id="I">I</p>
+            <p>L</p>
+            <p>L</p>
+            <p>S</p>
+        </div>
+        <p><strong>'I'</strong> is in the word but in the wrong spot.</p>
+        <br>
+        <div id="vague">
+            <p>V</p>
+            <p>A</p>
+            <p>G</p>
+            <p>U</p>
+            <p>E</p>
+        </div>
+        <p>All the letters in your guess is not in the word.</p>
     </div>
 </body>
 

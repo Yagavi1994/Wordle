@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -11,7 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #f1e5e5;
-    font-family: 'Karla', sans-serif;
 }
 
 /* Game Board Grid */
@@ -101,7 +99,7 @@ h1 img {
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .key {
@@ -121,14 +119,75 @@ h1 img {
 
 /* How To Play */
 
-#htp-container {
-    padding: 30px 30px;
-    margin-left: 30px;
+#htp {
+    font-size: 200%;
 }
 
-#htp, #htp~p, li{
-    padding-left: 30px;
+#htp~p, li {
+    font-size: 120%;
 }
+
+li {
+    display:list-item;
+    list-style-position:outside;
+    list-style-type: disc;
+    line-height: 25px;
+}
+
+#weary p, #pills p, #vague p {
+border: 2px solid #242323;
+border-left: 2px solid #242323;
+border-right: 2px solid #242323;
+width: 30px;
+height: 30px;
+align-items: center;
+justify-content: center;
+display: flex;
+flex-direction: row;
+margin: 5px 2px;
+font-weight: 600;
+}
+
+#weary, #pills, #vague {
+    max-height: 30px;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+}
+
+#W, #I {
+    color: #fff;
+    background-color: #04721f;
+    border: none;
+}
+
+#I {
+    color: #fff;
+    background-color: #bea609;
+    border: none;
+}
+
+
+#vague p {
+    color: #fff;
+    background-color: #494646;
+    border: none;
+}
+
+#htp-container {
+/* border: 2px solid black; */
+max-width: fit-content;
+max-height: fit-content;
+padding: 30px;
+max-width: auto;
+display: block;
+}
+
 
 /* media query for screens larger than 440px */
 
