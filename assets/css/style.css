@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* General Styles */
@@ -116,6 +117,17 @@ h1 img {
     width: 13vw;
     max-width: 65px;
     height: 50px;
+}
+
+/* How To Play */
+
+#htp-container {
+    padding: 30px 30px;
+    margin-left: 30px;
+}
+
+#htp, #htp~p, li{
+    padding-left: 30px;
 }
 
 /* media query for screens larger than 440px */
