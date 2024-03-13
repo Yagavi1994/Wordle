@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    color: #e3dcdc;
+    background-color: #f1e5e5;
     font-family: 'Karla', sans-serif;
 }
 
@@ -31,7 +31,7 @@ body {
 
 .grid {
     border: 1px solid rgb(249, 246, 246);
-    border-radius: 15%;
+    border-radius: 10%;
     margin: 2px;
     height: 15vw;
     width: 15vw;
@@ -40,6 +40,7 @@ body {
     font-size: 30px;
     text-align: center;
     background-color: #854389;
+    /* background-color: #290026; */
     display: flex;
     align-items: center;
     align-content: center;
@@ -55,7 +56,7 @@ body {
     align-items: center;
     padding: 30px 20px 20px 0px;
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background-color: #242323;
 }
 
@@ -81,7 +82,6 @@ h1 img {
 
 #how-to-play, #reset, #mode {
     background-color: #242323;
-    /* border-radius: 50%; */
     font-size: 170%;
     padding: 7px;
     border: none;
@@ -100,7 +100,7 @@ h1 img {
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .key {
