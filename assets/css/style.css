@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #f1e5e5;
+    font-family: Arial, Helvetica, sans-serif ;
 }
 
 /* Game Board Grid */
@@ -41,11 +42,18 @@ body {
     font-size: 30px;
     text-align: center;
     background-color: #854389;
-    /* background-color: #290026; */
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
+    font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
 }
 
 /* Header */
@@ -110,12 +118,35 @@ h1 img {
     max-width: 43px;
     border-radius: 15%;
     box-shadow: 1px 1px #494646;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .key-large {
-    width: 13vw;
+    width: 14vw;
     max-width: 65px;
     height: 50px;
+}
+
+.key:hover, .key:focus {
+    background-color: #a3a0a0;
+    color: #fff;
+}
+
+.key.wrong {
+    background-color: #494646;
+    color: #fff;
+
+}
+
+.key.wrong-location {
+    background-color: #06962a;
+    color: #fff;
+}
+
+.key.correct {
+    background-color: #e4c915;
+    color: #fff;
 }
 
 /* How To Play */
@@ -207,7 +238,7 @@ font-weight: 600;
 }
 
 #htp-container {
-/* border: 2px solid black; */
+border: 5px solid black;
 max-width: fit-content;
 max-height: fit-content;
 padding: 30px;
@@ -221,6 +252,7 @@ display: block;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 99;
 } 
 
 
