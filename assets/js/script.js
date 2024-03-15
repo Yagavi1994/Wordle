@@ -1,4 +1,5 @@
-// Fetching the words from targetWords and dictionary which are used to play the Game.
+// The words from targetWords and dictionary which are used to play the Game.
+
 const targetWords = [
     "cigar",
     "rebut",
@@ -15292,24 +15293,28 @@ const dictionary = [
 ]
 
 //Declaring Constants and Variables.
+
 const WORD_LENGTH = 5
 const guessGrid = document.querySelector("[data-guess-grid]")
 
 
-// This function is to initiate interaction with the game when a letter is clicked or pressed
+// This function is to initiate interaction with the game when a letter is clicked or pressed.
 
+startInteraction()
 function startInteraction() {
     document.addEventListener("click", handleMouseClick)
-    document.addEventListener("keyDown", handlePressKey)
+    document.addEventListener("keydown", handlePressKey)
 }
 
 // This function is to stop interaction with the game when the correct word is guessed.
+
 function stopInteraction() {
     document.removeEventListener("click", handleMouseClick)
-    document.removeEventListener("keyDown", handlePressKey)
+    document.removeEventListener("keydown", handlePressKey)
 }
 
 // This function will declare what happens when a key is clicked.
+
 function handleMouseClick(e) {
     if (e.target.matches("[data-key]")) {
         pressKey(e.target.dataset.key)
@@ -15329,13 +15334,14 @@ function handleMouseClick(e) {
 }
 
 // This function will declare what happens when a key is pressed.
+
 function handlePressKey(e) {
     if (e.key === "Enter") {
         submitGuess()
         return
     }
 
-    if (e.key === "Backspace" || e.key === "delete") {
+    if (e.key === "Backspace" || e.key === "Delete") {
         deleteKey()
         return
     }
@@ -15348,6 +15354,8 @@ function handlePressKey(e) {
 
 }
 
+//This function enters the letter in the guess grid when it's clicked or pressed in the keyboard.
+
 function pressKey(key) {
     const activeTiles = getActiveTiles()
     if (activeTiles.length >= WORD_LENGTH) return
@@ -15355,6 +15363,21 @@ function pressKey(key) {
     nextTile.dataset.letter = key.toLowerCase()
     nextTile.textContent = key
     nextTile.dataset.state = "active"
+}
+
+//This function deletes the letter in the guess grid when it's clicked or pressed in the keyboard.
+
+function deleteKey() {
+    const activeTiles = getActiveTiles()
+    const lastTile = activeTiles[activeTiles.length - 1]
+    if (lastTile === undefined) return
+    lastTile.textContent = ""
+    delete lastTile.dataset.state
+    delete lastTile.dataset.letter
+}
+
+function getActiveTiles() {
+    return guessGrid.querySelectorAll('[data-state="active"]')
 }
 
 

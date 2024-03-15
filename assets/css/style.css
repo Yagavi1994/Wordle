@@ -15,9 +15,9 @@ body {
     font-family: Arial, Helvetica, sans-serif ;
 }
 
-/* Game Board Grid */
+/* Guess Grid */
 
-#game-board {
+#guess-grid {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -31,7 +31,7 @@ body {
 
 }
 
-.grid {
+.tile {
     border-radius: 10%;
     margin: 2px;
     height: 15vw;
@@ -55,22 +55,22 @@ body {
     user-select: none;
 }
 
-.grid[data-state="active"] {
+.tile[data-state="active"] {
     border-color: rgb(250, 248, 248);
     border: 1px solid;
 }
 
-.grid[data-state="wrong"] {
+.tile[data-state="wrong"] {
     border-color: none;
     background-color: #494646;
 }
 
-.grid[data-state="wrong-location"] {
+.tile[data-state="wrong-location"] {
     border-color: none;
     background-color: #ceb40f;
 }
 
-.grid[data-state="correct"] {
+.tile[data-state="correct"] {
     border-color: none;
     background-color: #058425;
 }
