@@ -1,4 +1,4 @@
-// The words from targetWords and dictionary which are used to play the Game.
+// The words from targetWords.json and dictionary.json which are used to play the Game.
 
 const targetWords = [
     "cigar",
@@ -15296,6 +15296,7 @@ const dictionary = [
 
 const WORD_LENGTH = 5
 const guessGrid = document.querySelector("[data-guess-grid]")
+let targetWord = targetWords[Math.floor(Math.random() * targetWords.length)]
 
 
 // This function is to initiate interaction with the game when a letter is clicked or pressed.
@@ -15365,7 +15366,7 @@ function pressKey(key) {
     nextTile.dataset.state = "active"
 }
 
-//This function deletes the letter in the guess grid when it's clicked or pressed in the keyboard.
+//This function deletes the letter in the guess grid when delete/backspace key is clicked or pressed in the keyboard.
 
 function deleteKey() {
     const activeTiles = getActiveTiles()
@@ -15375,6 +15376,19 @@ function deleteKey() {
     delete lastTile.dataset.state
     delete lastTile.dataset.letter
 }
+
+//This function submits the word when pressed enter.
+
+function submitGuess() {
+    const activeTiles = [...getActiveTiles()]
+    if (activeTiles.length !== WORD_LENGTH) {
+        showAlert("Not enough letters")
+        shakeTiles(activeTiles)
+        return
+    }
+
+}
+
 
 function getActiveTiles() {
     return guessGrid.querySelectorAll('[data-state="active"]')
