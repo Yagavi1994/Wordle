@@ -364,6 +364,7 @@ max-height: fit-content;
 padding: 30px;
 max-width: auto;
 display: block;
+color: #fff;
 }
 
 #htp-body {
@@ -373,7 +374,24 @@ display: block;
     align-items: center;
     justify-content: center;
     z-index: 99;
+    position: fixed;
+    transform: translateX(-50%);
+    top: 20vh;
+    left: 49.5vw;
+    background-color: #854389;
+    /* width: 100vw;
+    height: 90vh; */
 } 
+
+/* Reset button */
+
+#reset:active {
+    transform: rotateX(180deg)
+}
+
+#reset:hover {
+    cursor: pointer;
+}
 
 
 /* media query for screens larger than 440px */

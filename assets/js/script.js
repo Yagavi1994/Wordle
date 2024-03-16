@@ -15306,6 +15306,7 @@ const offsetFromDate = new Date(2022, 0, 1)
 const msOffset = Date.now() - offsetFromDate
 const dayOffset = msOffset / 1000 / 60 / 60 / 24
 const targetWord = targetWords[Math.floor(dayOffset)]
+console.log(targetWord);
 
 
 
@@ -15387,9 +15388,11 @@ function deleteKey() {
     delete lastTile.dataset.letter
 }
 
-/**This function submits the word when pressed enter.
- * Checks whether enough letters are entered.
- * Checks whether the entered guess is valid word from dictionary.
+/**This function submits the word when pressed enter and
+ * checks whether enough letters are entered.
+ * whether the entered guess is a valid word from dictionary.
+ * shows alert when the word guessed is equal to the target word.
+ * and if no remaining tiles are there shows the target word in the alert.
 */
 
 function submitGuess() {
@@ -15410,6 +15413,19 @@ function submitGuess() {
         return
     }
 
+    if (guess === targetWord) {
+        showAlert(`Congratulation, You Win`, 5000)
+        danceTiles(activeTiles)
+        stopInteraction()
+        return
+    }
+    
+    const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
+      if (remainingTiles.length === 0) {
+        showAlert(`Oops.. You missed it.. The correct word is ${targetWord.toUpperCase()}`, null)
+        stopInteraction()
+      }
+
     stopInteraction()
     activeTiles.forEach((...params) => flipTile(...params, guess))
 }
@@ -15418,7 +15434,7 @@ function submitGuess() {
  * Checks whether the letters in the word is in correct or wrong location and adds respective classes to them.
  */
 
-function flipTile(tile, index, array) {
+function flipTile(tile, index, array, guess) {
     const letter = tile.dataset.letter
     const key = keyboard.querySelector(`[data-key="${letter}"i]`)
     setTimeout(() => {
@@ -15427,6 +15443,7 @@ function flipTile(tile, index, array) {
 
     tile.addEventListener("transitionend", () => {
         tile.classList.remove("flip")
+
     if (targetWord[index] === letter) {
         tile.dataset.state = "correct"
         key.classList.add("correct")
@@ -15488,23 +15505,6 @@ function shakeTiles(tiles) {
             { once: true }
         )
     })
-}
-
-//Function to check whether the word guessed is equal to the target word.
-
-function checkWinLose(guess, tiles) {
-if (guess === targetWord) {
-    showAlert(`Congratulation, You Win`, 5000)
-    danceTiles(tiles)
-    stopInteraction()
-    return
-}
-
-const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
-  if (remainingTiles.length === 0) {
-    showAlert(`Oops.. You missed it.. The correct word is ${targetWord.toUpperCase()}`, null)
-    stopInteraction()
-  }
 }
 
 //Function to add dance tiles animation when the correct word is guessed.
