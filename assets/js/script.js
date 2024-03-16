@@ -15399,7 +15399,7 @@ function getActiveTiles() {
     return guessGrid.querySelectorAll('[data-state="active"]')
 }
 
-// Function to show alert messages in the game.
+//Function to show alert messages in the game.
 
 function showAlert(message, duration = 1000) {
     const alert = document.createElement("div")
@@ -15416,4 +15416,17 @@ function showAlert(message, duration = 1000) {
     }, duration)
 }
 
+//Function to add shake tiles animation when a word not in the dictionary is entered.
 
+function shakeTiles(tiles) {
+    tiles.forEach(tile => {
+        tile.classList.add("shake")
+        tile.addEventListener(
+            "animationend", 
+            () => {
+                tile.classList.remove("shake")
+            },
+            { once: true }
+        )
+    })
+}
