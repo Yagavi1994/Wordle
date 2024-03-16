@@ -15302,10 +15302,7 @@ const DANCE_ANIMATION_DURATION = 500
 const keyboard = document.querySelector("[data-keyboard]")
 const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
-const offsetFromDate = new Date(2022, 0, 1)
-const msOffset = Date.now() - offsetFromDate
-const dayOffset = msOffset / 1000 / 60 / 60 / 24
-const targetWord = targetWords[Math.floor(dayOffset)]
+const targetWord = targetWords[Math.floor(Math.random() * targetWords.length)]
 console.log(targetWord);
 
 
@@ -15557,7 +15554,14 @@ resetButton.addEventListener("click", resetPage);
 function toggleTheme() {
 
     document.body.classList.toggle('dark-mode');
+   
 }
 
-let modeButton = document.getElementById('mode')
+let modeButton = document.getElementById("mode")
 modeButton.addEventListener("click", toggleTheme);
+
+// Yet to prevent theme from changing when refreshed.
+// Change the mode icon when clicked.
+// Apply flip tile animation for the correct word.
+// add more themes and colors.
+// green and yellow key backgrounds are not working when theme changed.
