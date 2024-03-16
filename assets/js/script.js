@@ -15302,7 +15302,11 @@ const DANCE_ANIMATION_DURATION = 500
 const keyboard = document.querySelector("[data-keyboard]")
 const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
-let targetWord = targetWords[Math.floor(Math.random() * targetWords.length)]
+const offsetFromDate = new Date(2022, 0, 1)
+const msOffset = Date.now() - offsetFromDate
+const dayOffset = msOffset / 1000 / 60 / 60 / 24
+const targetWord = targetWords[Math.floor(dayOffset)]
+
 
 
 // This function is to initiate interaction with the game when a letter is clicked or pressed.
@@ -15407,14 +15411,14 @@ function submitGuess() {
     }
 
     stopInteraction()
-    activeTiles.forEach((...params) => flipTile(...params,guess))
+    activeTiles.forEach((...params) => flipTile(...params, guess))
 }
 
 /**Apllies flip tile animation to the word once it's submitted
  * Checks whether the letters in the word is in correct or wrong location and adds respective classes to them.
  */
 
-function flipTile(tile, index, array, guess) {
+function flipTile(tile, index, array) {
     const letter = tile.dataset.letter
     const key = keyboard.querySelector(`[data-key="${letter}"i]`)
     setTimeout(() => {
@@ -15490,7 +15494,7 @@ function shakeTiles(tiles) {
 
 function checkWinLose(guess, tiles) {
 if (guess === targetWord) {
-    showAlert("You Win", 5000)
+    showAlert(`Congratulation, You Win`, 5000)
     danceTiles(tiles)
     stopInteraction()
     return
@@ -15498,23 +15502,24 @@ if (guess === targetWord) {
 
 const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
   if (remainingTiles.length === 0) {
-    showAlert(targetWord.toUpperCase(), null)
+    showAlert(`Oops.. You missed it.. The correct word is ${targetWord.toUpperCase()}`, null)
     stopInteraction()
   }
 }
 
+//Function to add dance tiles animation when the correct word is guessed.
+
 function danceTiles(tiles) {
-    tile.forEach((tile, index) => {
-        setTimeout(() => {
-            tile.classList.add("dance")
-            tile.addEventListener(
-                "animationend",
-                () => {
-                    tile.classList.remove("dance")
-                },
-                { once: true }
-            )
-        }, (index * DANCE_ANIMATION_DURATION) / 5)
+    tiles.forEach((tile, index) => {
+      setTimeout(() => {
+        tile.classList.add("dance")
+        tile.addEventListener(
+          "animationend",
+          () => {
+            tile.classList.remove("dance")
+          },
+          { once: true }
+        )
+      }, (index * DANCE_ANIMATION_DURATION) / 5)
     })
-       
-}
+  }

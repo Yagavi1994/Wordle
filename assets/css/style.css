@@ -108,7 +108,7 @@ body {
 /* Learnt this animation code from Web Dev Simplified Youtube Tutorial */
 
 .tile.dance {
-    animation: dance 250ms ease-in-out;
+    animation: dance 500ms ease-in-out;
 }
 
 @keyframes dance {
@@ -228,12 +228,12 @@ h1 img {
 }
 
 .key.wrong-location {
-    background-color: #058425;
+    background-color: #ceb40f;
     color: #fff;
 }
 
 .key.correct {
-    background-color: #ceb40f;
+    background-color: #058425  ;
     color: #fff;
 }
 
