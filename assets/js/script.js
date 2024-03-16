@@ -1,3 +1,5 @@
+//Learnt the following codes for Wordle Game from Web Dev Simplified Youtube Tutorial.
+
 // The words from targetWords.json and dictionary.json which are used to play the Game.
 
 const targetWords = [
@@ -15295,6 +15297,10 @@ const dictionary = [
 //Declaring Constants and Variables.
 
 const WORD_LENGTH = 5
+const FLIP_ANIMATION_DURATION = 500
+const DANCE_ANIMATION_DURATION = 500
+const keyboard = document.querySelector("[data-keyboard]")
+const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
 let targetWord = targetWords[Math.floor(Math.random() * targetWords.length)]
 
@@ -15389,10 +15395,25 @@ function submitGuess() {
 
 }
 
-
 function getActiveTiles() {
     return guessGrid.querySelectorAll('[data-state="active"]')
 }
 
+// Function to show alert messages in the game.
+
+function showAlert(message, duration = 1000) {
+    const alert = document.createElement("div")
+    alert.textContent = message
+    alert.classList.add("alert")
+    alertContainer.prepend(alert)
+    if (duration == null) return
+
+    setTimeout(() => {
+        alert.classList.add("hide")
+        alert.addEventListener("transitioned", () => {
+            alert.remove()
+        })
+    }, duration)
+}
 
 
