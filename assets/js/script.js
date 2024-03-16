@@ -15524,6 +15524,19 @@ function danceTiles(tiles) {
     })
   }
 
+  //The code from here are my own code and not followed from any tutorial.
+  
+  //Function to open rulesBox when clicked.
+
   function rulesBox() {
     
-  }
+    const displayContainer = document.querySelector('[data-display-container="false"]');
+    
+    if (displayContainer) {
+        
+        displayContainer.setAttribute('data-display-container', 'true');
+    }
+}
+
+let rulesBoxBtn = document.getElementById("how-to-play");
+rulesBoxBtn.addEventListener("click", rulesBox);

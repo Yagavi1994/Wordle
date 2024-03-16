@@ -356,6 +356,10 @@ font-weight: 600;
     border: none;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 #htp-container {
 max-width: fit-content;
 max-height: fit-content;
@@ -366,8 +370,6 @@ color: #fff;
 #htp-body {
     margin: auto;
     display: flex;
-    width: 70vw;
-    height: 80vh;
     max-width: 750px;
     max-height: 500px;
     flex-direction: column;
@@ -380,15 +382,15 @@ color: #fff;
     left: 49.5vw;
     background-color: #854389;
     overflow: auto;
-    display: block;
+    
     border: 5px solid black;
 } 
 
-#htp-body[data-display-container=false] {
+#htp-body[data-display-container="false"] {
     display: none;
 }
 
-#htp-body[data-display-container=true] {
+#htp-body[data-display-container="true"] {
     display: block;
 }
 
