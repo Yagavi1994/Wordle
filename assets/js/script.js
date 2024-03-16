@@ -15523,3 +15523,7 @@ function danceTiles(tiles) {
       }, (index * DANCE_ANIMATION_DURATION) / 5)
     })
   }
+
+  function rulesBox() {
+    
+  }
