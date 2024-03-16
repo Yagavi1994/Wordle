@@ -15383,7 +15383,10 @@ function deleteKey() {
     delete lastTile.dataset.letter
 }
 
-//This function submits the word when pressed enter.
+/**This function submits the word when pressed enter.
+ * Checks whether enough letters are entered.
+ * Checks whether the entered guess is valid word from dictionary.
+*/
 
 function submitGuess() {
     const activeTiles = [...getActiveTiles()]
@@ -15393,7 +15396,59 @@ function submitGuess() {
         return
     }
 
+    const guess = activeTiles.reduce((word, tile) => {
+        return word + tile.dataset.letter
+    }, "")
+
+    if (!dictionary.includes(guess)) {
+        showAlert("Not in word list")
+        shakeTiles(activeTiles)
+        return
+    }
+
+    stopInteraction()
+    activeTiles.forEach((...params) => flipTile(...params,guess))
 }
+
+/**Apllies flip tile animation to the word once it's submitted
+ * Checks whether the letters in the word is in correct or wrong location and adds respective classes to them.
+ */
+
+function flipTile(tile, index, array, guess) {
+    const letter = tile.dataset.letter
+    const key = keyboard.querySelector(`[data-key="${letter}"i]`)
+    setTimeout(() => {
+        tile.classList.add("flip")
+    }, (index * FLIP_ANIMATION_DURATION) / 2)
+
+    tile.addEventListener("transitionend", () => {
+        tile.classList.remove("flip")
+    if (targetWord[index] === letter) {
+        tile.dataset.state = "correct"
+        key.classList.add("correct")
+    }
+    else if (targetWord.includes(letter)) {
+        tile.dataset.state = "wrong-location"
+        key.classList.add("wrong-location")
+    }
+    else {
+        tile.dataset.state = "wrong"
+        key.classList.add("wrong")
+    }
+
+    if (index === array.length - 1) {
+        tile.addEventListener("transitionend", () => {
+            startInteraction()
+        },
+        {once: true}
+        )
+    }
+}, 
+{once: true}
+)
+}
+
+// Function to select the active tiles.
 
 function getActiveTiles() {
     return guessGrid.querySelectorAll('[data-state="active"]')
@@ -15429,4 +15484,37 @@ function shakeTiles(tiles) {
             { once: true }
         )
     })
+}
+
+//Function to check whether the word guessed is equal to the target word.
+
+function checkWinLose(guess, tiles) {
+if (guess === targetWord) {
+    showAlert("You Win", 5000)
+    danceTiles(tiles)
+    stopInteraction()
+    return
+}
+
+const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
+  if (remainingTiles.length === 0) {
+    showAlert(targetWord.toUpperCase(), null)
+    stopInteraction()
+  }
+}
+
+function danceTiles(tiles) {
+    tile.forEach((tile, index) => {
+        setTimeout(() => {
+            tile.classList.add("dance")
+            tile.addEventListener(
+                "animationend",
+                () => {
+                    tile.classList.remove("dance")
+                },
+                { once: true }
+            )
+        }, (index * DANCE_ANIMATION_DURATION) / 5)
+    })
+       
 }
