@@ -404,6 +404,21 @@ color: #fff;
     cursor: pointer;
 }
 
+/* Dark Mode */
+
+.dark-mode {
+  background-color: #020202;
+}
+
+.dark-mode .tile {
+    background-color:#320235;
+}
+
+.dark-mode .key {
+    background-color: #242323;
+    color: #fff;
+}
+
 
 /* media query for screens larger than 440px */
 

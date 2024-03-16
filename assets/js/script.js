@@ -15419,12 +15419,12 @@ function submitGuess() {
         stopInteraction()
         return
     }
-    
+
     const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
-      if (remainingTiles.length === 0) {
+    if (remainingTiles.length === 0) {
         showAlert(`Oops.. You missed it.. The correct word is ${targetWord.toUpperCase()}`, null)
         stopInteraction()
-      }
+    }
 
     stopInteraction()
     activeTiles.forEach((...params) => flipTile(...params, guess))
@@ -15444,29 +15444,29 @@ function flipTile(tile, index, array, guess) {
     tile.addEventListener("transitionend", () => {
         tile.classList.remove("flip")
 
-    if (targetWord[index] === letter) {
-        tile.dataset.state = "correct"
-        key.classList.add("correct")
-    }
-    else if (targetWord.includes(letter)) {
-        tile.dataset.state = "wrong-location"
-        key.classList.add("wrong-location")
-    }
-    else {
-        tile.dataset.state = "wrong"
-        key.classList.add("wrong")
-    }
+        if (targetWord[index] === letter) {
+            tile.dataset.state = "correct"
+            key.classList.add("correct")
+        }
+        else if (targetWord.includes(letter)) {
+            tile.dataset.state = "wrong-location"
+            key.classList.add("wrong-location")
+        }
+        else {
+            tile.dataset.state = "wrong"
+            key.classList.add("wrong")
+        }
 
-    if (index === array.length - 1) {
-        tile.addEventListener("transitionend", () => {
-            startInteraction()
-        },
-        {once: true}
-        )
-    }
-}, 
-{once: true}
-)
+        if (index === array.length - 1) {
+            tile.addEventListener("transitionend", () => {
+                startInteraction()
+            },
+                { once: true }
+            )
+        }
+    },
+        { once: true }
+    )
 }
 
 // Function to select the active tiles.
@@ -15498,7 +15498,7 @@ function shakeTiles(tiles) {
     tiles.forEach(tile => {
         tile.classList.add("shake")
         tile.addEventListener(
-            "animationend", 
+            "animationend",
             () => {
                 tile.classList.remove("shake")
             },
@@ -15511,32 +15511,53 @@ function shakeTiles(tiles) {
 
 function danceTiles(tiles) {
     tiles.forEach((tile, index) => {
-      setTimeout(() => {
-        tile.classList.add("dance")
-        tile.addEventListener(
-          "animationend",
-          () => {
-            tile.classList.remove("dance")
-          },
-          { once: true }
-        )
-      }, (index * DANCE_ANIMATION_DURATION) / 5)
+        setTimeout(() => {
+            tile.classList.add("dance")
+            tile.addEventListener(
+                "animationend",
+                () => {
+                    tile.classList.remove("dance")
+                },
+                { once: true }
+            )
+        }, (index * DANCE_ANIMATION_DURATION) / 5)
     })
-  }
+}
 
-  //The code from here are my own code and not followed from any tutorial.
-  
-  //Function to open rulesBox when clicked.
+//The code from here are my own code and not followed from any tutorial.
 
-  function rulesBox() {
-    
+//Function to open rulesBox when clicked.
+
+function rulesBox() {
+
     const displayContainer = document.querySelector('[data-display-container="false"]');
-    
+
     if (displayContainer) {
-        
+
         displayContainer.setAttribute('data-display-container', 'true');
     }
 }
 
-let rulesBoxBtn = document.getElementById("how-to-play");
-rulesBoxBtn.addEventListener("click", rulesBox);
+let rulesBoxButton = document.getElementById("how-to-play");
+rulesBoxButton.addEventListener("click", rulesBox);
+
+//Function to reset page.
+
+function resetPage() {
+
+    location.reload();
+
+}
+
+let resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", resetPage);
+
+//Function to toggle theme.
+
+function toggleTheme() {
+
+    document.body.classList.toggle('dark-mode');
+}
+
+let modeButton = document.getElementById('mode')
+modeButton.addEventListener("click", toggleTheme);
