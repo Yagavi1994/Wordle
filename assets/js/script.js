@@ -15563,8 +15563,30 @@ modeButton.addEventListener("click", toggleTheme);
 // Initialize theme
 initializeTheme();
 
-// Yet to prevent theme from changing when refreshed.
+// Rules Box
+
+const howToPlayBtn = document.getElementById("how-to-play");
+const htpBody = document.getElementById("htp-body");
+
+function openRulesBox() {
+
+htpBody.setAttribute("data-display-container", "true")
+
+}
+
+howToPlayBtn.addEventListener('click', openRulesBox)
+
+
+
+const closeButton = document.getElementById("close");
+
+function closeRulesBox() {
+
+    htpBody.setAttribute("data-display-container", "false")
+    
+    }
+
+closeButton.addEventListener("click", closeRulesBox)
+
 // Change the mode icon when clicked.
-// Apply flip tile animation for the correct word.
 // add more themes and colors.
-// green and yellow key backgrounds are not working when theme changed.
