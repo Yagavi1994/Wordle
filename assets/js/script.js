@@ -15572,20 +15572,41 @@ const closeButton = document.getElementById("close");
 // Function to open rule box
 function openRulesBox() {
 
-htpBody.setAttribute("data-display-container", "true")
-
+    htpBody.setAttribute("data-display-container", "true");
 }
 
-howToPlayBtn.addEventListener('click', openRulesBox)
 
 // Function to close rule box
 function closeRulesBox() {
 
-    htpBody.setAttribute("data-display-container", "false")
-    
-    }
+    htpBody.setAttribute("data-display-container", "false");
+}
 
-closeButton.addEventListener("click", closeRulesBox)
+// Function to add overlay effect
+function addBodyOverlay() {
+    document.body.classList.add("body-overlay");
+  }
+  
+// Function to remove overlay effect
+function removeBodyOverlay() {
+    document.body.classList.remove("body-overlay");
+  }
+  
+// Attach event listeners to open and close the rules box
+
+  howToPlayBtn.addEventListener('click', function() {
+    openRulesBox();
+    addBodyOverlay();
+  });
+
+  closeButton.addEventListener("click", function() {
+    closeRulesBox();
+    removeBodyOverlay();
+  });
+  
+  
+  
+  
 
 // Change the mode icon when clicked.
 // add more themes and colors.
