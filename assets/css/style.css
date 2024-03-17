@@ -12,7 +12,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #f1e5e5;
-    font-family: Arial, Helvetica, sans-serif ;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
 }
 
 /* Guess Grid */
@@ -27,7 +28,7 @@ body {
     max-width: 350px;
     max-height: 350px;
     margin: auto;
-    padding: 0px 5px ;
+    padding: 0px 5px;
 
 }
 
@@ -56,22 +57,26 @@ body {
     transition: transform 250ms linear;
 }
 
-.dark-mode, .tile[data-state="active"] {
+.dark-mode .tile[data-state="active"],
+.tile[data-state="active"] {
     border-color: rgb(250, 248, 248);
     border: 1px solid;
 }
 
-.dark-mode, .tile[data-state="wrong"] {
+.dark-mode .tile[data-state="wrong"],
+.tile[data-state="wrong"] {
     border-color: none;
     background-color: #494646;
 }
 
-.dark-mode, .tile[data-state="wrong-location"] {
+.dark-mode .tile[data-state="wrong-location"],
+.tile[data-state="wrong-location"] {
     border-color: none;
     background-color: #ceb40f;
 }
 
-.dark-mode, .tile[data-state="correct"] {
+.dark-mode .tile[data-state="correct"],
+.tile[data-state="correct"] {
     border-color: none;
     background-color: #058425;
 }
@@ -87,18 +92,23 @@ body {
     10% {
         transform: translateX(-5%);
     }
+
     30% {
         transform: translateX(5%);
     }
+
     50% {
         transform: translateX(-7.5%);
     }
+
     70% {
         transform: translateX(7.5%);
     }
+
     90% {
         transform: translateX(-5%);
     }
+
     100% {
         transform: translateX(0%);
     }
@@ -113,27 +123,27 @@ body {
 
 @keyframes dance {
     20% {
-      transform: translateY(-50%);
-    }  
-  
+        transform: translateY(-50%);
+    }
+
     40% {
-      transform: translateY(5%);
-    }  
-  
+        transform: translateY(5%);
+    }
+
     60% {
-      transform: translateY(-25%);
-    }  
-  
+        transform: translateY(-25%);
+    }
+
     80% {
-      transform: translateY(2.5%);
-    }  
-  
+        transform: translateY(2.5%);
+    }
+
     90% {
-      transform: translateY(-5%);
-    }  
-  
+        transform: translateY(-5%);
+    }
+
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -164,7 +174,7 @@ body {
     justify-content: flex-end;
     margin: auto;
     position: absolute;
-    right: 0%;
+    right: 1%;
 
 }
 
@@ -176,7 +186,9 @@ h1 img {
     padding-left: 10px;
 }
 
-#how-to-play, #reset, #mode {
+#how-to-play,
+#reset,
+#mode {
     background-color: #242323;
     font-size: 170%;
     padding: 7px;
@@ -184,7 +196,9 @@ h1 img {
 
 }
 
-#how-to-play i, #reset i, #mode i {
+#how-to-play i,
+#reset i,
+#mode i {
     color: #ffff;
 }
 
@@ -211,29 +225,33 @@ h1 img {
 }
 
 .key-large {
-    width: 14vw;
+    width: 13vw;
     max-width: 65px;
     height: 50px;
 }
 
-.key:hover, .key:focus {
+.key:hover,
+.key:focus {
     background-color: #a3a0a0;
     color: #fff;
 }
 
-.dark-mode, .key.wrong {
+.dark-mode .key.wrong,
+.key.wrong {
     background-color: #494646;
     color: #fff;
 
 }
 
-.dark-mode, .key.wrong-location {
+.dark-mode .key.wrong-location,
+.key.wrong-location {
     background-color: #ceb40f;
     color: #fff;
 }
 
-.dark-mode, .key.correct {
-    background-color: #058425  ;
+.dark-mode .key.correct,
+.key.correct {
+    background-color: #058425;
     color: #fff;
 }
 
@@ -301,32 +319,37 @@ h1 img {
     color: white;
 }
 
-em, li {
+em,
+li {
     font-size: 120%;
 }
 
 li {
-    display:list-item;
-    list-style-position:outside;
+    display: list-item;
+    list-style-position: outside;
     list-style-type: disc;
     line-height: 25px;
 }
 
-#weary p, #pills p, #vague p {
-border: 2px solid #242323;
-border-left: 2px solid #242323;
-border-right: 2px solid #242323;
-width: 30px;
-height: 30px;
-align-items: center;
-justify-content: center;
-display: flex;
-flex-direction: row;
-margin: 5px 2px;
-font-weight: 600;
+#weary p,
+#pills p,
+#vague p {
+    border: 2px solid #242323;
+    border-left: 2px solid #242323;
+    border-right: 2px solid #242323;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin: 5px 2px;
+    font-weight: 600;
 }
 
-#weary, #pills, #vague {
+#weary,
+#pills,
+#vague {
     max-height: 30px;
     max-width: fit-content;
     display: flex;
@@ -337,7 +360,8 @@ font-weight: 600;
 
 }
 
-#W, #I {
+#W,
+#I {
     color: #fff;
     background-color: #058425;
     border: none;
@@ -361,10 +385,10 @@ button:hover {
 }
 
 #htp-container {
-max-width: fit-content;
-max-height: fit-content;
-padding: 30px;
-color: #fff;
+    max-width: fit-content;
+    max-height: fit-content;
+    padding: 30px;
+    color: #fff;
 }
 
 #htp-body {
@@ -383,7 +407,7 @@ color: #fff;
     background-color: #854389;
     overflow: auto;
     border: 5px solid black;
-} 
+}
 
 #htp-body[data-display-container="false"] {
     display: none;
@@ -394,24 +418,38 @@ color: #fff;
 }
 
 .body-overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10; /* Ensure it's above other content */
-  }
+    z-index: 10;
+    /* Ensure it's above other content */
+}
+
+/* Overlay */
+
+.body-overlay img {
+    opacity: 0.3;
+}
+
+.body-overlay #how-to-play,
+.body-overlay #reset,
+.body-overlay #mode {
+
+    opacity: 0.3;
+}
 
 .body-overlay .key {
-    opacity: 0.5; /* Example: Reduce opacity of keys */
-  }
-  
-.body-overlay .tile {
-    opacity: 0.5; /* Example: Reduce opacity of tiles */
-  }
+    opacity: 0.3;
+}
 
-body 
+.body-overlay .tile {
+    opacity: 0.3;
+}
+
 
 /* Reset button */
 
@@ -425,12 +463,16 @@ body
 
 /* Dark Mode */
 
+.dark-mode #htp-body {
+    background-color: #320235;
+}
+
 .dark-mode {
-  background-color: #020202;
+    background-color: #020202;
 }
 
 .dark-mode .tile {
-    background-color:#320235;
+    background-color: #320235;
 }
 
 .dark-mode .key {
@@ -441,7 +483,10 @@ body
 /* media query for screens larger than 440px */
 
 @media screen and (min-width: 440px) {
-    #how-to-play, #reset, #mode {
+
+    #how-to-play,
+    #reset,
+    #mode {
         font-size: 250%;
         padding: 15px;
     }
@@ -452,4 +497,3 @@ body
     }
 
 }
-
