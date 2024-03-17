@@ -15526,42 +15526,42 @@ function danceTiles(tiles) {
 
 //The code from here are my own code and not followed from any tutorial.
 
-//Function to open rulesBox when clicked.
+// Function to toggle theme
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
 
-function rulesBox() {
-
-    const displayContainer = document.querySelector('[data-display-container="false"]');
-
-    if (displayContainer) {
-
-        displayContainer.setAttribute('data-display-container', 'true');
-    }
+    // Save the current theme preference to localStorage
+    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
 }
 
-let rulesBoxButton = document.getElementById("how-to-play");
-rulesBoxButton.addEventListener("click", rulesBox);
+// Function to reset the page without resetting the theme
+function resetPageWithoutThemeReset() {
 
-//Function to reset page.
-
-function resetPage() {
+    // Hide the body to prevent flashing of the light theme
+    document.body.style.visibility = 'hidden';
 
     location.reload();
+}
 
+// Function to initialize the theme
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    document.body.style.visibility = 'visible';
 }
 
 let resetButton = document.getElementById("reset");
-resetButton.addEventListener("click", resetPage);
-
-//Function to toggle theme.
-
-function toggleTheme() {
-
-    document.body.classList.toggle('dark-mode');
-   
-}
+resetButton.addEventListener("click", resetPageWithoutThemeReset);
 
 let modeButton = document.getElementById("mode")
 modeButton.addEventListener("click", toggleTheme);
+
+// Initialize theme
+initializeTheme();
 
 // Yet to prevent theme from changing when refreshed.
 // Change the mode icon when clicked.
