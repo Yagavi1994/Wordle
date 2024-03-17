@@ -15567,7 +15567,9 @@ initializeTheme();
 
 const howToPlayBtn = document.getElementById("how-to-play");
 const htpBody = document.getElementById("htp-body");
+const closeButton = document.getElementById("close");
 
+// Function to open rule box
 function openRulesBox() {
 
 htpBody.setAttribute("data-display-container", "true")
@@ -15576,10 +15578,7 @@ htpBody.setAttribute("data-display-container", "true")
 
 howToPlayBtn.addEventListener('click', openRulesBox)
 
-
-
-const closeButton = document.getElementById("close");
-
+// Function to close rule box
 function closeRulesBox() {
 
     htpBody.setAttribute("data-display-container", "false")

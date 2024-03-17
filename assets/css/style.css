@@ -56,22 +56,22 @@ body {
     transition: transform 250ms linear;
 }
 
-.dark-mode .tile[data-state="active"] {
+.dark-mode, .tile[data-state="active"] {
     border-color: rgb(250, 248, 248);
     border: 1px solid;
 }
 
-.dark-mode .tile[data-state="wrong"] {
+.dark-mode, .tile[data-state="wrong"] {
     border-color: none;
     background-color: #494646;
 }
 
-.dark-mode .tile[data-state="wrong-location"] {
+.dark-mode, .tile[data-state="wrong-location"] {
     border-color: none;
     background-color: #ceb40f;
 }
 
-.dark-mode .tile[data-state="correct"] {
+.dark-mode, .tile[data-state="correct"] {
     border-color: none;
     background-color: #058425;
 }
@@ -221,18 +221,18 @@ h1 img {
     color: #fff;
 }
 
-.dark-mode .key.wrong {
+.dark-mode, .key.wrong {
     background-color: #494646;
     color: #fff;
 
 }
 
-.dark-mode .key.wrong-location {
+.dark-mode, .key.wrong-location {
     background-color: #ceb40f;
     color: #fff;
 }
 
-.dark-mode .key.correct {
+.dark-mode, .key.correct {
     background-color: #058425  ;
     color: #fff;
 }
@@ -290,7 +290,7 @@ h1 img {
     height: 25px;
     font-size: 100%;
     font-weight: 800;
-    color: black;
+    color: rgb(249, 249, 249);
     margin-left: 10px;
     border-radius: 15%;
 
