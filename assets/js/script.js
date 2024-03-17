@@ -15411,8 +15411,11 @@ function submitGuess() {
     }
 
     if (guess === targetWord) {
-        showAlert(`Congratulation, You Win`, 5000)
-        danceTiles(activeTiles)
+        activeTiles.forEach((...params) => flipTile(...params, guess))
+        setTimeout(() => {
+            danceTiles(activeTiles);
+            showAlert(`Congratulation, You Win`, 5000);
+        }, FLIP_ANIMATION_DURATION * 5)
         stopInteraction()
         return
     }
