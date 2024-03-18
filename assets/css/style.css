@@ -188,7 +188,8 @@ h1 img {
 
 #how-to-play,
 #reset,
-#mode {
+#mode,
+#themes {
     background-color: #242323;
     font-size: 170%;
     padding: 7px;
@@ -198,15 +199,92 @@ h1 img {
 
 #how-to-play i,
 #reset i,
-#mode i {
+#mode i,
+#themes i {
     color: #ffff;
 }
 
 #how-to-play i:hover,
 #reset i:hover,
-#mode i:hover {
+#mode i:hover,
+#themes i:hover {
 
     transform: scale(1.2);
+}
+
+#themes-container {
+    position: absolute;
+    top: 100%;
+    right: 3%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #242323;
+    border-radius: 10%;
+    /* display: none; */
+}
+
+#themes-container p {
+    color: white;
+    margin-top: 10px;
+}
+
+.colors {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 2px solid rgb(254, 254, 255);
+    margin-bottom: 20px;
+}
+
+.colors:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#purple {
+
+    background-color: #854389;
+}
+
+#orange {
+    
+    background-color: #F4864E;
+}
+
+#green {
+    
+    background-color: #6CC859 ;
+
+}
+
+#dark-purple {
+
+    background-color: #320235;
+
+}
+
+#dark-orange {
+    
+    background-color: #CD4602;
+
+}
+
+#dark-green {
+
+   background-color: #116600;
+}
+
+#light-themes, #dark-themes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
 }
 
 
@@ -490,7 +568,7 @@ button:hover {
     color: #e7e7e7;
 }
 
-/* Flip animation */
+/* Flip animation for mode icon to toggle theme */
 
 .rotate {
     animation: flip 0.5s ease-in-out;
