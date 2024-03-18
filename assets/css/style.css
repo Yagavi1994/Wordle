@@ -202,6 +202,14 @@ h1 img {
     color: #ffff;
 }
 
+#how-to-play i:hover,
+#reset i:hover,
+#mode i:hover {
+
+    transform: scale(1.2);
+}
+
+
 /* Keyboard */
 
 #keyboard-area {
@@ -314,10 +322,10 @@ h1 img {
 
 }
 
-#top a {
+/* #top a {
     text-decoration: none;
     color: white;
-}
+} */
 
 em,
 li {
@@ -417,6 +425,8 @@ button:hover {
     display: block;
 }
 
+/* Overlay */
+
 .body-overlay {
     background-color: rgba(0, 0, 0, 0.5);
     /* Semi-transparent black background */
@@ -428,8 +438,6 @@ button:hover {
     z-index: 10;
     /* Ensure it's above other content */
 }
-
-/* Overlay */
 
 .body-overlay img {
     opacity: 0.3;
@@ -459,12 +467,14 @@ button:hover {
 
 #reset:hover {
     cursor: pointer;
+    transform: rotateX(180deg)
 }
 
 /* Dark Mode */
 
 .dark-mode #htp-body {
     background-color: #320235;
+    border: 5px solid #a09e9e;
 }
 
 .dark-mode {
@@ -477,7 +487,29 @@ button:hover {
 
 .dark-mode .key {
     background-color: #242323;
-    color: #fff;
+    color: #e7e7e7;
+}
+
+/* Flip animation */
+
+.flip {
+    animation: flip 0.5s ease-in-out;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
+#mode .hidden {
+    display: none;
 }
 
 /* media query for screens larger than 440px */

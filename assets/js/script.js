@@ -15526,6 +15526,33 @@ function danceTiles(tiles) {
 
 //The code from here are my own code and not followed from any tutorial.
 
+const modeButton = document.getElementById("mode");
+const moonIcon = document.getElementById("moon-icon");
+const sunIcon = document.getElementById("sun-icon");
+
+// Function to toggle between light and dark mode icons with flip animation
+
+function toggleModeIcon() {
+    // Toggle the hidden class to show/hide the icons
+    moonIcon.classList.toggle("hidden");
+    sunIcon.classList.toggle("hidden");
+
+    // Add flip animation to both icons
+    moonIcon.classList.add("flip");
+    sunIcon.classList.add("flip");
+
+    // Wait for the animation to finish before removing the flip animation classes
+    setTimeout(() => {
+        moonIcon.classList.remove("flip");
+        sunIcon.classList.remove("flip");
+    }, 500); // Duration of flip animation (0.5 seconds)
+}
+
+modeButton.addEventListener("click", () => {
+    toggleModeIcon();
+    toggleTheme();
+});
+
 // Function to toggle theme
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
@@ -15537,11 +15564,8 @@ function toggleTheme() {
 
 // Function to reset the page without resetting the theme
 function resetPageWithoutThemeReset() {
-
-    // Hide the body to prevent flashing of the light theme
-    document.body.style.visibility = 'hidden';
-
     location.reload();
+    
 }
 
 // Function to initialize the theme
@@ -15551,17 +15575,17 @@ function initializeTheme() {
         document.body.classList.add('dark-mode');
     }
 
-    document.body.style.visibility = 'visible';
 }
+
+// Attach event listeners to reset button and mode button.
 
 let resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", resetPageWithoutThemeReset);
 
-let modeButton = document.getElementById("mode")
-modeButton.addEventListener("click", toggleTheme);
-
-// Initialize theme
 initializeTheme();
+
+// modeButton.addEventListener("click", toggleTheme);
+
 
 // Rules Box
 
