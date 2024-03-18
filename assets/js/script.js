@@ -15533,19 +15533,18 @@ const sunIcon = document.getElementById("sun-icon");
 // Function to toggle between light and dark mode icons with flip animation
 
 function toggleModeIcon() {
-    // Toggle the hidden class to show/hide the icons
-    moonIcon.classList.toggle("hidden");
-    sunIcon.classList.toggle("hidden");
+    
+    moonIcon.classList.add("rotate");
+    sunIcon.classList.add("rotate");
 
-    // Add flip animation to both icons
-    moonIcon.classList.add("flip");
-    sunIcon.classList.add("flip");
-
-    // Wait for the animation to finish before removing the flip animation classes
     setTimeout(() => {
+
+        moonIcon.classList.toggle("hidden");
+        sunIcon.classList.toggle("hidden");
+
         moonIcon.classList.remove("rotate");
         sunIcon.classList.remove("rotate");
-    }, 500); // Duration of flip animation (0.5 seconds)
+    }, 500); 
 }
 
 modeButton.addEventListener("click", () => {

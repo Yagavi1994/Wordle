@@ -16,6 +16,147 @@ body {
     border: none;
 }
 
+/* Header */
+
+#header-container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px 20px 20px 0px;
+    margin-bottom: 30px;
+    background-color: #242323;
+    justify-content: space-between;
+}
+
+#buttons-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    margin: auto;
+    position: absolute;
+    right: 1%;
+
+}
+
+h1 img {
+    width: 140px;
+    height: 50px;
+    padding-left: 10px;
+}
+
+#how-to-play,
+#reset,
+#mode,
+#themes {
+    background-color: #242323;
+    font-size: 140%;
+    padding: 7px;
+    border: none;
+
+}
+
+#how-to-play i,
+#reset i,
+#mode i,
+#themes i {
+    color: #ffff;
+}
+
+#how-to-play i:hover,
+#reset i:hover,
+#mode i:hover,
+#themes i:hover {
+
+    transform: scale(1.2);
+}
+
+/* Reset button */
+
+#reset:active {
+    transform: rotateX(180deg)
+}
+
+#reset:hover {
+    cursor: pointer;
+    transform: rotateX(180deg)
+}
+
+#themes-container {
+    position: absolute;
+    top: 100%;
+    right: 3%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #242323;
+    border-radius: 10%;
+    display: none;
+}
+
+#themes-container p {
+    color: white;
+    margin-top: 10px;
+}
+
+.colors {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 2px solid rgb(254, 254, 255);
+    margin-bottom: 20px;
+}
+
+.colors:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#purple {
+
+    background-color: #854389;
+}
+
+#orange {
+    
+    background-color: #F4864E;
+}
+
+#green {
+    
+    background-color: #6CC859 ;
+
+}
+
+#dark-purple {
+
+    background-color: #320235;
+
+}
+
+#dark-orange {
+    
+    background-color: #CD4602;
+
+}
+
+#dark-green {
+
+   background-color: #116600;
+}
+
+#light-themes, #dark-themes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
 /* Guess Grid */
 
 #guess-grid {
@@ -153,141 +294,6 @@ body {
     transform: rotateX(90deg);
 }
 
-
-/* Header */
-
-#header-container {
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 30px 20px 20px 0px;
-    margin-bottom: 30px;
-    background-color: #242323;
-}
-
-#buttons-container {
-    display: flex;
-    flex-direction: row;
-    max-width: 100%;
-    align-items: center;
-    justify-content: flex-end;
-    margin: auto;
-    position: absolute;
-    right: 1%;
-
-}
-
-h1 img {
-    width: 150px;
-    height: 60px;
-    align-items: center;
-    justify-content: center;
-    padding-left: 10px;
-}
-
-#how-to-play,
-#reset,
-#mode,
-#themes {
-    background-color: #242323;
-    font-size: 170%;
-    padding: 7px;
-    border: none;
-
-}
-
-#how-to-play i,
-#reset i,
-#mode i,
-#themes i {
-    color: #ffff;
-}
-
-#how-to-play i:hover,
-#reset i:hover,
-#mode i:hover,
-#themes i:hover {
-
-    transform: scale(1.2);
-}
-
-#themes-container {
-    position: absolute;
-    top: 100%;
-    right: 3%;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #242323;
-    border-radius: 10%;
-    /* display: none; */
-}
-
-#themes-container p {
-    color: white;
-    margin-top: 10px;
-}
-
-.colors {
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-    border: 2px solid rgb(254, 254, 255);
-    margin-bottom: 20px;
-}
-
-.colors:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-#purple {
-
-    background-color: #854389;
-}
-
-#orange {
-    
-    background-color: #F4864E;
-}
-
-#green {
-    
-    background-color: #6CC859 ;
-
-}
-
-#dark-purple {
-
-    background-color: #320235;
-
-}
-
-#dark-orange {
-    
-    background-color: #CD4602;
-
-}
-
-#dark-green {
-
-   background-color: #116600;
-}
-
-#light-themes, #dark-themes {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-
-}
-
-
 /* Keyboard */
 
 #keyboard-area {
@@ -399,11 +405,6 @@ h1 img {
     border-radius: 15%;
 
 }
-
-/* #top a {
-    text-decoration: none;
-    color: white;
-} */
 
 em,
 li {
@@ -537,17 +538,6 @@ button:hover {
 }
 
 
-/* Reset button */
-
-#reset:active {
-    transform: rotateX(180deg)
-}
-
-#reset:hover {
-    cursor: pointer;
-    transform: rotateX(180deg)
-}
-
 /* Dark Mode */
 
 .dark-mode #htp-body {
@@ -570,8 +560,8 @@ button:hover {
 
 /* Flip animation for mode icon to toggle theme */
 
-.rotate {
-    animation: flip 0.5s ease-in-out;
+#mode .rotate {
+    animation: rotate 500ms ease-in-out;;
 }
 
 @keyframes rotate {
