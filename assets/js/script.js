@@ -15543,8 +15543,8 @@ function toggleModeIcon() {
 
     // Wait for the animation to finish before removing the flip animation classes
     setTimeout(() => {
-        moonIcon.classList.remove("flip");
-        sunIcon.classList.remove("flip");
+        moonIcon.classList.remove("rotate");
+        sunIcon.classList.remove("rotate");
     }, 500); // Duration of flip animation (0.5 seconds)
 }
 

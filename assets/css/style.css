@@ -492,11 +492,11 @@ button:hover {
 
 /* Flip animation */
 
-.flip {
+.rotate {
     animation: flip 0.5s ease-in-out;
 }
 
-@keyframes flip {
+@keyframes rotate {
     0% {
         transform: rotateX(0deg);
     }
