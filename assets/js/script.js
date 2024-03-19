@@ -15667,30 +15667,42 @@ document.body.addEventListener("click", function(event) {
     }
 });
 
+// Functions to change theme colors
 
-  // Function to change theme colours.
-  const colorButtons = document.querySelectorAll('.colors');
+// Orange theme.
 
-  // Select all tiles
-  const tiles = document.querySelectorAll('.tile');
-  
-  // Add event listener to each color button
-  colorButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Get the color from the data-color attribute of the clicked button
-      const color = button.dataset.color;
-      
-      // Apply the color to each tile
-      tiles.forEach(tile => {
-        tile.style.backgroundColor = color;
-        
-      });
-    });
-  });
-  
-  
-  
-  
+function orangeTheme() {
+    document.body.classList.remove('purple', 'blue');
+    document.body.classList.add('orange');
 
-// Change the mode icon when clicked.
-// add more themes and colors.
+}
+const orange = document.getElementById('orange');
+orange.addEventListener('click', orangeTheme)
+
+// Purple Theme
+
+function purpleTheme() {
+    document.body.classList.remove('orange', 'blue');
+    document.body.classList.add('purple');
+    
+}
+const purple = document.getElementById('purple');
+purple.addEventListener('click', purpleTheme)
+
+
+// Blue Theme
+
+function blueTheme() {
+    document.body.classList.remove('purple', 'orange');
+    document.body.classList.add('blue');
+    
+}
+const blue = document.getElementById('blue');
+blue.addEventListener('click', blueTheme)
+  
+  
+  /** Add confetti animation when won.
+   * Add transition effect for how to play.
+   * Debug tiles color changing when theme color is changed.
+   * Add dialog box with congratulations message, points and winning streak.
+   */

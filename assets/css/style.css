@@ -117,7 +117,7 @@ h1 img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: #242323;
     border-radius: 10%;
 }
@@ -133,6 +133,7 @@ h1 img {
 #themes-container p {
     color: white;
     margin-top: 10px;
+    font-size: 150%;
 }
 
 .colors {
@@ -158,30 +159,13 @@ h1 img {
     background-color: #F4864E;
 }
 
-#green {
+#blue {
     
-    background-color: #6CC859 ;
+    background-color: #64aae3 ;
 
 }
 
-#dark-purple {
-
-    background-color: #320235;
-
-}
-
-#dark-orange {
-    
-    background-color: #CD4602;
-
-}
-
-#dark-green {
-
-   background-color: #116600;
-}
-
-#light-themes, #dark-themes {
+#light-themes {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -231,24 +215,50 @@ h1 img {
     transition: transform 250ms linear;
 }
 
-.dark-mode .tile[data-state="active"],
+/* Color Themes */
+
+.purple .tile {
+    background-color: #854389;
+}
+
+.purple.dark-mode .tile {
+    background-color: #320235;
+}
+
+.orange .tile {
+    background-color: #F4864E;
+}
+
+.orange.dark-mode .tile {
+    background-color: #CD4602;
+}
+
+.blue .tile {
+    background-color: #64aae3;
+}
+
+.blue.dark-mode .tile {
+    background-color: rgb(1, 30, 54);
+}
+
+.purple .tile[data-state="active"], .orange .tile[data-state="active"], .blue .tile[data-state="active"], .dark-mode .tile[data-state="active"],
 .tile[data-state="active"] {
     border-color: rgb(250, 248, 248);
     border: 1px solid;
 }
 
-.dark-mode .tile[data-state="wrong"], .tile[data-state="wrong"] {
+.purple .tile[data-state="wrong"], .orange .tile[data-state="wrong"], .blue .tile[data-state="wrong"], .dark-mode .tile[data-state="wrong"], .tile[data-state="wrong"] {
     border-color: none;
     background-color: #494646;
 }
 
-.dark-mode .tile[data-state="wrong-location"],
+.purple .tile[data-state="wrong-location"], .orange .tile[data-state="wrong-location"], .blue .tile[data-state="wrong-location"], .dark-mode .tile[data-state="wrong-location"],
 .tile[data-state="wrong-location"] {
     border-color: none;
     background-color: #ceb40f;
 }
 
-.colors .tile[data-state="correct"], .dark-mode .tile[data-state="correct"],
+.orange .tile[data-state="correct"], .dark-mode .tile[data-state="correct"],
 .tile[data-state="correct"] {
     border-color: none;
     background-color: #058425;
