@@ -115,6 +115,7 @@ h1 img {
     width: 200px;
     height: 200px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -165,12 +166,19 @@ h1 img {
 
 }
 
+#red {
+
+    background-color: #C50636;
+}
+
 #light-themes {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    width: 130px;
 
 }
 
@@ -226,39 +234,47 @@ h1 img {
 }
 
 .orange .tile {
-    background-color: #F4864E;
+    background-color: #f3783a;
 }
 
 .orange.dark-mode .tile {
-    background-color: #CD4602;
+    background-color: #b33f04;
 }
 
 .blue .tile {
-    background-color: #64aae3;
+    background-color: #51a8ee;
 }
 
 .blue.dark-mode .tile {
     background-color: rgb(1, 30, 54);
 }
 
-.purple .tile[data-state="active"], .orange .tile[data-state="active"], .blue .tile[data-state="active"], .dark-mode .tile[data-state="active"],
+.red .tile {
+    background-color: #d8063b;
+}
+
+.red.dark-mode .tile {
+    background-color: #70021d;
+}
+
+.purple .tile[data-state="active"], .orange .tile[data-state="active"], .blue .tile[data-state="active"], .red .tile[data-state="active"], .dark-mode .tile[data-state="active"],
 .tile[data-state="active"] {
     border-color: rgb(250, 248, 248);
     border: 1px solid;
 }
 
-.purple .tile[data-state="wrong"], .orange .tile[data-state="wrong"], .blue .tile[data-state="wrong"], .dark-mode .tile[data-state="wrong"], .tile[data-state="wrong"] {
+.purple .tile[data-state="wrong"], .orange .tile[data-state="wrong"], .blue .tile[data-state="wrong"], .red .tile[data-state="wrong"], .dark-mode .tile[data-state="wrong"], .tile[data-state="wrong"] {
     border-color: none;
     background-color: #494646;
 }
 
-.purple .tile[data-state="wrong-location"], .orange .tile[data-state="wrong-location"], .blue .tile[data-state="wrong-location"], .dark-mode .tile[data-state="wrong-location"],
+.purple .tile[data-state="wrong-location"], .orange .tile[data-state="wrong-location"], .blue .tile[data-state="wrong-location"], .red .tile[data-state="wrong-location"], .dark-mode .tile[data-state="wrong-location"],
 .tile[data-state="wrong-location"] {
     border-color: none;
     background-color: #ceb40f;
 }
 
-.orange .tile[data-state="correct"], .dark-mode .tile[data-state="correct"],
+.purple .tile[data-state="correct"], .orange .tile[data-state="correct"], .blue .tile[data-state="correct"], .red .tile[data-state="correct"], .dark-mode .tile[data-state="correct"],
 .tile[data-state="correct"] {
     border-color: none;
     background-color: #058425;

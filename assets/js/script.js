@@ -15672,7 +15672,7 @@ document.body.addEventListener("click", function(event) {
 // Orange theme.
 
 function orangeTheme() {
-    document.body.classList.remove('purple', 'blue');
+    document.body.classList.remove('purple', 'blue', 'red');
     document.body.classList.add('orange');
 
 }
@@ -15682,7 +15682,7 @@ orange.addEventListener('click', orangeTheme)
 // Purple Theme
 
 function purpleTheme() {
-    document.body.classList.remove('orange', 'blue');
+    document.body.classList.remove('orange', 'blue', 'red');
     document.body.classList.add('purple');
     
 }
@@ -15693,12 +15693,22 @@ purple.addEventListener('click', purpleTheme)
 // Blue Theme
 
 function blueTheme() {
-    document.body.classList.remove('purple', 'orange');
+    document.body.classList.remove('purple', 'orange', 'red');
     document.body.classList.add('blue');
     
 }
 const blue = document.getElementById('blue');
 blue.addEventListener('click', blueTheme)
+
+// Red Theme
+
+function redTheme() {
+    document.body.classList.remove('purple', 'orange', 'blue');
+    document.body.classList.add('red');
+    
+}
+const red = document.getElementById('red');
+red.addEventListener('click', redTheme)
   
   
   /** Add confetti animation when won.
