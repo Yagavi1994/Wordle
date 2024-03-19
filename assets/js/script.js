@@ -15684,7 +15684,6 @@ document.body.addEventListener("click", function(event) {
       tiles.forEach(tile => {
         tile.style.backgroundColor = color;
       });
-      toggleTheme();
     });
   });
   
