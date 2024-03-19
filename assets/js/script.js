@@ -15573,6 +15573,9 @@ function initializeTheme() {
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
     }
+    else {
+        document.body.classList.remove('dark-mode');
+    }
 
 }
 
@@ -15625,19 +15628,45 @@ function removeBodyOverlay() {
     removeBodyOverlay();
   });
 
-  // Function to open and close themes menu when themes button is clicked.
+
+
+  // Function to open themes menu when themes button is clicked.
 
   const themesButton = document.getElementById('themes')
   const themesMenu = document.getElementById('themes-container')
   const themesCloseButton = document.getElementById('close-button')
 
   function openThemesMenu() {
-     themesMenu.classList.toggle("hidden");
+     themesMenu.classList.remove("hidden");
 
   }
-
+  
   themesButton.addEventListener("click", openThemesMenu)
-  themesCloseButton.addEventListener("click", openThemesMenu)
+
+  // Function to close themes menu.
+
+  function closeThemesMenu() {
+
+    themesMenu.classList.add("hidden");
+  }
+
+  // Stop event propagation to prevent immediate closing
+
+ themesButton.addEventListener("click", function(event) {
+    event.stopPropagation(); 
+    openThemesMenu();
+});
+
+themesCloseButton.addEventListener("click", closeThemesMenu);
+
+// Add event listener to document body to close themes menu when clicked outside
+
+document.body.addEventListener("click", function(event) {
+    if (!themesMenu.contains(event.target) && event.target !== themesButton) {
+        closeThemesMenu();
+    }
+});
+
 
   // Function to change theme colours.
   const colorButtons = document.querySelectorAll('.colors');
