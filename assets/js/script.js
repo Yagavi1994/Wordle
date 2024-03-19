@@ -15683,6 +15683,7 @@ document.body.addEventListener("click", function(event) {
       // Apply the color to each tile
       tiles.forEach(tile => {
         tile.style.backgroundColor = color;
+        
       });
     });
   });
