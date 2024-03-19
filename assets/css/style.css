@@ -82,6 +82,32 @@ h1 img {
     transform: rotateX(180deg)
 }
 
+/* Mode Button */
+
+/* Flip animation for mode icon to toggle theme */
+
+#mode .rotate {
+    animation: rotate 500ms ease-in-out;;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
+#mode .hidden, #themes-container.hidden {
+    display: none;
+}
+
+/* Themes */
+
 #themes-container {
     position: absolute;
     top: 100%;
@@ -94,7 +120,14 @@ h1 img {
     justify-content: space-around;
     background-color: #242323;
     border-radius: 10%;
-    display: none;
+}
+
+#close-button {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-weight: bold;
+    padding: 2px;
 }
 
 #themes-container p {
@@ -110,7 +143,7 @@ h1 img {
     margin-bottom: 20px;
 }
 
-.colors:hover {
+.colors:hover, #close-button:hover {
     transform: scale(1.2);
     cursor: pointer;
 }
@@ -204,8 +237,7 @@ h1 img {
     border: 1px solid;
 }
 
-.dark-mode .tile[data-state="wrong"],
-.tile[data-state="wrong"] {
+.dark-mode .tile[data-state="wrong"], .tile[data-state="wrong"] {
     border-color: none;
     background-color: #494646;
 }
@@ -216,7 +248,7 @@ h1 img {
     background-color: #ceb40f;
 }
 
-.dark-mode .tile[data-state="correct"],
+.colors .tile[data-state="correct"], .dark-mode .tile[data-state="correct"],
 .tile[data-state="correct"] {
     border-color: none;
     background-color: #058425;
@@ -524,7 +556,8 @@ button:hover {
 
 .body-overlay #how-to-play,
 .body-overlay #reset,
-.body-overlay #mode {
+.body-overlay #mode,
+.body-overlay #themes {
 
     opacity: 0.3;
 }
@@ -558,35 +591,16 @@ button:hover {
     color: #e7e7e7;
 }
 
-/* Flip animation for mode icon to toggle theme */
 
-#mode .rotate {
-    animation: rotate 500ms ease-in-out;;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotateX(0deg);
-    }
-    50% {
-        transform: rotateX(90deg);
-    }
-    100% {
-        transform: rotateX(180deg);
-    }
-}
-
-#mode .hidden {
-    display: none;
-}
 
 /* media query for screens larger than 440px */
 
-@media screen and (min-width: 440px) {
+@media screen and (min-width: 520px) {
 
     #how-to-play,
     #reset,
-    #mode {
+    #mode,
+    #themes {
         font-size: 250%;
         padding: 15px;
     }

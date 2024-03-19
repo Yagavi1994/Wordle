@@ -15583,8 +15583,6 @@ resetButton.addEventListener("click", resetPageWithoutThemeReset);
 
 initializeTheme();
 
-// modeButton.addEventListener("click", toggleTheme);
-
 
 // Rules Box
 
@@ -15617,7 +15615,7 @@ function removeBodyOverlay() {
   
 // Attach event listeners to open and close the rules box
 
-  howToPlayBtn.addEventListener('click', function() {
+  howToPlayBtn.addEventListener("click", function() {
     openRulesBox();
     addBodyOverlay();
   });
@@ -15625,6 +15623,40 @@ function removeBodyOverlay() {
   closeButton.addEventListener("click", function() {
     closeRulesBox();
     removeBodyOverlay();
+  });
+
+  // Function to open and close themes menu when themes button is clicked.
+
+  const themesButton = document.getElementById('themes')
+  const themesMenu = document.getElementById('themes-container')
+  const themesCloseButton = document.getElementById('close-button')
+
+  function openThemesMenu() {
+     themesMenu.classList.toggle("hidden");
+
+  }
+
+  themesButton.addEventListener("click", openThemesMenu)
+  themesCloseButton.addEventListener("click", openThemesMenu)
+
+  // Function to change theme colours.
+  const colorButtons = document.querySelectorAll('.colors');
+
+  // Select all tiles
+  const tiles = document.querySelectorAll('.tile');
+  
+  // Add event listener to each color button
+  colorButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Get the color from the data-color attribute of the clicked button
+      const color = button.dataset.color;
+      
+      // Apply the color to each tile
+      tiles.forEach(tile => {
+        tile.style.backgroundColor = color;
+      });
+      toggleTheme();
+    });
   });
   
   
