@@ -15563,12 +15563,23 @@ function toggleTheme() {
 
 // Function to reset the page without resetting the theme
 function resetPageWithoutThemeReset() {
+
+    // Save the current theme preference to localStorage
+    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+
+    // Save the current tile color preference to localStorage
+    const tileColor = document.body.classList.value;
+    localStorage.setItem('tileColor', tileColor);
+
     location.reload();
     
 }
 
 // Function to initialize the theme
 function initializeTheme() {
+
+    // Initialize the theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
@@ -15577,7 +15588,11 @@ function initializeTheme() {
         document.body.classList.remove('dark-mode');
     }
 
+    // Initialize the tile colors
+    const savedTileColor = localStorage.getItem('tileColor');
+    document.body.className = savedTileColor || ''; // Restore the saved tile colors
 }
+
 
 // Attach event listeners to reset button and mode button.
 

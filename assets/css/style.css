@@ -234,7 +234,7 @@ h1 img {
 }
 
 .orange .tile {
-    background-color: #f3783a;
+    background-color: #df7a47;
 }
 
 .orange.dark-mode .tile {
@@ -242,7 +242,7 @@ h1 img {
 }
 
 .blue .tile {
-    background-color: #51a8ee;
+    background-color: #5096cf;
 }
 
 .blue.dark-mode .tile {
@@ -250,18 +250,51 @@ h1 img {
 }
 
 .red .tile {
-    background-color: #d8063b;
+    background-color: #ca2951;
 }
 
 .red.dark-mode .tile {
     background-color: #70021d;
 }
 
+.orange #htp-body {
+    background-color: #df7a47;
+    border: 5px solid #020202;
+}
+
+.orange.dark-mode #htp-body {
+    background-color: #b33f04;
+    border: 5px solid #a09e9e;
+}
+
+.blue #htp-body {
+    background-color: #5096cf;
+    border: 5px solid #020202;
+}
+
+.blue.dark-mode #htp-body {
+    background-color: rgb(1, 30, 54);
+    border: 5px solid #a09e9e;
+}
+
+.red #htp-body {
+    background-color: #ca2951;
+    border: 5px solid #020202;
+}
+
+.red.dark-mode #htp-body {
+    background-color: #70021d;
+    border: 5px solid #a09e9e;
+}
+
+/* Color themes for tiles according to correctness */
+
 .purple .tile[data-state="active"], .orange .tile[data-state="active"], .blue .tile[data-state="active"], .red .tile[data-state="active"], .dark-mode .tile[data-state="active"],
 .tile[data-state="active"] {
     border-color: rgb(250, 248, 248);
     border: 1px solid;
 }
+
 
 .purple .tile[data-state="wrong"], .orange .tile[data-state="wrong"], .blue .tile[data-state="wrong"], .red .tile[data-state="wrong"], .dark-mode .tile[data-state="wrong"], .tile[data-state="wrong"] {
     border-color: none;
