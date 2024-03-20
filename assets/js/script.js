@@ -15601,6 +15601,16 @@ resetButton.addEventListener("click", resetPageWithoutThemeReset);
 initializeTheme();
 
 
+window.addEventListener('beforeload', function(event) {
+
+    event.preventDefault();
+    resetPageWithoutThemeReset()
+    location.reload();
+
+});
+
+
+
 // Rules Box
 
 const howToPlayBtn = document.getElementById("how-to-play");
