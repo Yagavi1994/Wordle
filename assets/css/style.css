@@ -115,7 +115,7 @@ h1 img {
 }
 
 #mode .hidden,
-#themes-container.hidden {
+#themes-container.hidden, #statistics-parent-container.hidden {
     display: none;
 }
 
@@ -142,6 +142,10 @@ h1 img {
     top: 5%;
     font-weight: bold;
     padding: 2px;
+    color: white;
+    background-color: #272626;
+    font-size: 15px;
+    border: none;
 }
 
 #themes-container p {
@@ -195,6 +199,59 @@ h1 img {
     width: 130px;
 
 }
+
+/* Statistics */
+
+#statistics-parent-container {
+
+    position: fixed;
+    background-color: #272626;
+    color: #fff;
+    height: 50vh;
+    width: 70vw;
+    max-width: 500px;
+    max-height: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    margin: auto;
+    top: 30vh;
+    left: 49.5vw;
+    transform: translateX(-50%);
+    border-radius: 2%;
+    box-shadow: 5px 5px 5px #0b0b0b;
+    
+  }
+
+  #statistics-logo img {
+    width: 120px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  #statistics-container p {
+    line-height: 25px;
+    font-weight: 500;
+  }
+
+  #statistics-container h3 {
+    margin-bottom: 10px;
+  }
+
+  #statistics-close {
+    position: fixed;
+    top: 2vh;
+    right: 2%;
+    background-color: #272626;
+    border: none;
+    color: white;
+    padding: 3px;
+    font-size: 20px;
+
+  }
 
 /* Guess Grid */
 
@@ -662,58 +719,6 @@ button:hover {
     }
   }
 
-  /* Statistics */
-
-  #statistics-parent-container {
-    position: fixed;
-    background-color: #272626;
-    color: #fff;
-    height: 40vh;
-    width: 60vw;
-    max-width: 375px;
-    max-height: 210px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    margin: auto;
-    top: 30vh;
-    left: 49.5vw;
-    transform: translateX(-50%);
-    border-radius: 2%;
-    box-shadow: 5px 5px 5px #0b0b0b;
-    
-  }
-
-  #statistics-logo img {
-    width: 120px;
-    height: 50px;
-    margin-bottom: 10px;
-  }
-
-  #statistics-container p {
-    line-height: 25px;
-    font-weight: 500;
-  }
-
-  #statistics-container h3 {
-    margin-bottom: 10px;
-  }
-
-  #statistics-close {
-    position: fixed;
-    top: 2vh;
-    right: 2%;
-    background-color: #272626;
-    border: none;
-    color: white;
-    padding: 3px;
-    font-size: 20px;
-
-
-  }
 
 /* Overlay */
 

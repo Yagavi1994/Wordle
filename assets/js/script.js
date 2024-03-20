@@ -15742,6 +15742,44 @@ function redTheme() {
 const red = document.getElementById('red');
 red.addEventListener('click', redTheme)
 
+// Function to open statistics when statistics button is clicked.
+
+const statisticsButton = document.getElementById('statistics-button')
+const statistics = document.getElementById('statistics-parent-container')
+const statisticsCloseButton = document.getElementById('statistics-close')
+
+function openStatistics() {
+   statistics.classList.remove("hidden");
+
+}
+
+statisticsButton.addEventListener("click", openStatistics)
+
+// Function to close statistics menu.
+
+function closeStatistics() {
+
+  statistics.classList.add("hidden");
+}
+
+// Stop event propagation to prevent immediate closing
+
+statisticsButton.addEventListener("click", function(event) {
+  event.stopPropagation(); 
+  openStatistics();
+});
+
+statisticsCloseButton.addEventListener("click", closeStatistics);
+
+// Add event listener to document body to close themes menu when clicked outside
+
+document.body.addEventListener("click", function(event) {
+  if (!statistics.contains(event.target) && event.target !== statisticsButton) {
+      closeStatistics();
+  }
+});
+
+
   /** Add confetti animation when won.
    * Add transition effect for how to play.
    * Debug tiles color changing when theme color is changed.
