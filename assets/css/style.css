@@ -605,30 +605,52 @@ button:hover {
 #htp-body {
     margin: auto;
     display: flex;
-    max-width: 750px;
-    max-height: 500px;
+    max-width: 0x;
+    max-height: 0px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 99;
+    z-index: 90;
     position: fixed;
     transform: translateX(-50%);
     top: 20vh;
     left: 49.5vw;
     background-color: #854389;
     overflow: auto;
-    border: 5px solid black;
+    transition: max-height 1s ease-out, opacity 1s ease-out;
+
 }
 
 #htp-body[data-display-container="false"] {
-    display: none;
+    opacity: 0;
+    animation: fadeout 1s ease-out backwards;
 }
+
+@keyframes fadeout {
+    0% {
+        
+        opacity: 1;
+
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 
 /* Learnt this fadein animation code from https://stackoverflow.com/questions/76708361/how-do-i-css-transition-a-modal-dialog-element-when-it-opens */
 
 #htp-body[data-display-container="true"] {
     display: block;
     animation: fadein 1s ease-in forwards;
+    transform: translate(-50%);
+    max-height: 500px;
+    max-width: 750px;
+    border: 5px solid black;
+}
+
+.dark-mode #htp-body[data-display-container="true"] {
+    border: 5px solid #a09e9e;
 }
 
 @keyframes fadein {
@@ -679,8 +701,9 @@ button:hover {
 /* Dark Mode */
 
 .dark-mode #htp-body {
+
     background-color: #320235;
-    border: 5px solid #a09e9e;
+
 }
 
 .dark-mode {

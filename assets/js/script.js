@@ -15617,7 +15617,8 @@ function openRulesBox() {
 // Function to close rule box
 function closeRulesBox() {
 
-    htpBody.setAttribute("data-display-container", "false");
+        htpBody.setAttribute("data-display-container", "false");
+      
 }
 
 // Function to add overlay effect
