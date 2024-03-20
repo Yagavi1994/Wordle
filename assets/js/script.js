@@ -364,6 +364,7 @@ const targetWords = [
     "froth",
     "depth",
     "gloom",
+    "april",
     "flood",
     "trait",
     "girth",
@@ -2320,6 +2321,7 @@ const targetWords = [
     "shave"
 ]
 const dictionary = [
+    "april",
     "aahed",
     "aalii",
     "aargh",
@@ -15414,21 +15416,43 @@ function submitGuess() {
         activeTiles.forEach((...params) => flipTile(...params, guess))
         setTimeout(() => {
             danceTiles(activeTiles);
-            showAlert(`Congratulation, You Win`, 5000);
         }, FLIP_ANIMATION_DURATION * 5)
         stopInteraction()
+        handleGameResult("win", guess);
+        
         return
     }
 
     const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
     if (remainingTiles.length === 0) {
-        showAlert(`Oops.. You missed it.. The correct word is '${targetWord.toUpperCase()}'..`, null)
+        // showAlert(`Oops.. You missed it.. The correct word is '${targetWord.toUpperCase()}'..`, null)
+        handleGameResult("lose", targetWord);
         stopInteraction()
     }
 
     stopInteraction()
     activeTiles.forEach((...params) => flipTile(...params, guess))
 }
+
+function handleGameResult(result, word) {
+    if (result === "win") {
+        updateGameStatistics("win");
+        showAlert(`Congratulation, You Win`, 5000);
+        setTimeout(() => {
+            openStatistics();
+        }, 3000); 
+    }
+    else if (result === "lose") {
+    
+        showAlert(`Oops.. You missed it.. The correct word is '${word.toUpperCase()}'..`, null);
+        updateGameStatistics("lose");
+        setTimeout(() => {
+            openStatistics();
+        }, 3000); 
+    }
+}
+        
+
 
 /**Apllies flip tile animation to the word once it's submitted
  * Checks whether the letters in the word is in correct or wrong location and adds respective classes to them.
@@ -15778,6 +15802,64 @@ document.body.addEventListener("click", function(event) {
       closeStatistics();
   }
 });
+
+// // Function to update statistics
+
+// Initialize game statistics
+let gamesWon = 0;
+let gamesLost = 0;
+
+// Function to retrieve game statistics from local storage
+function retrieveGameStatistics() {
+    gamesWon = parseInt(localStorage.getItem('gamesWon')) || 0;
+    gamesLost = parseInt(localStorage.getItem('gamesLost')) || 0;
+}
+
+// Call retrieveGameStatistics function to initialize game statistics
+retrieveGameStatistics();
+
+// Function to update game statistics and save them to local storage
+function updateGameStatistics(result) {
+    if (result === "win") {
+        gamesWon++;
+    } else if (result === "lose") {
+        gamesLost++;
+    }
+
+    // To calculate win percentage
+    const totalGames = gamesWon + gamesLost;
+    const winPercentage = totalGames > 0 ? ((gamesWon / totalGames) * 100).toFixed(2) : 0;
+
+    // Update UI to display game statistics
+    document.getElementById('games-won').textContent = gamesWon;
+    document.getElementById('games-lost').textContent = gamesLost;
+    document.getElementById('total-games').textContent = totalGames;
+    document.getElementById('win-percentage').textContent = winPercentage + '%';
+
+    // Save updated game statistics to local storage
+    localStorage.setItem('gamesWon', gamesWon);
+    localStorage.setItem('gamesLost', gamesLost);
+}
+
+// Function to display game statistics when the statistics menu is opened
+function displayGameStatistics() {
+    // Display the current game statistics
+    document.getElementById('games-won').textContent = gamesWon;
+    document.getElementById('games-lost').textContent = gamesLost;
+
+    // Calculate and display total games and win percentage
+    const totalGames = gamesWon + gamesLost;
+    const winPercentage = totalGames > 0 ? ((gamesWon / totalGames) * 100).toFixed(2) : 0;
+    document.getElementById('total-games').textContent = totalGames;
+    document.getElementById('win-percentage').textContent = winPercentage + '%';
+}
+
+// Call displayGameStatistics function when the statistics menu is opened
+statisticsButton.addEventListener("click", function() {
+    openStatistics();
+    displayGameStatistics();
+});
+
 
 
   /** Add confetti animation when won.
