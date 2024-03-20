@@ -15415,7 +15415,6 @@ function submitGuess() {
         setTimeout(() => {
             danceTiles(activeTiles);
             showAlert(`Congratulation, You Win`, 5000);
-            celebrateWin();
         }, FLIP_ANIMATION_DURATION * 5)
         stopInteraction()
         return
@@ -15423,7 +15422,7 @@ function submitGuess() {
 
     const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
     if (remainingTiles.length === 0) {
-        showAlert(`Oops.. You missed it.. The correct word is ${targetWord.toUpperCase()}`, null)
+        showAlert(`Oops.. You missed it.. The correct word is '${targetWord.toUpperCase()}'..`, null)
         stopInteraction()
     }
 
@@ -15525,6 +15524,7 @@ function danceTiles(tiles) {
     })
 }
 
+
 //The code from here are my own code and not followed from any tutorial.
 
 const modeButton = document.getElementById("mode");
@@ -15560,6 +15560,12 @@ function toggleTheme() {
     // Save the current theme preference to localStorage
     const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
     localStorage.setItem('theme', theme);
+}
+
+// Check if the user previously selected light mode and apply it
+const isLightMode = JSON.parse(localStorage.getItem('isLightMode'));
+if (isLightMode) {
+    document.body.classList.add('light-mode');
 }
 
 // Function to reset the page without resetting the theme
@@ -15730,12 +15736,12 @@ blue.addEventListener('click', blueTheme)
 function redTheme() {
     document.body.classList.remove('purple', 'orange', 'blue');
     document.body.classList.add('red');
+    celebrateWin();
     
 }
 const red = document.getElementById('red');
 red.addEventListener('click', redTheme)
-  
-  
+
   /** Add confetti animation when won.
    * Add transition effect for how to play.
    * Debug tiles color changing when theme color is changed.
