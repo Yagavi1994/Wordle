@@ -57,10 +57,10 @@ h1 img {
 #how-to-play,
 #reset,
 #mode,
-#themes {
+#themes, #statistics-button {
     background-color: #242323;
-    font-size: 140%;
-    padding: 7px;
+    font-size: 120%;
+    padding: 5px;
     border: none;
 
 }
@@ -68,14 +68,14 @@ h1 img {
 #how-to-play i,
 #reset i,
 #mode i,
-#themes i {
+#themes i, #statistics-button i {
     color: #ffff;
 }
 
 #how-to-play i:hover,
 #reset i:hover,
 #mode i:hover,
-#themes i:hover {
+#themes i:hover, #statistics-button i:hover {
 
     transform: scale(1.2);
 }
@@ -124,7 +124,7 @@ h1 img {
 #themes-container {
     position: absolute;
     top: 100%;
-    right: 3%;
+    right: 15%;
     width: 200px;
     height: 200px;
     display: flex;
@@ -620,6 +620,7 @@ button:hover {
     overflow: auto;
     transition: max-height 1s ease-out, opacity 1s ease-out;
     box-shadow: 5px 5px 5px #020202;
+    border-radius: 10px;
 
 }
 
@@ -651,10 +652,6 @@ button:hover {
 
 }
 
-/* .dark-mode #htp-body[data-display-container="true"] {
-    border: 5px solid #a09e9e;
-} */
-
 @keyframes fadein {
     0% {
         opacity:0;
@@ -663,6 +660,59 @@ button:hover {
       100% {
         opacity:1;
     }
+  }
+
+  /* Statistics */
+
+  #statistics-parent-container {
+    position: fixed;
+    background-color: #272626;
+    color: #fff;
+    height: 40vh;
+    width: 60vw;
+    max-width: 375px;
+    max-height: 210px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    margin: auto;
+    top: 30vh;
+    left: 49.5vw;
+    transform: translateX(-50%);
+    border-radius: 2%;
+    box-shadow: 5px 5px 5px #0b0b0b;
+    
+  }
+
+  #statistics-logo img {
+    width: 120px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  #statistics-container p {
+    line-height: 25px;
+    font-weight: 500;
+  }
+
+  #statistics-container h3 {
+    margin-bottom: 10px;
+  }
+
+  #statistics-close {
+    position: fixed;
+    top: 2vh;
+    right: 2%;
+    background-color: #272626;
+    border: none;
+    color: white;
+    padding: 3px;
+    font-size: 20px;
+
+
   }
 
 /* Overlay */
@@ -684,7 +734,7 @@ button:hover {
 .body-overlay #how-to-play,
 .body-overlay #reset,
 .body-overlay #mode,
-.body-overlay #themes {
+.body-overlay #themes, .body-overlay #statistics-button {
 
     opacity: 0.3;
 }
@@ -703,7 +753,7 @@ button:hover {
 .dark-mode #htp-body {
 
     background-color: #320235;
-    box-shadow: 5px 5px 5px #373636;
+    box-shadow: 5px 5px 5px #1c1c1c;
 
 }
 
@@ -737,9 +787,9 @@ footer {
     #how-to-play,
     #reset,
     #mode,
-    #themes {
-        font-size: 250%;
-        padding: 15px;
+    #themes, #statistics-button {
+        font-size: 210%;
+        padding: 10px;
     }
 
     h1 img {

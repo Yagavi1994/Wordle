@@ -13,149 +13,165 @@
     <header>
         <div id="game-container">
             <div id="header-container">
-                <h1><img src="assets/images/logo-png.png" alt="logo"/></h1>
+                <h1><img src="assets/images/logo-png.png" alt="logo" /></h1>
                 <!-- Buttons -->
-             <div id="buttons-container">
-                <button id="how-to-play"><i class="fa-solid fa-question"></i></button>
-                <div id="htp-body" data-display-container="false">
-                    <div id="htp-container">
-                        <div id="top"><h2 id="htp">How To Play</h2><button id="close">X</button></div>
-                        <p><em>Guess the word in 6 tries.</em></p>
-                        <br>
-                        <ul class="list">
-                            <li>Each guess must be a valid 5-letter word.</li>
-                            <li>The color of the tiles will change to show how close your guess was to the word.</li>
-                        </ul>
-                        <br>
-                        <p>Examples:</p>
-                        <div id="weary">
-                            <p id="W">W</p>
-                            <p>E</p>
-                            <p>A</p>
-                            <p>R</p>
-                            <p>Y</p>
+                <div id="buttons-container">
+                    <button id="how-to-play"><i class="fa-solid fa-question"></i></button>
+                    <div id="htp-body" data-display-container="false">
+                        <div id="htp-container">
+                            <div id="top">
+                                <h2 id="htp">How To Play</h2><button id="close">X</button>
+                            </div>
+                            <p><em>Guess the word in 6 tries.</em></p>
+                            <br>
+                            <ul class="list">
+                                <li>Each guess must be a valid 5-letter word.</li>
+                                <li>The color of the tiles will change to show how close your guess was to the word.
+                                </li>
+                            </ul>
+                            <br>
+                            <p>Examples:</p>
+                            <div id="weary">
+                                <p id="W">W</p>
+                                <p>E</p>
+                                <p>A</p>
+                                <p>R</p>
+                                <p>Y</p>
+                            </div>
+                            <p><strong>'W'</strong> is in the word and in the correct spot.</p>
+                            <br>
+                            <div id="pills">
+                                <p>P</p>
+                                <p id="I">I</p>
+                                <p>L</p>
+                                <p>L</p>
+                                <p>S</p>
+                            </div>
+                            <p><strong>'I'</strong> is in the word but in the wrong spot.</p>
+                            <br>
+                            <div id="vague">
+                                <p>V</p>
+                                <p>A</p>
+                                <p>G</p>
+                                <p>U</p>
+                                <p>E</p>
+                            </div>
+                            <p>No letters in the guess are in the word.</p>
                         </div>
-                        <p><strong>'W'</strong> is in the word and in the correct spot.</p>
-                        <br>
-                        <div id="pills">
-                            <p>P</p>
-                            <p id="I">I</p>
-                            <p>L</p>
-                            <p>L</p>
-                            <p>S</p>
-                        </div>
-                        <p><strong>'I'</strong> is in the word but in the wrong spot.</p>
-                        <br>
-                        <div id="vague">
-                            <p>V</p>
-                            <p>A</p>
-                            <p>G</p>
-                            <p>U</p>
-                            <p>E</p>
-                        </div>
-                        <p>No letters in the guess are in the word.</p>
                     </div>
-                </div>
-                
-                <button id="reset"><i class="fa-solid fa-repeat"></i></button>
-                <button id="mode" class="theme-toggle">
-                    <i id="moon-icon" class="fa-solid fa-moon"></i>
-                    <i id="sun-icon" class="fa-solid fa-sun hidden"></i></i>
-                </button>
-                <button id="themes"><i class="fa-solid fa-palette"></i></button>
-            <div id="themes-container" class="hidden">
-                <button id="close-button">X</button>
-                <p>Themes</p>
-                <div id="light-themes">
-                    <button id="purple" class="colors"></button>
-                    <button id="orange" class="colors"></button>
-                    <button id="blue" class="colors"></button>
-                    <button id="red" class="colors"></button>
+
+                    <button id="reset"><i class="fa-solid fa-repeat"></i></button>
+                    <button id="mode" class="theme-toggle">
+                        <i id="moon-icon" class="fa-solid fa-moon"></i>
+                        <i id="sun-icon" class="fa-solid fa-sun hidden"></i></i>
+                    </button>
+                    <button id="themes"><i class="fa-solid fa-palette"></i></button>
+                    <div id="themes-container" class="hidden">
+                        <button id="close-button">X</button>
+                        <p>Themes</p>
+                        <div id="light-themes">
+                            <button id="purple" class="colors"></button>
+                            <button id="orange" class="colors"></button>
+                            <button id="blue" class="colors"></button>
+                            <button id="red" class="colors"></button>
+                        </div>
+                    </div>
+                    <button id="statistics-button"><i class="fa-solid fa-chart-simple"></i></button>
                 </div>
             </div>
-            </div>
+        </div>
+        <div id="statistics-parent-container">
+            <div id="statistics-container">
+                <button id="statistics-close">X</button>
+                <div id="statistics-logo"><img src="assets/images/logo-png.png" alt="logo" /></div>
+                <div id="statistics">
+                    <h3>Statistics</h3>
+                    <p>Played: 0</p>
+                    <p>Win%: 0%</p>
+                    <p>Win: 0</p>
+                    <p>Lose: 0</p>
+                </div>
             </div>
         </div>
     </header>
-<main>
-     <!-- Game Board -->
-    <div data-alert-container class="alert-container"></div>
-    <div data-guess-grid id="guess-grid">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-    </div>
+    <main>
+        <!-- Game Board -->
+        <div data-alert-container class="alert-container"></div>
+        <div data-guess-grid id="guess-grid">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
 
-    <!-- Keyboard -->
-    <div data-keyboard id="keyboard-area">
-        <div id="row-one">
-            <button class="key" data-key="Q">Q</button>
-            <button class="key" data-key="W">W</button>
-            <button class="key" data-key="E">E</button>
-            <button class="key" data-key="R">R</button>
-            <button class="key" data-key="T">T</button>
-            <button class="key" data-key="Y">Y</button>
-            <button class="key" data-key="U">U</button>
-            <button class="key" data-key="I">I</button>
-            <button class="key" data-key="O">O</button>
-            <button class="key" data-key="P">P</button>
+        <!-- Keyboard -->
+        <div data-keyboard id="keyboard-area">
+            <div id="row-one">
+                <button class="key" data-key="Q">Q</button>
+                <button class="key" data-key="W">W</button>
+                <button class="key" data-key="E">E</button>
+                <button class="key" data-key="R">R</button>
+                <button class="key" data-key="T">T</button>
+                <button class="key" data-key="Y">Y</button>
+                <button class="key" data-key="U">U</button>
+                <button class="key" data-key="I">I</button>
+                <button class="key" data-key="O">O</button>
+                <button class="key" data-key="P">P</button>
+            </div>
+            <div id="row-two">
+                <button class="key" data-key="A">A</button>
+                <button class="key" data-key="S">S</button>
+                <button class="key" data-key="D">D</button>
+                <button class="key" data-key="F">F</button>
+                <button class="key" data-key="G">G</button>
+                <button class="key" data-key="H">H</button>
+                <button class="key" data-key="J">J</button>
+                <button class="key" data-key="K">K</button>
+                <button class="key" data-key="L">L</button>
+            </div>
+            <div id="row-three">
+                <button data-enter class="key-large key">Enter</button>
+                <button class="key" data-key="Z">Z</button>
+                <button class="key" data-key="X">X</button>
+                <button class="key" data-key="C">C</button>
+                <button class="key" data-key="V">V</button>
+                <button class="key" data-key="B">B</button>
+                <button class="key" data-key="N">N</button>
+                <button class="key" data-key="M">M</button>
+                <button data-delete class="key-large key">DEL</button>
+            </div>
         </div>
-        <div id="row-two">
-            <button class="key" data-key="A">A</button>
-            <button class="key" data-key="S">S</button>
-            <button class="key" data-key="D">D</button>
-            <button class="key" data-key="F">F</button>
-            <button class="key" data-key="G">G</button>
-            <button class="key" data-key="H">H</button>
-            <button class="key" data-key="J">J</button>
-            <button class="key" data-key="K">K</button>
-            <button class="key" data-key="L">L</button>
         </div>
-        <div id="row-three">
-            <button data-enter class="key-large key">Enter</button>
-            <button class="key" data-key="Z">Z</button>
-            <button class="key" data-key="X">X</button>
-            <button class="key" data-key="C">C</button>
-            <button class="key" data-key="V">V</button>
-            <button class="key" data-key="B">B</button>
-            <button class="key" data-key="N">N</button>
-            <button class="key" data-key="M">M</button>
-            <button data-delete class="key-large key">DEL</button>
-        </div>
-    </div>
-    </div>
-</main>
-<canvas class="confetti" id="canvas"></canvas>
-<footer>
-    <p>&copy; Yagavi 2024. All rights reserved.</p>
-</footer>
+    </main>
+    <footer>
+        <p>&copy; Yagavi 2024. All rights reserved.</p>
+    </footer>
 
     <!-- Fontawesome script -->
     <script src="https://kit.fontawesome.com/bcf93ab511.js" crossorigin="anonymous"></script>
@@ -164,7 +180,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1/confetti.min.js"></script>
 
     <!-- Java script -->
-    <script type = "module" src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
 
 </body>
 
