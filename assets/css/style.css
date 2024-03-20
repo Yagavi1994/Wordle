@@ -233,7 +233,7 @@ h1 img {
   }
 
   #statistics-container p {
-    line-height: 25px;
+    line-height: 30px;
     font-weight: 500;
   }
 
@@ -250,6 +250,7 @@ h1 img {
     color: white;
     padding: 3px;
     font-size: 20px;
+    font-weight: bold;
 
   }
 

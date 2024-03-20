@@ -15419,7 +15419,7 @@ function submitGuess() {
         }, FLIP_ANIMATION_DURATION * 5)
         stopInteraction()
         handleGameResult("win", guess);
-        
+
         return
     }
 
@@ -15440,18 +15440,18 @@ function handleGameResult(result, word) {
         showAlert(`Congratulation, You Win`, 5000);
         setTimeout(() => {
             openStatistics();
-        }, 3000); 
+        }, 3000);
     }
     else if (result === "lose") {
-    
+
         showAlert(`Oops.. You missed it.. The correct word is '${word.toUpperCase()}'..`, null);
         updateGameStatistics("lose");
         setTimeout(() => {
             openStatistics();
-        }, 3000); 
+        }, 3000);
     }
 }
-        
+
 
 
 /**Apllies flip tile animation to the word once it's submitted
@@ -15558,7 +15558,7 @@ const sunIcon = document.getElementById("sun-icon");
 // Function to toggle between light and dark mode icons with flip animation
 
 function toggleModeIcon() {
-    
+
     moonIcon.classList.add("rotate");
     sunIcon.classList.add("rotate");
 
@@ -15569,7 +15569,7 @@ function toggleModeIcon() {
 
         moonIcon.classList.remove("rotate");
         sunIcon.classList.remove("rotate");
-    }, 500); 
+    }, 500);
 }
 
 modeButton.addEventListener("click", () => {
@@ -15604,7 +15604,7 @@ function resetPageWithoutThemeReset() {
     localStorage.setItem('tileColor', tileColor);
 
     location.reload();
-    
+
 }
 
 // Function to initialize the theme
@@ -15631,7 +15631,7 @@ resetButton.addEventListener("click", resetPageWithoutThemeReset);
 initializeTheme();
 
 
-window.addEventListener('beforeload', function(event) {
+window.addEventListener('beforeload', function (event) {
 
     event.preventDefault();
     resetPageWithoutThemeReset()
@@ -15657,58 +15657,58 @@ function openRulesBox() {
 // Function to close rule box
 function closeRulesBox() {
 
-        htpBody.setAttribute("data-display-container", "false");
-      
+    htpBody.setAttribute("data-display-container", "false");
+
 }
 
 // Function to add overlay effect
 function addBodyOverlay() {
     document.body.classList.add("body-overlay");
-  }
-  
+}
+
 // Function to remove overlay effect
 function removeBodyOverlay() {
     document.body.classList.remove("body-overlay");
-  }
-  
+}
+
 // Attach event listeners to open and close the rules box
 
-  howToPlayBtn.addEventListener("click", function() {
+howToPlayBtn.addEventListener("click", function () {
     openRulesBox();
     addBodyOverlay();
-  });
+});
 
-  closeButton.addEventListener("click", function() {
+closeButton.addEventListener("click", function () {
     closeRulesBox();
     removeBodyOverlay();
-  });
+});
 
 
 
-  // Function to open themes menu when themes button is clicked.
+// Function to open themes menu when themes button is clicked.
 
-  const themesButton = document.getElementById('themes')
-  const themesMenu = document.getElementById('themes-container')
-  const themesCloseButton = document.getElementById('close-button')
+const themesButton = document.getElementById('themes')
+const themesMenu = document.getElementById('themes-container')
+const themesCloseButton = document.getElementById('close-button')
 
-  function openThemesMenu() {
-     themesMenu.classList.remove("hidden");
+function openThemesMenu() {
+    themesMenu.classList.remove("hidden");
 
-  }
-  
-  themesButton.addEventListener("click", openThemesMenu)
+}
 
-  // Function to close themes menu.
+themesButton.addEventListener("click", openThemesMenu)
 
-  function closeThemesMenu() {
+// Function to close themes menu.
+
+function closeThemesMenu() {
 
     themesMenu.classList.add("hidden");
-  }
+}
 
-  // Stop event propagation to prevent immediate closing
+// Stop event propagation to prevent immediate closing
 
- themesButton.addEventListener("click", function(event) {
-    event.stopPropagation(); 
+themesButton.addEventListener("click", function (event) {
+    event.stopPropagation();
     openThemesMenu();
 });
 
@@ -15716,7 +15716,7 @@ themesCloseButton.addEventListener("click", closeThemesMenu);
 
 // Add event listener to document body to close themes menu when clicked outside
 
-document.body.addEventListener("click", function(event) {
+document.body.addEventListener("click", function (event) {
     if (!themesMenu.contains(event.target) && event.target !== themesButton) {
         closeThemesMenu();
     }
@@ -15739,7 +15739,7 @@ orange.addEventListener('click', orangeTheme)
 function purpleTheme() {
     document.body.classList.remove('orange', 'blue', 'red');
     document.body.classList.add('purple');
-    
+
 }
 const purple = document.getElementById('purple');
 purple.addEventListener('click', purpleTheme)
@@ -15750,7 +15750,7 @@ purple.addEventListener('click', purpleTheme)
 function blueTheme() {
     document.body.classList.remove('purple', 'orange', 'red');
     document.body.classList.add('blue');
-    
+
 }
 const blue = document.getElementById('blue');
 blue.addEventListener('click', blueTheme)
@@ -15761,7 +15761,7 @@ function redTheme() {
     document.body.classList.remove('purple', 'orange', 'blue');
     document.body.classList.add('red');
     celebrateWin();
-    
+
 }
 const red = document.getElementById('red');
 red.addEventListener('click', redTheme)
@@ -15773,7 +15773,7 @@ const statistics = document.getElementById('statistics-parent-container')
 const statisticsCloseButton = document.getElementById('statistics-close')
 
 function openStatistics() {
-   statistics.classList.remove("hidden");
+    statistics.classList.remove("hidden");
 
 }
 
@@ -15783,25 +15783,10 @@ statisticsButton.addEventListener("click", openStatistics)
 
 function closeStatistics() {
 
-  statistics.classList.add("hidden");
+    statistics.classList.add("hidden");
 }
 
-// Stop event propagation to prevent immediate closing
-
-statisticsButton.addEventListener("click", function(event) {
-  event.stopPropagation(); 
-  openStatistics();
-});
-
 statisticsCloseButton.addEventListener("click", closeStatistics);
-
-// Add event listener to document body to close themes menu when clicked outside
-
-document.body.addEventListener("click", function(event) {
-  if (!statistics.contains(event.target) && event.target !== statisticsButton) {
-      closeStatistics();
-  }
-});
 
 // // Function to update statistics
 
@@ -15855,15 +15840,7 @@ function displayGameStatistics() {
 }
 
 // Call displayGameStatistics function when the statistics menu is opened
-statisticsButton.addEventListener("click", function() {
+statisticsButton.addEventListener("click", function () {
     openStatistics();
     displayGameStatistics();
 });
-
-
-
-  /** Add confetti animation when won.
-   * Add transition effect for how to play.
-   * Debug tiles color changing when theme color is changed.
-   * Add dialog box with congratulations message, points and winning streak.
-   */
