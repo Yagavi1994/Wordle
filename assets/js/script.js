@@ -15415,6 +15415,7 @@ function submitGuess() {
         setTimeout(() => {
             danceTiles(activeTiles);
             showAlert(`Congratulation, You Win`, 5000);
+            celebrateWin();
         }, FLIP_ANIMATION_DURATION * 5)
         stopInteraction()
         return
@@ -15593,12 +15594,10 @@ function initializeTheme() {
     document.body.className = savedTileColor || ''; // Restore the saved tile colors
 }
 
-
-// Attach event listeners to reset button and mode button.
+// Attach event listeners to reset button.
 
 let resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", resetPageWithoutThemeReset);
-
 initializeTheme();
 
 

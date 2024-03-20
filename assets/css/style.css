@@ -87,22 +87,26 @@ h1 img {
 /* Flip animation for mode icon to toggle theme */
 
 #mode .rotate {
-    animation: rotate 500ms ease-in-out;;
+    animation: rotate 500ms ease-in-out;
+    ;
 }
 
 @keyframes rotate {
     0% {
         transform: rotateX(0deg);
     }
+
     50% {
         transform: rotateX(90deg);
     }
+
     100% {
         transform: rotateX(180deg);
     }
 }
 
-#mode .hidden, #themes-container.hidden {
+#mode .hidden,
+#themes-container.hidden {
     display: none;
 }
 
@@ -145,7 +149,8 @@ h1 img {
     margin-bottom: 20px;
 }
 
-.colors:hover, #close-button:hover {
+.colors:hover,
+#close-button:hover {
     transform: scale(1.2);
     cursor: pointer;
 }
@@ -156,13 +161,13 @@ h1 img {
 }
 
 #orange {
-    
+
     background-color: #F4864E;
 }
 
 #blue {
-    
-    background-color: #64aae3 ;
+
+    background-color: #64aae3;
 
 }
 
@@ -289,25 +294,42 @@ h1 img {
 
 /* Color themes for tiles according to correctness */
 
-.purple .tile[data-state="active"], .orange .tile[data-state="active"], .blue .tile[data-state="active"], .red .tile[data-state="active"], .dark-mode .tile[data-state="active"],
+.purple .tile[data-state="active"],
+.orange .tile[data-state="active"],
+.blue .tile[data-state="active"],
+.red .tile[data-state="active"],
+.dark-mode .tile[data-state="active"],
 .tile[data-state="active"] {
     border-color: rgb(250, 248, 248);
     border: 1px solid;
 }
 
 
-.purple .tile[data-state="wrong"], .orange .tile[data-state="wrong"], .blue .tile[data-state="wrong"], .red .tile[data-state="wrong"], .dark-mode .tile[data-state="wrong"], .tile[data-state="wrong"] {
+.purple .tile[data-state="wrong"],
+.orange .tile[data-state="wrong"],
+.blue .tile[data-state="wrong"],
+.red .tile[data-state="wrong"],
+.dark-mode .tile[data-state="wrong"],
+.tile[data-state="wrong"] {
     border-color: none;
     background-color: #494646;
 }
 
-.purple .tile[data-state="wrong-location"], .orange .tile[data-state="wrong-location"], .blue .tile[data-state="wrong-location"], .red .tile[data-state="wrong-location"], .dark-mode .tile[data-state="wrong-location"],
+.purple .tile[data-state="wrong-location"],
+.orange .tile[data-state="wrong-location"],
+.blue .tile[data-state="wrong-location"],
+.red .tile[data-state="wrong-location"],
+.dark-mode .tile[data-state="wrong-location"],
 .tile[data-state="wrong-location"] {
     border-color: none;
     background-color: #ceb40f;
 }
 
-.purple .tile[data-state="correct"], .orange .tile[data-state="correct"], .blue .tile[data-state="correct"], .red .tile[data-state="correct"], .dark-mode .tile[data-state="correct"],
+.purple .tile[data-state="correct"],
+.orange .tile[data-state="correct"],
+.blue .tile[data-state="correct"],
+.red .tile[data-state="correct"],
+.dark-mode .tile[data-state="correct"],
 .tile[data-state="correct"] {
     border-color: none;
     background-color: #058425;
@@ -591,9 +613,22 @@ button:hover {
     display: none;
 }
 
+/* Learnt this fadein animation code from https://stackoverflow.com/questions/76708361/how-do-i-css-transition-a-modal-dialog-element-when-it-opens */
+
 #htp-body[data-display-container="true"] {
     display: block;
+    animation: fadein 1s ease-in forwards;
 }
+
+@keyframes fadein {
+    0% {
+        opacity:0;
+      }
+
+      100% {
+        opacity:1;
+    }
+  }
 
 /* Overlay */
 
