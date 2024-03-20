@@ -8,7 +8,7 @@
 /* General Styles */
 
 body {
-    min-height: 100vh;
+ 
     display: flex;
     flex-direction: column;
     background-color: #f1e5e5;
@@ -200,6 +200,8 @@ h1 img {
     max-height: 350px;
     margin: auto;
     padding: 0px 5px;
+    flex-grow: 1;
+    margin-top: 30px;
 
 }
 
@@ -413,9 +415,10 @@ h1 img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 30px;
+    justify-content: space-between;
+    margin-top: 50px;
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .key {
@@ -436,7 +439,9 @@ h1 img {
 }
 
 .key:hover,
-.key:focus {
+.key:focus,
+.dark-mode .key:hover,
+.dark-mode .key:focus {
     background-color: #a3a0a0;
     color: #fff;
 }
