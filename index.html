@@ -12,14 +12,15 @@
 </head>
 
 <body>
-    <!-- Header area -->
+<!-- Header --------------------------------------------------------------------------------------------------------->
     <header>
         <div id="game-container">
             <div id="header-container">
                 <img id="logo" src="assets/images/logo-png.png" alt="logo" />
-                <!-- Buttons -->
+<!-- Buttons ------------------------------------------------------------------------------------------------------------->
                 <div id="buttons-container">
                     <button id="how-to-play"><i class="fa-solid fa-question"></i></button>
+<!-- How to play --------------------------------------------------------------------------------------------------------->
                     <div id="htp-body" data-display-container="false">
                         <div id="htp-container">
                             <div id="top">
@@ -62,13 +63,14 @@
                             <p>No letters in the guess are in the word.</p>
                         </div>
                     </div>
-
+<!-- Buttons ------------------------------------------------------------------------------------------------------------->
                     <button id="reset"><i class="fa-solid fa-repeat"></i></button>
                     <button id="mode" class="theme-toggle">
                         <i id="moon-icon" class="fa-solid fa-moon"></i>
                         <i id="sun-icon" class="fa-solid fa-sun hidden"></i></i>
                     </button>
                     <button id="themes"><i class="fa-solid fa-palette"></i></button>
+<!-- Themes -------------------------------------------------------------------------------------------------------------->
                     <div id="themes-container" class="hidden">
                         <button id="close-button">X</button>
                         <p>Themes</p>
@@ -79,6 +81,7 @@
                             <button id="red" class="colors"></button>
                         </div>
                     </div>
+<!--- Statistics --------------------------------------------------------------------------------------------------------------------->
                     <button id="statistics-button"><i class="fa-solid fa-chart-simple"></i></button>
                 </div>
             </div>
@@ -97,8 +100,9 @@
             </div>
         </div>
     </header>
+
+<!-- Guess grid ---------------------------------------------------------------------------------------------------------->
     <main>
-        <!-- Game Board -->
         <div data-alert-container class="alert-container"></div>
         <div data-guess-grid id="guess-grid">
             <div class="tile"></div>
@@ -133,7 +137,7 @@
             <div class="tile"></div>
         </div>
 
-        <!-- Keyboard -->
+<!-- Keyboard ------------------------------------------------------------------------------------------------------------>
         <div data-keyboard id="keyboard-area">
             <div id="row-one">
                 <button class="key" data-key="Q">Q</button>
@@ -172,15 +176,14 @@
         </div>
         </div>
     </main>
+
+<!-- Footer -------------------------------------------------------------------------------------------------------------->
     <footer>
         <p>&copy; Yagavi 2024. All rights reserved.</p>
     </footer>
 
     <!-- Fontawesome script -->
     <script src="https://kit.fontawesome.com/bcf93ab511.js" crossorigin="anonymous"></script>
-
-    <!-- Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1/confetti.min.js"></script>
 
     <!-- Java script -->
     <script type="module" src="assets/js/script.js"></script>
