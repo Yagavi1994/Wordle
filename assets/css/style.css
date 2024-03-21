@@ -5,27 +5,21 @@
     text-decoration: none;
 }
 
-/* General Styles */
+/* General Styles ----------------------------------------------------------------------------------------------------- */
 
 body {
- 
+
     display: flex;
     flex-direction: column;
     background-color: #f1e5e5;
     font-family: Arial, Helvetica, sans-serif;
     border: none;
     height: 100vh;
-    
-}
-
-main {
-
-    flex-grow: 1;
 
 }
 
 
-/* Header */
+/* Header -------------------------------------------------------------------------------------------------------------- */
 
 #header-container {
     max-width: 100%;
@@ -37,6 +31,9 @@ main {
     background-color: #242323;
     justify-content: space-between;
 }
+
+
+/* buttons ------------------------------------------------------------------------------------------------------------- */
 
 #buttons-container {
     display: flex;
@@ -57,7 +54,8 @@ main {
 #how-to-play,
 #reset,
 #mode,
-#themes, #statistics-button {
+#themes,
+#statistics-button {
     background-color: #242323;
     font-size: 120%;
     padding: 5px;
@@ -68,14 +66,16 @@ main {
 #how-to-play i,
 #reset i,
 #mode i,
-#themes i, #statistics-button i {
+#themes i,
+#statistics-button i {
     color: #ffff;
 }
 
 #how-to-play i:hover,
 #reset i:hover,
 #mode i:hover,
-#themes i:hover, #statistics-button i:hover {
+#themes i:hover,
+#statistics-button i:hover {
 
     transform: scale(1.2);
 }
@@ -92,7 +92,6 @@ main {
 }
 
 /* Mode Button */
-
 /* Flip animation for mode icon to toggle theme */
 
 #mode .rotate {
@@ -114,483 +113,7 @@ main {
     }
 }
 
-#mode .hidden,
-#themes-container.hidden {
-    display: none;
-}
-
-#statistics-parent-container.hidden  {
-    transform: scale(0);
-    opacity: 0;
-}
-
-
-/* Themes */
-
-#themes-container {
-    position: absolute;
-    top: 100%;
-    right: 15%;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #242323;
-    border-radius: 10%;
-}
-
-#close-button {
-    position: absolute;
-    right: 5%;
-    top: 5%;
-    font-weight: bold;
-    padding: 2px;
-    color: white;
-    background-color: #272626;
-    font-size: 15px;
-    border: none;
-}
-
-#themes-container p {
-    color: white;
-    margin-top: 10px;
-    font-size: 150%;
-}
-
-.colors {
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-    border: 2px solid rgb(254, 254, 255);
-    margin-bottom: 20px;
-}
-
-.colors:hover,
-#close-button:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-#purple {
-
-    background-color: #854389;
-}
-
-#orange {
-
-    background-color: #F4864E;
-}
-
-#blue {
-
-    background-color: #64aae3;
-
-}
-
-#red {
-
-    background-color: #C50636;
-}
-
-#light-themes {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 130px;
-
-}
-
-/* Statistics */
-
-#statistics-parent-container {
-
-    position: absolute;
-    background-color: #272626;
-    color: #fff;
-    display: flex;
-    padding: 40px;
-    height: 350px;
-    width: 250px;
-    place-items: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    margin: auto;
-    top: 25%;
-    left: 49.5vw;
-    transform: translate(-50%) scale(1);
-    border-radius: 2%;
-    box-shadow: 5px 5px 5px #0b0b0b;
-    display: block;
-    transition: transform 0.5s ease-out, opacity 1s ease-out;
-
-}
-    
-
-  #statistics-logo img {
-    width: 150px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-
-  #statistics-container {
-
-    max-height: fit-content;
-    max-width: fit-content;
-    
-  }
-
-  #statistics {
-    border: 2px solid #fff;
-    padding: 15px 25px 15px 25px;
-  }
-
-  #statistics-container p {
-    line-height: 30px;
-    font-weight: 500;
-    min-width: 120px;
-  }
-
-  #statistics-container h3 {
-    margin-bottom: 10px;
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #fff ;
-  }
-
-  #statistics-close {
-    position: fixed;
-    top: 2vh;
-    right: 3%;
-    background-color: #272626;
-    border: none;
-    color: white;
-    padding: 3px;
-    font-size: 20px;
-    font-weight: bold;
-
-  }
-
-/* Guess Grid */
-
-#guess-grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    max-width: 350px;
-    max-height: 350px;
-    margin: auto;
-    padding: 0px 5px;
-    margin-top: 30px;
-
-}
-
-.tile {
-    border-radius: 10%;
-    margin: 2px;
-    height: 15vw;
-    width: 15vw;
-    max-width: 58px;
-    max-height: 58px;
-    font-size: 30px;
-    text-align: center;
-    background-color: #854389;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    font-size: 2em;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    transition: transform 250ms linear;
-}
-
-/* Color Themes */
-
-.purple .tile {
-    background-color: #854389;
-}
-
-.purple.dark-mode .tile {
-    background-color: #320235;
-}
-
-.orange .tile {
-    background-color: #df7a47;
-}
-
-.orange.dark-mode .tile {
-    background-color: #8f3001;
-}
-
-.blue .tile {
-    background-color: #5096cf;
-}
-
-.blue.dark-mode .tile {
-    background-color: rgb(1, 30, 54);
-}
-
-.red .tile {
-    background-color: #ca2951;
-}
-
-.red.dark-mode .tile {
-    background-color: #70021d;
-}
-
-.orange #htp-body {
-    background-color: #df7a47;
-
-}
-
-.orange.dark-mode #htp-body {
-    background-color: #8f3001;
-   
-}
-
-.blue #htp-body {
-    background-color: #5096cf;
-   
-}
-
-.blue.dark-mode #htp-body {
-    background-color: rgb(1, 30, 54);
-    
-}
-
-.red #htp-body {
-    background-color: #ca2951;
-    
-}
-
-.red.dark-mode #htp-body {
-    background-color: #70021d;
-   
-}
-
-/* Color themes for tiles according to correctness */
-
-.purple .tile[data-state="active"],
-.orange .tile[data-state="active"],
-.blue .tile[data-state="active"],
-.red .tile[data-state="active"],
-.dark-mode .tile[data-state="active"],
-.tile[data-state="active"] {
-    border-color: rgb(250, 248, 248);
-    border: 1px solid;
-}
-
-
-.purple .tile[data-state="wrong"],
-.orange .tile[data-state="wrong"],
-.blue .tile[data-state="wrong"],
-.red .tile[data-state="wrong"],
-.dark-mode .tile[data-state="wrong"],
-.tile[data-state="wrong"] {
-    border-color: none;
-    background-color: #494646;
-}
-
-.purple .tile[data-state="wrong-location"],
-.orange .tile[data-state="wrong-location"],
-.blue .tile[data-state="wrong-location"],
-.red .tile[data-state="wrong-location"],
-.dark-mode .tile[data-state="wrong-location"],
-.tile[data-state="wrong-location"] {
-    border-color: none;
-    background-color: #ceb40f;
-}
-
-.purple .tile[data-state="correct"],
-.orange .tile[data-state="correct"],
-.blue .tile[data-state="correct"],
-.red .tile[data-state="correct"],
-.dark-mode .tile[data-state="correct"],
-.tile[data-state="correct"] {
-    border-color: none;
-    background-color: #058425;
-}
-
-/* Shake animation effect */
-/* Learnt this animation code from Web Dev Simplified Youtube Tutorial */
-
-.tile.shake {
-    animation: shake 250ms ease-in-out;
-}
-
-@keyframes shake {
-    10% {
-        transform: translateX(-5%);
-    }
-
-    30% {
-        transform: translateX(5%);
-    }
-
-    50% {
-        transform: translateX(-7.5%);
-    }
-
-    70% {
-        transform: translateX(7.5%);
-    }
-
-    90% {
-        transform: translateX(-5%);
-    }
-
-    100% {
-        transform: translateX(0%);
-    }
-}
-
-/* Dance animation effect */
-/* Learnt this animation code from Web Dev Simplified Youtube Tutorial */
-
-.tile.dance {
-    animation: dance 500ms ease-in-out;
-}
-
-@keyframes dance {
-    20% {
-        transform: translateY(-50%);
-    }
-
-    40% {
-        transform: translateY(5%);
-    }
-
-    60% {
-        transform: translateY(-25%);
-    }
-
-    80% {
-        transform: translateY(2.5%);
-    }
-
-    90% {
-        transform: translateY(-5%);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Flip effect for tiles. */
-
-.tile.flip {
-    transform: rotateX(90deg);
-}
-
-/* Keyboard */
-
-#keyboard-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-
-.key {
-    width: 7.5vw;
-    height: 50px;
-    margin: 1px;
-    max-width: 43px;
-    border-radius: 15%;
-    box-shadow: 1px 1px #494646;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.key-large {
-    width: 13vw;
-    max-width: 65px;
-    height: 50px;
-}
-
-.key:hover,
-.key:focus,
-.dark-mode .key:hover,
-.dark-mode .key:focus {
-    background-color: #a3a0a0;
-    color: #fff;
-}
-
-.dark-mode .key.wrong,
-.key.wrong {
-    background-color: #494646;
-    color: #fff;
-
-}
-
-.dark-mode .key.wrong-location,
-.key.wrong-location {
-    background-color: #ceb40f;
-    color: #fff;
-}
-
-.dark-mode .key.correct,
-.key.correct {
-    background-color: #058425;
-    color: #fff;
-}
-
-/* Alert Container */
-/* Learnt this code from Web Dev Simplified Youtube Tutorial */
-
-.alert-container {
-    position: fixed;
-    transform: translateX(-50%);
-    z-index: 1;
-    top: 25vh;
-    left: 49.5vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.alert {
-    background-color: #d9cdcd;
-    padding: .75em;
-    pointer-events: none;
-    border-radius: .25em;
-    opacity: 1;
-    margin-bottom: 10px;
-    transition: opacity 500ms ease-in-out;
-}
-
-.alert:last-child {
-    margin-bottom: 0;
-}
-
-.alert.hide {
-    opacity: 0;
-}
-
-/* How To Play */
+/* How To Play -------------------------------------------------------------------------------------------------------- */
 
 #htp {
     font-size: 200%;
@@ -615,8 +138,6 @@ main {
     margin-left: 10px;
     border-radius: 15%;
 }
-
-
 
 em,
 li {
@@ -713,44 +234,513 @@ button:hover {
 
 #htp-body[data-display-container="false"] {
     opacity: 0;
-    animation: fadeout 1s ease-out backwards;
+
 }
 
-@keyframes fadeout {
-    0% {
-        
-        opacity: 1;
-
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-
-/* Learnt this fadein animation code from https://stackoverflow.com/questions/76708361/how-do-i-css-transition-a-modal-dialog-element-when-it-opens */
 
 #htp-body[data-display-container="true"] {
     display: block;
-    animation: fadein 1s ease-in forwards;
     transform: translate(-50%);
     max-height: 500px;
     max-width: 750px;
 
 }
 
-@keyframes fadein {
-    0% {
-        opacity:0;
-      }
+/* Color themes for how to play ---------------------------------------------------------------------------------------- */
 
-      100% {
-        opacity:1;
+.orange #htp-body {
+    background-color: #df7a47;
+
+}
+
+.orange.dark-mode #htp-body {
+    background-color: #8f3001;
+
+}
+
+.blue #htp-body {
+    background-color: #5096cf;
+
+}
+
+.blue.dark-mode #htp-body {
+    background-color: rgb(1, 30, 54);
+
+}
+
+.red #htp-body {
+    background-color: #ca2951;
+
+}
+
+.red.dark-mode #htp-body {
+    background-color: #70021d;
+
+}
+
+/* Themes Menu --------------------------------------------------------------------------------------------------------- */
+
+#themes-container {
+    position: absolute;
+    top: 100%;
+    right: 15%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #242323;
+    border-radius: 10%;
+}
+
+#close-button {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-weight: bold;
+    padding: 2px;
+    color: white;
+    background-color: #272626;
+    font-size: 15px;
+    border: none;
+}
+
+#themes-container p {
+    color: white;
+    margin-top: 10px;
+    font-size: 150%;
+}
+
+#light-themes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 130px;
+
+}
+
+.colors {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 2px solid rgb(254, 254, 255);
+    margin-bottom: 20px;
+}
+
+.colors:hover,
+#close-button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* colors button -------------------------------------------------------------------------------------------------------- */
+
+#purple {
+
+    background-color: #854389;
+}
+
+#orange {
+
+    background-color: #F4864E;
+}
+
+#blue {
+
+    background-color: #64aae3;
+
+}
+
+#red {
+
+    background-color: #C50636;
+}
+
+
+/* Statistics ---------------------------------------------------------------------------------------------------------- */
+
+#statistics-parent-container {
+
+    position: absolute;
+    background-color: #272626;
+    color: #fff;
+    display: flex;
+    padding: 40px;
+    height: 350px;
+    width: 250px;
+    place-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    margin: auto;
+    top: 25%;
+    left: 49.5vw;
+    transform: translate(-50%) scale(1);
+    border-radius: 2%;
+    box-shadow: 5px 5px 5px #0b0b0b;
+    display: block;
+    transition: transform 0.5s ease-out, opacity 1s ease-out;
+
+}
+
+
+#statistics-logo img {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#statistics-container {
+
+    max-height: fit-content;
+    max-width: fit-content;
+
+}
+
+#statistics {
+    border: 2px solid #fff;
+    padding: 15px 25px 15px 25px;
+}
+
+#statistics-container p {
+    line-height: 30px;
+    font-weight: 500;
+    min-width: 120px;
+}
+
+#statistics-container h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #fff;
+}
+
+#statistics-close {
+    position: fixed;
+    top: 2vh;
+    right: 3%;
+    background-color: #272626;
+    border: none;
+    color: white;
+    padding: 3px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+/* Statistics content */
+
+#total-games,
+#win-percentage,
+#games-won,
+#games-lost {
+    font-weight: 600;
+}
+
+/* Guess Grid ---------------------------------------------------------------------------------------------------------- */
+
+#guess-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    max-width: 350px;
+    max-height: 350px;
+    margin: auto;
+    padding: 0px 5px;
+    margin-top: 30px;
+
+}
+
+.tile {
+    border-radius: 10%;
+    margin: 2px;
+    height: 15vw;
+    width: 15vw;
+    max-width: 58px;
+    max-height: 58px;
+    font-size: 30px;
+    text-align: center;
+    background-color: #854389;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: transform 250ms linear;
+}
+
+/* Colors themes for tiles ---------------------------------------------------------------------------------------------- */
+
+.purple .tile {
+    background-color: #854389;
+}
+
+.purple.dark-mode .tile {
+    background-color: #320235;
+}
+
+.orange .tile {
+    background-color: #df7a47;
+}
+
+.orange.dark-mode .tile {
+    background-color: #8f3001;
+}
+
+.blue .tile {
+    background-color: #5096cf;
+}
+
+.blue.dark-mode .tile {
+    background-color: rgb(1, 30, 54);
+}
+
+.red .tile {
+    background-color: #ca2951;
+}
+
+.red.dark-mode .tile {
+    background-color: #70021d;
+}
+
+
+/* Colors for tiles according to correctness --------------------------------------------------------------------------- */
+
+.purple .tile[data-state="active"],
+.orange .tile[data-state="active"],
+.blue .tile[data-state="active"],
+.red .tile[data-state="active"],
+.dark-mode .tile[data-state="active"],
+.tile[data-state="active"] {
+    border-color: rgb(250, 248, 248);
+    border: 1px solid;
+}
+
+
+.purple .tile[data-state="wrong"],
+.orange .tile[data-state="wrong"],
+.blue .tile[data-state="wrong"],
+.red .tile[data-state="wrong"],
+.dark-mode .tile[data-state="wrong"],
+.tile[data-state="wrong"] {
+    border-color: none;
+    background-color: #494646;
+}
+
+.purple .tile[data-state="wrong-location"],
+.orange .tile[data-state="wrong-location"],
+.blue .tile[data-state="wrong-location"],
+.red .tile[data-state="wrong-location"],
+.dark-mode .tile[data-state="wrong-location"],
+.tile[data-state="wrong-location"] {
+    border-color: none;
+    background-color: #ceb40f;
+}
+
+.purple .tile[data-state="correct"],
+.orange .tile[data-state="correct"],
+.blue .tile[data-state="correct"],
+.red .tile[data-state="correct"],
+.dark-mode .tile[data-state="correct"],
+.tile[data-state="correct"] {
+    border-color: none;
+    background-color: #058425;
+}
+
+/* Shake animation effect ---------------------------------------------------------------------------------------------- */
+/* Learnt this animation code from Web Dev Simplified Youtube Tutorial */
+
+.tile.shake {
+    animation: shake 250ms ease-in-out;
+}
+
+@keyframes shake {
+    10% {
+        transform: translateX(-5%);
     }
-  }
+
+    30% {
+        transform: translateX(5%);
+    }
+
+    50% {
+        transform: translateX(-7.5%);
+    }
+
+    70% {
+        transform: translateX(7.5%);
+    }
+
+    90% {
+        transform: translateX(-5%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Dance animation effect ----------------------------------------------------------------------------------------------- */
+/* Learnt this animation code from Web Dev Simplified Youtube Tutorial */
+
+.tile.dance {
+    animation: dance 500ms ease-in-out;
+}
+
+@keyframes dance {
+    20% {
+        transform: translateY(-50%);
+    }
+
+    40% {
+        transform: translateY(5%);
+    }
+
+    60% {
+        transform: translateY(-25%);
+    }
+
+    80% {
+        transform: translateY(2.5%);
+    }
+
+    90% {
+        transform: translateY(-5%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Flip animation effect ----------------------------------------------------------------------------------------------- */
+
+.tile.flip {
+    transform: rotateX(90deg);
+}
+
+/* Keyboard ------------------------------------------------------------------------------------------------------------- */
+
+#keyboard-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.key {
+    width: 7.5vw;
+    height: 50px;
+    margin: 1px;
+    max-width: 43px;
+    border-radius: 15%;
+    box-shadow: 1px 1px #494646;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.key-large {
+    width: 13vw;
+    max-width: 65px;
+    height: 50px;
+}
+
+.key:hover,
+.key:focus,
+.dark-mode .key:hover,
+.dark-mode .key:focus {
+    background-color: #a3a0a0;
+    color: #fff;
+}
+
+.dark-mode .key.wrong,
+.key.wrong {
+    background-color: #494646;
+    color: #fff;
+
+}
+
+.dark-mode .key.wrong-location,
+.key.wrong-location {
+    background-color: #ceb40f;
+    color: #fff;
+}
+
+.dark-mode .key.correct,
+.key.correct {
+    background-color: #058425;
+    color: #fff;
+}
+
+/* Alert Container ----------------------------------------------------------------------------------------------------- */
+/* Learnt this code from Web Dev Simplified Youtube Tutorial */
+
+.alert-container {
+    position: fixed;
+    transform: translateX(-50%);
+    z-index: 1;
+    top: 25vh;
+    left: 49.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alert {
+    background-color: #d9cdcd;
+    padding: .75em;
+    pointer-events: none;
+    border-radius: .25em;
+    opacity: 1;
+    margin-bottom: 10px;
+    transition: opacity 500ms ease-in-out;
+}
+
+.alert:last-child {
+    margin-bottom: 0;
+}
+
+.alert.hide {
+    opacity: 0;
+}
 
 
-/* Overlay */
+/* hidden class ------------------------------------------------------------------------------------------------------- */
+
+#mode .hidden,
+#themes-container.hidden {
+    display: none;
+}
+
+#statistics-parent-container.hidden {
+    transform: scale(0);
+    opacity: 0;
+}
+
+
+/* Overlay class ------------------------------------------------------------------------------------------------------- */
 
 .body-overlay {
     background-color: rgba(0, 0, 0, 0.5);
@@ -769,7 +759,8 @@ button:hover {
 .body-overlay #how-to-play,
 .body-overlay #reset,
 .body-overlay #mode,
-.body-overlay #themes, .body-overlay #statistics-button {
+.body-overlay #themes,
+.body-overlay #statistics-button {
 
     opacity: 0.3;
 }
@@ -783,7 +774,7 @@ button:hover {
 }
 
 
-/* Dark Mode */
+/* Dark Mode class ------------------------------------------------------------------------------------------------------------ */
 
 .dark-mode #htp-body {
 
@@ -810,19 +801,20 @@ footer {
     color: white;
     width: 100%;
     text-align: center;
-    margin-top: auto; 
+    margin-top: auto;
     padding: 5px;
 }
 
 
-/* media query for screens larger than 440px */
+/* media query for screens larger than 520px --------------------------------------------------------------------------- */
 
 @media screen and (min-width: 520px) {
 
     #how-to-play,
     #reset,
     #mode,
-    #themes, #statistics-button {
+    #themes,
+    #statistics-button {
         font-size: 210%;
         padding: 10px;
     }
