@@ -120,7 +120,7 @@ main {
 }
 
 #statistics-parent-container.hidden  {
-    display: none;
+    transform: scale(0);
     opacity: 0;
     animation: fadeout 1s ease-out backwards;
 }
@@ -224,7 +224,7 @@ main {
 
 #statistics-parent-container {
 
-    position: fixed;
+    position: absolute;
     background-color: #272626;
     color: #fff;
     display: flex;
@@ -235,13 +235,15 @@ main {
     justify-content: center;
     z-index: 999;
     margin: auto;
-    top: 30vh;
-    left: 49.5vw;
-    transform: translateX(-50%);
+    /* top: 30vh; */
+    left: 41vw;
+    transform: translate(-50%);
     border-radius: 2%;
     box-shadow: 5px 5px 5px #0b0b0b;
     animation: fadein 1s ease-in forwards;
     display: block;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    transform: scale(1);
 
 }
 
@@ -268,8 +270,10 @@ main {
   }
 
   #statistics-container {
-    height: fit-content;
-    width: fit-content;
+
+    max-height: fit-content;
+    max-width: fit-content;
+    
   }
 
   #statistics {
@@ -635,8 +639,9 @@ main {
     color: rgb(249, 249, 249);
     margin-left: 10px;
     border-radius: 15%;
-
 }
+
+
 
 em,
 li {
