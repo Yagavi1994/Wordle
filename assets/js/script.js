@@ -15296,7 +15296,7 @@ const dictionary = [
     "shave"
 ]
 
-//Declaring Constants and Variables.
+//Declaring Variables.
 
 const WORD_LENGTH = 5
 const FLIP_ANIMATION_DURATION = 500
@@ -15317,12 +15317,16 @@ function startInteraction() {
     document.addEventListener("keydown", handlePressKey)
 }
 
+
+
 // This function is to stop interaction with the game when the correct word is guessed.
 
 function stopInteraction() {
     document.removeEventListener("click", handleMouseClick)
     document.removeEventListener("keydown", handlePressKey)
 }
+
+
 
 // This function will declare what happens when a key is clicked.
 
@@ -15343,6 +15347,8 @@ function handleMouseClick(e) {
 
     }
 }
+
+
 
 // This function will declare what happens when a key is pressed.
 
@@ -15365,6 +15371,8 @@ function handlePressKey(e) {
 
 }
 
+
+
 //This function enters the letter in the guess grid when it's clicked or pressed in the keyboard.
 
 function pressKey(key) {
@@ -15376,6 +15384,8 @@ function pressKey(key) {
     nextTile.dataset.state = "active"
 }
 
+
+
 //This function deletes the letter in the guess grid when delete/backspace key is clicked or pressed in the keyboard.
 
 function deleteKey() {
@@ -15386,6 +15396,8 @@ function deleteKey() {
     delete lastTile.dataset.state
     delete lastTile.dataset.letter
 }
+
+
 
 /**This function submits the word when pressed enter and
  * checks whether enough letters are entered.
@@ -15434,6 +15446,10 @@ function submitGuess() {
     activeTiles.forEach((...params) => flipTile(...params, guess))
 }
 
+
+
+// Function to show alert and open statistics.
+
 function handleGameResult(result, word) {
     if (result === "win") {
         updateGameStatistics("win");
@@ -15454,7 +15470,7 @@ function handleGameResult(result, word) {
 
 
 
-/**Apllies flip tile animation to the word once it's submitted
+/** Function to apply flip tile animation to the word once it's submitted
  * Checks whether the letters in the word is in correct or wrong location and adds respective classes to them.
  */
 
@@ -15493,11 +15509,15 @@ function flipTile(tile, index, array, guess) {
     )
 }
 
+
+
 // Function to select the active tiles.
 
 function getActiveTiles() {
     return guessGrid.querySelectorAll('[data-state="active"]')
 }
+
+
 
 //Function to show alert messages in the game.
 
@@ -15516,6 +15536,8 @@ function showAlert(message, duration = 1000) {
     }, duration)
 }
 
+
+
 //Function to add shake tiles animation when a word not in the dictionary is entered.
 
 function shakeTiles(tiles) {
@@ -15530,6 +15552,8 @@ function shakeTiles(tiles) {
         )
     })
 }
+
+
 
 //Function to add dance tiles animation when the correct word is guessed.
 
@@ -15547,6 +15571,7 @@ function danceTiles(tiles) {
         }, (index * DANCE_ANIMATION_DURATION) / 5)
     })
 }
+
 
 
 //The code from here are my own code and not followed from any tutorial.
@@ -15577,6 +15602,8 @@ modeButton.addEventListener("click", () => {
     toggleTheme();
 });
 
+
+
 // Function to toggle theme
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
@@ -15592,6 +15619,8 @@ if (isLightMode) {
     document.body.classList.add('light-mode');
 }
 
+
+
 // Function to reset the page without resetting the theme
 function resetPageWithoutThemeReset() {
 
@@ -15606,6 +15635,8 @@ function resetPageWithoutThemeReset() {
     location.reload();
 
 }
+
+
 
 // Function to initialize the theme
 function initializeTheme() {
@@ -15631,15 +15662,6 @@ resetButton.addEventListener("click", resetPageWithoutThemeReset);
 initializeTheme();
 
 
-window.addEventListener('beforeload', function (event) {
-
-    event.preventDefault();
-    resetPageWithoutThemeReset()
-    location.reload();
-
-});
-
-
 
 // Rules Box
 
@@ -15661,15 +15683,18 @@ function closeRulesBox() {
 
 }
 
+
 // Function to add overlay effect
 function addBodyOverlay() {
     document.body.classList.add("body-overlay");
 }
 
+
 // Function to remove overlay effect
 function removeBodyOverlay() {
     document.body.classList.remove("body-overlay");
 }
+
 
 // Attach event listeners to open and close the rules box
 
@@ -15698,12 +15723,14 @@ function openThemesMenu() {
 
 themesButton.addEventListener("click", openThemesMenu)
 
+
 // Function to close themes menu.
 
 function closeThemesMenu() {
 
     themesMenu.classList.add("hidden");
 }
+
 
 // Stop event propagation to prevent immediate closing
 
@@ -15722,6 +15749,8 @@ document.body.addEventListener("click", function (event) {
     }
 });
 
+
+
 // Functions to change theme colors
 
 // Orange theme.
@@ -15733,6 +15762,7 @@ function orangeTheme() {
 }
 const orange = document.getElementById('orange');
 orange.addEventListener('click', orangeTheme)
+
 
 // Purple Theme
 
@@ -15755,6 +15785,7 @@ function blueTheme() {
 const blue = document.getElementById('blue');
 blue.addEventListener('click', blueTheme)
 
+
 // Red Theme
 
 function redTheme() {
@@ -15765,6 +15796,8 @@ function redTheme() {
 }
 const red = document.getElementById('red');
 red.addEventListener('click', redTheme)
+
+
 
 // Function to open statistics when statistics button is clicked.
 
@@ -15777,10 +15810,12 @@ function openStatistics() {
 
 }
 
-statisticsButton.addEventListener("click", function() {
+statisticsButton.addEventListener("click", function () {
     openStatistics();
     addBodyOverlay();
 });
+
+
 
 // Function to close statistics menu.
 
@@ -15789,12 +15824,14 @@ function closeStatistics() {
     statistics.classList.add("hidden");
 }
 
-statisticsCloseButton.addEventListener("click", function() {
+statisticsCloseButton.addEventListener("click", function () {
     closeStatistics();
     removeBodyOverlay();
 });
 
-// // Function to update statistics
+
+
+// Function to update statistics
 
 // Initialize game statistics
 let gamesWon = 0;
@@ -15809,7 +15846,10 @@ function retrieveGameStatistics() {
 // Call retrieveGameStatistics function to initialize game statistics
 retrieveGameStatistics();
 
+
+
 // Function to update game statistics and save them to local storage
+
 function updateGameStatistics(result) {
     if (result === "win") {
         gamesWon++;
@@ -15832,7 +15872,10 @@ function updateGameStatistics(result) {
     localStorage.setItem('gamesLost', gamesLost);
 }
 
+
+
 // Function to display game statistics when the statistics menu is opened
+
 function displayGameStatistics() {
     // Display the current game statistics
     document.getElementById('games-won').textContent = gamesWon;
