@@ -15638,22 +15638,28 @@ function resetPageWithoutThemeReset() {
 
 
 
-// Function to initialize the theme
+// Initialize theme
 function initializeTheme() {
-
-    // Initialize the theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
-    }
-    else {
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+    } else {
         document.body.classList.remove('dark-mode');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
     }
+
 
     // Initialize the tile colors
     const savedTileColor = localStorage.getItem('tileColor');
     document.body.className = savedTileColor || ''; // Restore the saved tile colors
 }
+
+// Call initializeTheme function when the page loads
+window.addEventListener('load', initializeTheme);
+
 
 // Attach event listeners to reset button.
 
