@@ -15777,7 +15777,10 @@ function openStatistics() {
 
 }
 
-statisticsButton.addEventListener("click", openStatistics)
+statisticsButton.addEventListener("click", function() {
+    openStatistics();
+    addBodyOverlay();
+});
 
 // Function to close statistics menu.
 
@@ -15786,7 +15789,10 @@ function closeStatistics() {
     statistics.classList.add("hidden");
 }
 
-statisticsCloseButton.addEventListener("click", closeStatistics);
+statisticsCloseButton.addEventListener("click", function() {
+    closeStatistics();
+    removeBodyOverlay();
+});
 
 // // Function to update statistics
 

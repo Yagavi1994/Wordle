@@ -48,7 +48,7 @@ main {
 
 }
 
-h1 img {
+#logo {
     width: 140px;
     height: 50px;
     padding-left: 10px;
@@ -209,11 +209,11 @@ h1 img {
     color: #fff;
     height: 50vh;
     width: 70vw;
-    max-width: 500px;
-    max-height: 250px;
+    max-width: 350px;
+    max-height: 350px;
     display: flex;
+    place-items: center;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     z-index: 999;
@@ -227,9 +227,18 @@ h1 img {
   }
 
   #statistics-logo img {
-    width: 120px;
+    width: 150px;
     height: 50px;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  #statistics {
+    border: 2px solid #fff;
+    padding: 15px 25px 15px 25px;
   }
 
   #statistics-container p {
@@ -239,6 +248,9 @@ h1 img {
 
   #statistics-container h3 {
     margin-bottom: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #fff ;
   }
 
   #statistics-close {
@@ -733,7 +745,7 @@ button:hover {
     z-index: 10;
 }
 
-.body-overlay img {
+.body-overlay #logo {
     opacity: 0.3;
 }
 
@@ -798,7 +810,7 @@ footer {
         padding: 10px;
     }
 
-    h1 img {
+    #logo {
         width: 250px;
         height: 75px;
     }
