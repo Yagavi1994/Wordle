@@ -15576,11 +15576,11 @@ function danceTiles(tiles) {
 
 //The code from here are my own code and not followed from any tutorial.
 
+// Function to toggle between light and dark mode icons with flip animation
+
 const modeButton = document.getElementById("mode");
 const moonIcon = document.getElementById("moon-icon");
 const sunIcon = document.getElementById("sun-icon");
-
-// Function to toggle between light and dark mode icons with flip animation
 
 function toggleModeIcon() {
 
@@ -15605,6 +15605,7 @@ modeButton.addEventListener("click", () => {
 
 
 // Function to toggle theme
+
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
 
@@ -15622,6 +15623,7 @@ if (isLightMode) {
 
 
 // Function to reset the page without resetting the theme
+
 function resetPageWithoutThemeReset() {
 
     // Save the current theme preference to localStorage
@@ -15638,7 +15640,8 @@ function resetPageWithoutThemeReset() {
 
 
 
-// Initialize theme
+// Function to Initialize theme
+
 function initializeTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -15797,7 +15800,6 @@ blue.addEventListener('click', blueTheme)
 function redTheme() {
     document.body.classList.remove('purple', 'orange', 'blue');
     document.body.classList.add('red');
-    celebrateWin();
 
 }
 const red = document.getElementById('red');
@@ -15883,6 +15885,7 @@ function updateGameStatistics(result) {
 // Function to display game statistics when the statistics menu is opened
 
 function displayGameStatistics() {
+
     // Display the current game statistics
     document.getElementById('games-won').textContent = gamesWon;
     document.getElementById('games-lost').textContent = gamesLost;
