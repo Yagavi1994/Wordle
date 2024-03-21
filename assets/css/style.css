@@ -115,9 +115,29 @@ main {
 }
 
 #mode .hidden,
-#themes-container.hidden, #statistics-parent-container.hidden {
+#themes-container.hidden {
     display: none;
 }
+
+#statistics-parent-container.hidden  {
+    display: none;
+    opacity: 0;
+    animation: fadeout 1s ease-out backwards;
+}
+
+@keyframes fadeout {
+    0% {
+        
+        opacity: 1;
+
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
 
 /* Themes */
 
@@ -220,8 +240,22 @@ main {
     transform: translateX(-50%);
     border-radius: 2%;
     box-shadow: 5px 5px 5px #0b0b0b;
-    
+    animation: fadein 1s ease-in forwards;
+    display: block;
+
+}
+
+@keyframes fadein {
+    0% {
+        opacity:0;
+      }
+
+      100% {
+        opacity:1;
+    }
   }
+    
+
 
   #statistics-logo img {
     width: 150px;
