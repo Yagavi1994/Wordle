@@ -58,8 +58,9 @@ body {
 #statistics-button {
     background-color: #242323;
     font-size: 120%;
-    padding: 5px;
     border: none;
+    height: 32px;
+    width: 28px
 
 }
 
@@ -78,17 +79,6 @@ body {
 #statistics-button i:hover {
 
     transform: scale(1.2);
-}
-
-/* Reset button */
-
-#reset:active {
-    transform: rotateX(180deg)
-}
-
-#reset:hover {
-    cursor: pointer;
-    transform: rotateX(180deg)
 }
 
 /* Mode Button */
@@ -789,6 +779,21 @@ footer {
 
 /* media query for screens larger than 520px --------------------------------------------------------------------------- */
 
+
+@media screen and (min-width: 320px) {
+
+#how-to-play,
+    #reset,
+    #mode,
+    #themes,
+    #statistics-button {
+        font-size: 170%;
+        height: 35px;
+        width: 35px;
+    }
+
+}
+
 @media screen and (min-width: 520px) {
 
     #how-to-play,
@@ -798,6 +803,8 @@ footer {
     #statistics-button {
         font-size: 210%;
         padding: 10px;
+        height: 45px;
+        width: 50px;
     }
 
     #logo {
