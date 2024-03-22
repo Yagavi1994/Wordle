@@ -723,7 +723,7 @@ button:hover {
 /* hidden class ------------------------------------------------------------------------------------------------------- */
 
 #mode .hidden,
-#themes-container.hidden, #overlay.hidden, #transparent-overlay.hidden, #rules-box-overlay {
+#themes-container.hidden, #overlay.hidden, #transparent-overlay.hidden, #rules-box-overlay.hidden {
     display: none;
 }
 
