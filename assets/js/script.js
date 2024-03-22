@@ -15713,42 +15713,31 @@ closeButton.addEventListener("click", function (event) {
 
 
 // Function to open themes menu when themes button is clicked.
-
-const themesButton = document.getElementById('themes')
-const themesMenu = document.getElementById('themes-container')
-const themesCloseButton = document.getElementById('close-button')
+const themesButton = document.getElementById('themes');
+const themesMenu = document.getElementById('themes-container');
+const themesCloseButton = document.getElementById('close-button');
 
 function openThemesMenu() {
     themesMenu.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-
+    
 }
-
-themesButton.addEventListener("click", openThemesMenu)
-
-
-// Function to close themes menu.
-
-function closeThemesMenu() {
-
-    themesMenu.classList.add("hidden");
-    overlay.classList.add("hidden");
-}
-
-
-// Stop event propagation to prevent immediate closing
 
 themesButton.addEventListener("click", function (event) {
-    event.stopPropagation();
+    event.stopPropagation(); // Prevent event from bubbling up
     openThemesMenu();
 });
 
+// Function to close themes menu.
+function closeThemesMenu() {
+    themesMenu.classList.add("hidden");
+    
+}
+
 themesCloseButton.addEventListener("click", closeThemesMenu);
 
-// Add event listener to document body to close themes menu when clicked outside
-
+// Event listener to close themes menu when clicking outside of it or on close button
 document.body.addEventListener("click", function (event) {
-    if (!themesMenu.contains(event.target) && event.target !== themesButton) {
+    if (event.target !== themesButton && !themesMenu.contains(event.target)) {
         closeThemesMenu();
     }
 });
@@ -15811,33 +15800,25 @@ const statisticsCloseButton = document.getElementById('statistics-close')
 // Function to open statistics when statistics button is clicked.
 function openStatistics() {
     statistics.classList.remove("hidden");
-    overlay.classList.remove("hidden");
 }
 
 statisticsButton.addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevent the event from bubbling up
     openStatistics();
-    overlay.classList.remove("hidden");;
+    overlay.classList.remove("hidden");
+    
 });
 
 // Function to close statistics menu.
 function closeStatistics() {
     statistics.classList.add("hidden");
-}
 
-// Event listener to close statistics menu when clicked anywhere outside it.
-document.addEventListener("click", function (event) {
-    if (!statistics.contains(event.target) && event.target !== statisticsButton) {
-        closeStatistics();
-        overlay.classList.add("hidden");
-    }
-});
+}
 
 // Event listener to close statistics menu when the close button is clicked.
 statisticsCloseButton.addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevent the event from bubbling up
     closeStatistics();
     overlay.classList.add("hidden");
+    
 });
 
 
