@@ -15296,7 +15296,7 @@ const dictionary = [
     "shave"
 ]
 
-//Declaring Variables.
+// Global Variables
 
 const WORD_LENGTH = 5
 const FLIP_ANIMATION_DURATION = 500
@@ -15309,7 +15309,7 @@ console.log(targetWord);
 
 
 
-// This function is to initiate interaction with the game when a letter is clicked or pressed.
+// Function to initiate interaction with the game when a letter is clicked or pressed.
 
 startInteraction()
 function startInteraction() {
@@ -15319,7 +15319,7 @@ function startInteraction() {
 
 
 
-// This function is to stop interaction with the game when the correct word is guessed.
+// Function to stop interaction with the game when the correct word is guessed
 
 function stopInteraction() {
     document.removeEventListener("click", handleMouseClick)
@@ -15328,7 +15328,7 @@ function stopInteraction() {
 
 
 
-// This function will declare what happens when a key is clicked.
+// Function to declare what happens when a key is clicked
 
 function handleMouseClick(e) {
     if (e.target.matches("[data-key]")) {
@@ -15350,7 +15350,7 @@ function handleMouseClick(e) {
 
 
 
-// This function will declare what happens when a key is pressed.
+// Function to declare what happens when a key is pressed.
 
 function handlePressKey(e) {
     if (e.key === "Enter") {
@@ -15373,7 +15373,7 @@ function handlePressKey(e) {
 
 
 
-//This function enters the letter in the guess grid when it's clicked or pressed in the keyboard.
+// Function to enter the letter in the guess grid when it's clicked or pressed in the keyboard.
 
 function pressKey(key) {
     const activeTiles = getActiveTiles()
@@ -15386,7 +15386,7 @@ function pressKey(key) {
 
 
 
-//This function deletes the letter in the guess grid when delete/backspace key is clicked or pressed in the keyboard.
+// Function to delete the letter in the guess grid when delete/backspace key is clicked or pressed in the keyboard.
 
 function deleteKey() {
     const activeTiles = getActiveTiles()
@@ -15399,10 +15399,10 @@ function deleteKey() {
 
 
 
-/**This function submits the word when pressed enter and
- * checks whether enough letters are entered.
+/** Function to submit the word when pressed enter and
+ * check whether enough letters are entered.
  * whether the entered guess is a valid word from dictionary.
- * shows alert when the word guessed is equal to the target word.
+ * show alert when the word guessed is equal to the target word.
  * and if no remaining tiles are there shows the target word in the alert.
 */
 
@@ -15673,49 +15673,42 @@ initializeTheme();
 
 
 // Rules Box
-
 const howToPlayBtn = document.getElementById("how-to-play");
 const htpBody = document.getElementById("htp-body");
 const closeButton = document.getElementById("close");
+const overlay = document.getElementById("overlay"); // Assuming this is your overlay element
 
 // Function to open rule box
 function openRulesBox() {
-
     htpBody.setAttribute("data-display-container", "true");
+    overlay.classList.remove("hidden"); // Show overlay
 }
-
 
 // Function to close rule box
 function closeRulesBox() {
-
     htpBody.setAttribute("data-display-container", "false");
-
+    overlay.classList.add("hidden"); // Hide overlay
 }
 
-
-// Function to add overlay effect
-function addBodyOverlay() {
-    document.body.classList.add("body-overlay");
-}
-
-
-// Function to remove overlay effect
-function removeBodyOverlay() {
-    document.body.classList.remove("body-overlay");
-}
-
+// Event listener to close rules box when clicked anywhere outside it
+document.addEventListener("click", function (event) {
+    if (!htpBody.contains(event.target) && event.target !== howToPlayBtn) {
+        closeRulesBox();
+    }
+});
 
 // Attach event listeners to open and close the rules box
-
-howToPlayBtn.addEventListener("click", function () {
+howToPlayBtn.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevent event from bubbling up
     openRulesBox();
-    addBodyOverlay();
 });
 
-closeButton.addEventListener("click", function () {
+closeButton.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevent event from bubbling up
     closeRulesBox();
-    removeBodyOverlay();
 });
+
+
 
 
 
@@ -15727,6 +15720,7 @@ const themesCloseButton = document.getElementById('close-button')
 
 function openThemesMenu() {
     themesMenu.classList.remove("hidden");
+    overlay.classList.remove("hidden");
 
 }
 
@@ -15738,6 +15732,7 @@ themesButton.addEventListener("click", openThemesMenu)
 function closeThemesMenu() {
 
     themesMenu.classList.add("hidden");
+    overlay.classList.add("hidden");
 }
 
 
@@ -15807,35 +15802,44 @@ red.addEventListener('click', redTheme)
 
 
 
-// Function to open statistics when statistics button is clicked.
+// Function to open and close statistics when statistics button is clicked.
 
 const statisticsButton = document.getElementById('statistics-button')
 const statistics = document.getElementById('statistics-parent-container')
 const statisticsCloseButton = document.getElementById('statistics-close')
 
+// Function to open statistics when statistics button is clicked.
 function openStatistics() {
     statistics.classList.remove("hidden");
-
+    overlay.classList.remove("hidden");
 }
 
-statisticsButton.addEventListener("click", function () {
+statisticsButton.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevent the event from bubbling up
     openStatistics();
-    addBodyOverlay();
+    overlay.classList.remove("hidden");;
 });
 
-
-
 // Function to close statistics menu.
-
 function closeStatistics() {
-
     statistics.classList.add("hidden");
 }
 
-statisticsCloseButton.addEventListener("click", function () {
-    closeStatistics();
-    removeBodyOverlay();
+// Event listener to close statistics menu when clicked anywhere outside it.
+document.addEventListener("click", function (event) {
+    if (!statistics.contains(event.target) && event.target !== statisticsButton) {
+        closeStatistics();
+        overlay.classList.add("hidden");
+    }
 });
+
+// Event listener to close statistics menu when the close button is clicked.
+statisticsCloseButton.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevent the event from bubbling up
+    closeStatistics();
+    overlay.classList.add("hidden");
+});
+
 
 
 
