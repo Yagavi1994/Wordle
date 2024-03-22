@@ -15372,7 +15372,6 @@ function handlePressKey(e) {
 }
 
 
-
 // Function to enter the letter in the guess grid when it's clicked or pressed in the keyboard.
 
 function pressKey(key) {
@@ -15403,7 +15402,7 @@ function deleteKey() {
  * check whether enough letters are entered.
  * whether the entered guess is a valid word from dictionary.
  * show alert when the word guessed is equal to the target word.
- * and if no remaining tiles are there shows the target word in the alert.
+ * and if no remaining tiles are there, shows the target word in the alert.
 */
 
 function submitGuess() {
@@ -15673,18 +15672,21 @@ initializeTheme();
 
 
 // Rules Box
+
 const howToPlayBtn = document.getElementById("how-to-play");
 const htpBody = document.getElementById("htp-body");
 const closeButton = document.getElementById("close");
 const rulesBoxOverlay = document.getElementById("rules-box-overlay");
 
 // Function to open rule box
+
 function openRulesBox() {
     htpBody.setAttribute("data-display-container", "true");
-    rulesBoxOverlay.classList.remove("hidden"); // Show overlay
+    rulesBoxOverlay.classList.remove("hidden");
 }
 
 // Attach event listeners to open and close the rules box
+
 howToPlayBtn.addEventListener("click", function (event) {
     event.stopPropagation(); // Prevent event from bubbling up
     openRulesBox();
@@ -15693,15 +15695,16 @@ howToPlayBtn.addEventListener("click", function (event) {
 // Function to close rule box
 function closeRulesBox() {
     htpBody.setAttribute("data-display-container", "false");
-    rulesBoxOverlay.classList.add("hidden"); // Hide overlay
+    rulesBoxOverlay.classList.add("hidden");
 }
 
 closeButton.addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevent event from bubbling up
+    event.stopPropagation();
     closeRulesBox();
 });
 
 // Event listener to close rules box when clicked outside of it
+
 document.body.addEventListener("click", function (event) {
     if (!htpBody.contains(event.target) && event.target !== howToPlayBtn) {
         closeRulesBox();
@@ -15710,19 +15713,18 @@ document.body.addEventListener("click", function (event) {
 
 
 
+// Function to open and close themes menu when themes button is clicked.
 
-
-
-
-// Function to open themes menu when themes button is clicked.
 const themesButton = document.getElementById('themes');
 const themesMenu = document.getElementById('themes-container');
 const themesCloseButton = document.getElementById('close-button');
 const transparentOverlay = document.getElementById('transparent-overlay')
 
+// Function to open themes menu.
+
 function openThemesMenu() {
     themesMenu.classList.remove("hidden");
-    transparentOverlay.classList.remove("hidden"); // To prevent other menus from opening while themes menu is open.
+    transparentOverlay.classList.remove("hidden"); // Added a new overlay to prevent other menus from opening while themes menu is open.
 
 }
 
@@ -15735,13 +15737,14 @@ themesButton.addEventListener("click", function (event) {
 
 function closeThemesMenu() {
     themesMenu.classList.add("hidden");
-    transparentOverlay.classList.add("hidden"); 
-    
+    transparentOverlay.classList.add("hidden");
+
 }
 
 themesCloseButton.addEventListener("click", closeThemesMenu);
 
 // Event listener to close themes menu when clicking outside of it or on close button
+
 document.body.addEventListener("click", function (event) {
     if (event.target !== themesButton && !themesMenu.contains(event.target)) {
         closeThemesMenu();
@@ -15798,15 +15801,17 @@ red.addEventListener('click', redTheme)
 
 
 // Function to open and close statistics when statistics button is clicked.
+
 const statisticsButton = document.getElementById('statistics-button');
 const statistics = document.getElementById('statistics-parent-container');
 const statisticsCloseButton = document.getElementById('statistics-close');
 const overlay = document.getElementById('overlay')
 
-// Function to open statistics when statistics button is clicked.
+// Function to open statistics menu.
+
 function openStatistics() {
     statistics.classList.remove("hidden");
-    overlay.classList.remove("hidden"); // Show the overlay
+    overlay.classList.remove("hidden");
 }
 
 statisticsButton.addEventListener("click", function (event) {
@@ -15815,18 +15820,21 @@ statisticsButton.addEventListener("click", function (event) {
 });
 
 // Function to close statistics menu.
+
 function closeStatistics() {
     statistics.classList.add("hidden");
-    overlay.classList.add("hidden"); // Hide the overlay
+    overlay.classList.add("hidden");
 }
 
 // Event listener to close statistics menu when the close button is clicked.
+
 statisticsCloseButton.addEventListener("click", function (event) {
     event.stopPropagation();
     closeStatistics();
 });
 
 // Event listener to close statistics menu when clicking outside of it or on the overlay
+
 document.body.addEventListener("click", function (event) {
     if (!statistics.contains(event.target) && event.target !== statisticsButton) {
         closeStatistics();
@@ -15839,16 +15847,19 @@ document.body.addEventListener("click", function (event) {
 // Function to update statistics
 
 // Initialize game statistics
+
 let gamesWon = 0;
 let gamesLost = 0;
 
 // Function to retrieve game statistics from local storage
+
 function retrieveGameStatistics() {
     gamesWon = parseInt(localStorage.getItem('gamesWon')) || 0;
     gamesLost = parseInt(localStorage.getItem('gamesLost')) || 0;
 }
 
 // Call retrieveGameStatistics function to initialize game statistics
+
 retrieveGameStatistics();
 
 
@@ -15863,16 +15874,19 @@ function updateGameStatistics(result) {
     }
 
     // To calculate win percentage
+
     const totalGames = gamesWon + gamesLost;
     const winPercentage = totalGames > 0 ? ((gamesWon / totalGames) * 100).toFixed(2) : 0;
 
     // Update UI to display game statistics
+
     document.getElementById('games-won').textContent = gamesWon;
     document.getElementById('games-lost').textContent = gamesLost;
     document.getElementById('total-games').textContent = totalGames;
     document.getElementById('win-percentage').textContent = winPercentage + '%';
 
     // Save updated game statistics to local storage
+
     localStorage.setItem('gamesWon', gamesWon);
     localStorage.setItem('gamesLost', gamesLost);
 }
@@ -15884,10 +15898,12 @@ function updateGameStatistics(result) {
 function displayGameStatistics() {
 
     // Display the current game statistics
+
     document.getElementById('games-won').textContent = gamesWon;
     document.getElementById('games-lost').textContent = gamesLost;
 
     // Calculate and display total games and win percentage
+
     const totalGames = gamesWon + gamesLost;
     const winPercentage = totalGames > 0 ? ((gamesWon / totalGames) * 100).toFixed(2) : 0;
     document.getElementById('total-games').textContent = totalGames;
@@ -15895,6 +15911,7 @@ function displayGameStatistics() {
 }
 
 // Call displayGameStatistics function when the statistics menu is opened
+
 statisticsButton.addEventListener("click", function () {
     openStatistics();
     displayGameStatistics();

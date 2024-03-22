@@ -61,7 +61,6 @@ body {
     border: none;
     height: 32px;
     width: 28px
-
 }
 
 #how-to-play i,
@@ -76,12 +75,14 @@ body {
 #reset i:hover,
 #mode i:hover,
 #themes i:hover,
-#statistics-button i:hover, #statistics-close i:hover, #close:hover {
+#statistics-button i:hover,
+#statistics-close i:hover,
+#close:hover {
 
     transform: scale(1.2);
 }
 
-/* Mode Button */
+
 /* Flip animation for mode icon to toggle theme */
 
 #mode .rotate {
@@ -121,16 +122,16 @@ body {
     position: absolute;
     top: 3%;
     right: 3%;
-    background-color: #020202;
-    border: 2px solid black;
+    background-color: black;
+    border: none;
     width: 25px;
     height: 25px;
     font-size: 100%;
     font-weight: 800;
     color: rgb(249, 249, 249);
-    margin-left: 10px;
     border-radius: 25%;
     padding: 0 5px;
+    align-items: center;
 }
 
 em,
@@ -626,7 +627,7 @@ button:hover {
     }
 }
 
-/* Flip animation effect ----------------------------------------------------------------------------------------------- */
+/* Flip animation effect for tiles ----------------------------------------------------------------------------------------------- */
 
 .tile.flip {
     transform: rotateX(90deg);
@@ -723,14 +724,17 @@ button:hover {
 /* hidden class ------------------------------------------------------------------------------------------------------- */
 
 #mode .hidden,
-#themes-container.hidden, #overlay.hidden, #transparent-overlay.hidden, #rules-box-overlay.hidden {
+#themes-container.hidden,
+#overlay.hidden,
+#transparent-overlay.hidden,
+#rules-box-overlay.hidden {
     display: none;
 }
 
 #statistics-parent-container.hidden {
     opacity: 0;
     height: 0px;
-    
+
 }
 
 
@@ -744,7 +748,7 @@ button:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100; 
+    z-index: 100;
 }
 
 #rules-box-overlay {
@@ -755,7 +759,7 @@ button:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 300; 
+    z-index: 300;
 
 }
 
@@ -765,9 +769,9 @@ button:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     opacity: 0;
-    z-index: 999; 
+    z-index: 999;
 
 
 }
@@ -805,12 +809,12 @@ footer {
 }
 
 
-/* media query for screens larger than 520px --------------------------------------------------------------------------- */
+/* media queries ------------------------------------------------------------------------------------------------------- */
 
 
 @media screen and (min-width: 320px) {
 
-#how-to-play,
+    #how-to-play,
     #reset,
     #mode,
     #themes,
