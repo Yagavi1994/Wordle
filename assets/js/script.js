@@ -15676,19 +15676,30 @@ initializeTheme();
 const howToPlayBtn = document.getElementById("how-to-play");
 const htpBody = document.getElementById("htp-body");
 const closeButton = document.getElementById("close");
-const overlay = document.getElementById("overlay");
+const rulesBoxOverlay = document.getElementById("rules-box-overlay");
 
 // Function to open rule box
 function openRulesBox() {
     htpBody.setAttribute("data-display-container", "true");
-    overlay.classList.remove("hidden"); // Show overlay
+    rulesBoxOverlay.classList.remove("hidden"); // Show overlay
 }
+
+// Attach event listeners to open and close the rules box
+howToPlayBtn.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevent event from bubbling up
+    openRulesBox();
+});
 
 // Function to close rule box
 function closeRulesBox() {
     htpBody.setAttribute("data-display-container", "false");
-    overlay.classList.add("hidden"); // Hide overlay
+    rulesBoxOverlay.classList.add("hidden"); // Hide overlay
 }
+
+closeButton.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevent event from bubbling up
+    closeRulesBox();
+});
 
 // Event listener to close rules box when clicked outside of it
 document.body.addEventListener("click", function (event) {
@@ -15697,16 +15708,6 @@ document.body.addEventListener("click", function (event) {
     }
 });
 
-// Attach event listeners to open and close the rules box
-howToPlayBtn.addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevent event from bubbling up
-    openRulesBox();
-});
-
-closeButton.addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevent event from bubbling up
-    closeRulesBox();
-});
 
 
 
@@ -15800,6 +15801,7 @@ red.addEventListener('click', redTheme)
 const statisticsButton = document.getElementById('statistics-button');
 const statistics = document.getElementById('statistics-parent-container');
 const statisticsCloseButton = document.getElementById('statistics-close');
+const overlay = document.getElementById('overlay')
 
 // Function to open statistics when statistics button is clicked.
 function openStatistics() {
