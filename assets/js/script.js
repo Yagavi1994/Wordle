@@ -15676,7 +15676,7 @@ initializeTheme();
 const howToPlayBtn = document.getElementById("how-to-play");
 const htpBody = document.getElementById("htp-body");
 const closeButton = document.getElementById("close");
-const overlay = document.getElementById("overlay"); // Assuming this is your overlay element
+const overlay = document.getElementById("overlay"); 
 
 // Function to open rule box
 function openRulesBox() {
@@ -15689,13 +15689,6 @@ function closeRulesBox() {
     htpBody.setAttribute("data-display-container", "false");
     overlay.classList.add("hidden"); // Hide overlay
 }
-
-// Event listener to close rules box when clicked anywhere outside it
-document.addEventListener("click", function (event) {
-    if (!htpBody.contains(event.target) && event.target !== howToPlayBtn) {
-        closeRulesBox();
-    }
-});
 
 // Attach event listeners to open and close the rules box
 howToPlayBtn.addEventListener("click", function (event) {
@@ -15804,6 +15797,7 @@ function openStatistics() {
 }
 
 statisticsButton.addEventListener("click", function (event) {
+    event.stopPropagation();
     openStatistics();
     
 });
@@ -15817,6 +15811,7 @@ function closeStatistics() {
 
 // Event listener to close statistics menu when the close button is clicked.
 statisticsCloseButton.addEventListener("click", function (event) {
+    event.stopPropagation();
     closeStatistics();
 
 });
