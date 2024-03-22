@@ -15676,7 +15676,7 @@ initializeTheme();
 const howToPlayBtn = document.getElementById("how-to-play");
 const htpBody = document.getElementById("htp-body");
 const closeButton = document.getElementById("close");
-const overlay = document.getElementById("overlay"); 
+const overlay = document.getElementById("overlay");
 
 // Function to open rule box
 function openRulesBox() {
@@ -15689,6 +15689,13 @@ function closeRulesBox() {
     htpBody.setAttribute("data-display-container", "false");
     overlay.classList.add("hidden"); // Hide overlay
 }
+
+// Event listener to close rules box when clicked outside of it
+document.body.addEventListener("click", function (event) {
+    if (!htpBody.contains(event.target) && event.target !== howToPlayBtn) {
+        closeRulesBox();
+    }
+});
 
 // Attach event listeners to open and close the rules box
 howToPlayBtn.addEventListener("click", function (event) {
@@ -15705,24 +15712,29 @@ closeButton.addEventListener("click", function (event) {
 
 
 
+
 // Function to open themes menu when themes button is clicked.
 const themesButton = document.getElementById('themes');
 const themesMenu = document.getElementById('themes-container');
 const themesCloseButton = document.getElementById('close-button');
+const transparentOverlay = document.getElementById('transparent-overlay')
 
 function openThemesMenu() {
     themesMenu.classList.remove("hidden");
-    
+    transparentOverlay.classList.remove("hidden"); // To prevent other menus from opening while themes menu is open.
+
 }
 
 themesButton.addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevent event from bubbling up
+    event.stopPropagation();
     openThemesMenu();
 });
 
 // Function to close themes menu.
+
 function closeThemesMenu() {
     themesMenu.classList.add("hidden");
+    transparentOverlay.classList.add("hidden"); 
     
 }
 
@@ -15785,35 +15797,38 @@ red.addEventListener('click', redTheme)
 
 
 // Function to open and close statistics when statistics button is clicked.
-
-const statisticsButton = document.getElementById('statistics-button')
-const statistics = document.getElementById('statistics-parent-container')
-const statisticsCloseButton = document.getElementById('statistics-close')
+const statisticsButton = document.getElementById('statistics-button');
+const statistics = document.getElementById('statistics-parent-container');
+const statisticsCloseButton = document.getElementById('statistics-close');
 
 // Function to open statistics when statistics button is clicked.
 function openStatistics() {
     statistics.classList.remove("hidden");
-    overlay.classList.remove("hidden");
+    overlay.classList.remove("hidden"); // Show the overlay
 }
 
 statisticsButton.addEventListener("click", function (event) {
     event.stopPropagation();
     openStatistics();
-    
 });
 
 // Function to close statistics menu.
 function closeStatistics() {
     statistics.classList.add("hidden");
-    overlay.classList.add("hidden");
-
+    overlay.classList.add("hidden"); // Hide the overlay
 }
 
 // Event listener to close statistics menu when the close button is clicked.
 statisticsCloseButton.addEventListener("click", function (event) {
     event.stopPropagation();
     closeStatistics();
+});
 
+// Event listener to close statistics menu when clicking outside of it or on the overlay
+document.body.addEventListener("click", function (event) {
+    if (!statistics.contains(event.target) && event.target !== statisticsButton) {
+        closeStatistics();
+    }
 });
 
 

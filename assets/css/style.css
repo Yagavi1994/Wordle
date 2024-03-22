@@ -76,7 +76,7 @@ body {
 #reset i:hover,
 #mode i:hover,
 #themes i:hover,
-#statistics-button i:hover {
+#statistics-button i:hover, #statistics-close i:hover, #close:hover {
 
     transform: scale(1.2);
 }
@@ -118,6 +118,9 @@ body {
 }
 
 #close {
+    position: absolute;
+    top: 3%;
+    right: 3%;
     background-color: #020202;
     border: 2px solid black;
     width: 25px;
@@ -126,7 +129,8 @@ body {
     font-weight: 800;
     color: rgb(249, 249, 249);
     margin-left: 10px;
-    border-radius: 15%;
+    border-radius: 25%;
+    padding: 0 5px;
 }
 
 em,
@@ -719,7 +723,7 @@ button:hover {
 /* hidden class ------------------------------------------------------------------------------------------------------- */
 
 #mode .hidden,
-#themes-container.hidden, #overlay.hidden {
+#themes-container.hidden, #overlay.hidden, #transparent-overlay.hidden {
     display: none;
 }
 
@@ -741,6 +745,19 @@ button:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100; 
+}
+
+#transparent-overlay {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    opacity: 0;
+    z-index: 999; 
+
+
 }
 
 
