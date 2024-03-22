@@ -15800,25 +15800,25 @@ const statisticsCloseButton = document.getElementById('statistics-close')
 // Function to open statistics when statistics button is clicked.
 function openStatistics() {
     statistics.classList.remove("hidden");
+    overlay.classList.remove("hidden");
 }
 
 statisticsButton.addEventListener("click", function (event) {
     openStatistics();
-    overlay.classList.remove("hidden");
     
 });
 
 // Function to close statistics menu.
 function closeStatistics() {
     statistics.classList.add("hidden");
+    overlay.classList.add("hidden");
 
 }
 
 // Event listener to close statistics menu when the close button is clicked.
 statisticsCloseButton.addEventListener("click", function (event) {
     closeStatistics();
-    overlay.classList.add("hidden");
-    
+
 });
 
 
