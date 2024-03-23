@@ -15298,23 +15298,23 @@ const dictionary = [
 
 // Global Variables
 
-const WORD_LENGTH = 5
-const FLIP_ANIMATION_DURATION = 500
-const DANCE_ANIMATION_DURATION = 500
-const keyboard = document.querySelector("[data-keyboard]")
-const alertContainer = document.querySelector("[data-alert-container]")
-const guessGrid = document.querySelector("[data-guess-grid]")
-const targetWord = targetWords[Math.floor(Math.random() * targetWords.length)]
+const WORD_LENGTH = 5;
+const FLIP_ANIMATION_DURATION = 500;
+const DANCE_ANIMATION_DURATION = 500;
+const keyboard = document.querySelector("[data-keyboard]");
+const alertContainer = document.querySelector("[data-alert-container]");
+const guessGrid = document.querySelector("[data-guess-grid]");
+const targetWord = targetWords[Math.floor(Math.random() * targetWords.length)];
 console.log(targetWord);
 
 
 
 // Function to initiate interaction with the game when a letter is clicked or pressed.
 
-startInteraction()
+startInteraction();
 function startInteraction() {
-    document.addEventListener("click", handleMouseClick)
-    document.addEventListener("keydown", handlePressKey)
+    document.addEventListener("click", handleMouseClick);
+    document.addEventListener("keydown", handlePressKey);
 }
 
 
@@ -15322,8 +15322,8 @@ function startInteraction() {
 // Function to stop interaction with the game when the correct word is guessed
 
 function stopInteraction() {
-    document.removeEventListener("click", handleMouseClick)
-    document.removeEventListener("keydown", handlePressKey)
+    document.removeEventListener("click", handleMouseClick);
+    document.removeEventListener("keydown", handlePressKey);
 }
 
 
@@ -15332,18 +15332,18 @@ function stopInteraction() {
 
 function handleMouseClick(e) {
     if (e.target.matches("[data-key]")) {
-        pressKey(e.target.dataset.key)
-        return
+        pressKey(e.target.dataset.key);
+        return;
     }
 
     if (e.target.matches("[data-enter]")) {
-        submitGuess()
-        return
+        submitGuess();
+        return;
     }
 
     if (e.target.matches("[data-delete]")) {
-        deleteKey()
-        return
+        deleteKey();
+        return;
 
     }
 }
@@ -15354,18 +15354,18 @@ function handleMouseClick(e) {
 
 function handlePressKey(e) {
     if (e.key === "Enter") {
-        submitGuess()
-        return
+        submitGuess();
+        return;
     }
 
     if (e.key === "Backspace" || e.key === "Delete") {
-        deleteKey()
-        return
+        deleteKey();
+        return;
     }
 
     if (e.key.match(/^[a-z]$/)) {
-        pressKey(e.key)
-        return
+        pressKey(e.key);
+        return;
     }
 
 
@@ -15375,12 +15375,12 @@ function handlePressKey(e) {
 // Function to enter the letter in the guess grid when it's clicked or pressed in the keyboard.
 
 function pressKey(key) {
-    const activeTiles = getActiveTiles()
+    const activeTiles = getActiveTiles();
     if (activeTiles.length >= WORD_LENGTH) return
-    const nextTile = guessGrid.querySelector(":not([data-letter])")
-    nextTile.dataset.letter = key.toLowerCase()
-    nextTile.textContent = key
-    nextTile.dataset.state = "active"
+    const nextTile = guessGrid.querySelector(":not([data-letter])");
+    nextTile.dataset.letter = key.toLowerCase();
+    nextTile.textContent = key;
+    nextTile.dataset.state = "active";
 }
 
 
@@ -15388,12 +15388,12 @@ function pressKey(key) {
 // Function to delete the letter in the guess grid when delete/backspace key is clicked or pressed in the keyboard.
 
 function deleteKey() {
-    const activeTiles = getActiveTiles()
-    const lastTile = activeTiles[activeTiles.length - 1]
-    if (lastTile === undefined) return
-    lastTile.textContent = ""
-    delete lastTile.dataset.state
-    delete lastTile.dataset.letter
+    const activeTiles = getActiveTiles();
+    const lastTile = activeTiles[activeTiles.length - 1];
+    if (lastTile === undefined) return;
+    lastTile.textContent = "";
+    delete lastTile.dataset.state;
+    delete lastTile.dataset.letter;
 }
 
 
@@ -15406,43 +15406,41 @@ function deleteKey() {
 */
 
 function submitGuess() {
-    const activeTiles = [...getActiveTiles()]
+    const activeTiles = [...getActiveTiles()];
     if (activeTiles.length !== WORD_LENGTH) {
-        showAlert("Not enough letters")
-        shakeTiles(activeTiles)
-        return
+        showAlert("Not enough letters");
+        shakeTiles(activeTiles);
+        return;
     }
 
     const guess = activeTiles.reduce((word, tile) => {
-        return word + tile.dataset.letter
-    }, "")
+        return word + tile.dataset.letter;
+    }, "");
 
     if (!dictionary.includes(guess)) {
-        showAlert("Not in word list")
-        shakeTiles(activeTiles)
-        return
+        showAlert("Not in word list");
+        shakeTiles(activeTiles);
+        return;
     }
 
     if (guess === targetWord) {
-        activeTiles.forEach((...params) => flipTile(...params, guess))
+        activeTiles.forEach((...params) => flipTile(...params, guess));
         setTimeout(() => {
             danceTiles(activeTiles);
-        }, FLIP_ANIMATION_DURATION * 5)
-        stopInteraction()
+        }, FLIP_ANIMATION_DURATION * 5);
+        stopInteraction();
         handleGameResult("win", guess);
-
-        return
+        return;
     }
 
-    const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
+    const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])");
     if (remainingTiles.length === 0) {
-        // showAlert(`Oops.. You missed it.. The correct word is '${targetWord.toUpperCase()}'..`, null)
         handleGameResult("lose", targetWord);
-        stopInteraction()
+        stopInteraction();
     }
 
-    stopInteraction()
-    activeTiles.forEach((...params) => flipTile(...params, guess))
+    stopInteraction();
+    activeTiles.forEach((...params) => flipTile(...params, guess));
 }
 
 
@@ -15474,38 +15472,38 @@ function handleGameResult(result, word) {
  */
 
 function flipTile(tile, index, array, guess) {
-    const letter = tile.dataset.letter
-    const key = keyboard.querySelector(`[data-key="${letter}"i]`)
+    const letter = tile.dataset.letter;
+    const key = keyboard.querySelector(`[data-key="${letter}"i]`);
     setTimeout(() => {
-        tile.classList.add("flip")
-    }, (index * FLIP_ANIMATION_DURATION) / 2)
+        tile.classList.add("flip");
+    }, (index * FLIP_ANIMATION_DURATION) / 2);
 
     tile.addEventListener("transitionend", () => {
-        tile.classList.remove("flip")
+        tile.classList.remove("flip");
 
         if (targetWord[index] === letter) {
-            tile.dataset.state = "correct"
-            key.classList.add("correct")
+            tile.dataset.state = "correct";
+            key.classList.add("correct");
         }
         else if (targetWord.includes(letter)) {
-            tile.dataset.state = "wrong-location"
-            key.classList.add("wrong-location")
+            tile.dataset.state = "wrong-location";
+            key.classList.add("wrong-location");
         }
         else {
-            tile.dataset.state = "wrong"
-            key.classList.add("wrong")
+            tile.dataset.state = "wrong";
+            key.classList.add("wrong");
         }
 
         if (index === array.length - 1) {
             tile.addEventListener("transitionend", () => {
-                startInteraction()
+                startInteraction();
             },
                 { once: true }
-            )
+            );
         }
     },
         { once: true }
-    )
+    );
 }
 
 
@@ -15513,7 +15511,7 @@ function flipTile(tile, index, array, guess) {
 // Function to select the active tiles.
 
 function getActiveTiles() {
-    return guessGrid.querySelectorAll('[data-state="active"]')
+    return guessGrid.querySelectorAll('[data-state="active"]');
 }
 
 
@@ -15521,18 +15519,18 @@ function getActiveTiles() {
 //Function to show alert messages in the game.
 
 function showAlert(message, duration = 1000) {
-    const alert = document.createElement("div")
-    alert.textContent = message
-    alert.classList.add("alert")
-    alertContainer.prepend(alert)
-    if (duration == null) return
+    const alert = document.createElement("div");
+    alert.textContent = message;
+    alert.classList.add("alert");
+    alertContainer.prepend(alert);
+    if (duration == null) return;
 
     setTimeout(() => {
         alert.classList.add("hide")
         alert.addEventListener("transitioned", () => {
-            alert.remove()
-        })
-    }, duration)
+            alert.remove();
+        });
+    }, duration);
 }
 
 
@@ -15541,15 +15539,15 @@ function showAlert(message, duration = 1000) {
 
 function shakeTiles(tiles) {
     tiles.forEach(tile => {
-        tile.classList.add("shake")
+        tile.classList.add("shake");
         tile.addEventListener(
             "animationend",
             () => {
-                tile.classList.remove("shake")
+                tile.classList.remove("shake");
             },
             { once: true }
-        )
-    })
+        );
+    });
 }
 
 
@@ -15563,12 +15561,12 @@ function danceTiles(tiles) {
             tile.addEventListener(
                 "animationend",
                 () => {
-                    tile.classList.remove("dance")
+                    tile.classList.remove("dance");
                 },
                 { once: true }
-            )
-        }, (index * DANCE_ANIMATION_DURATION) / 5)
-    })
+            );
+        }, (index * DANCE_ANIMATION_DURATION) / 5);
+    });
 }
 
 
@@ -15718,7 +15716,7 @@ document.body.addEventListener("click", function (event) {
 const themesButton = document.getElementById('themes');
 const themesMenu = document.getElementById('themes-container');
 const themesCloseButton = document.getElementById('close-button');
-const transparentOverlay = document.getElementById('transparent-overlay')
+const transparentOverlay = document.getElementById('transparent-overlay');
 
 // Function to open themes menu.
 
@@ -15763,7 +15761,7 @@ function orangeTheme() {
 
 }
 const orange = document.getElementById('orange');
-orange.addEventListener('click', orangeTheme)
+orange.addEventListener('click', orangeTheme);
 
 
 // Purple Theme
@@ -15774,7 +15772,7 @@ function purpleTheme() {
 
 }
 const purple = document.getElementById('purple');
-purple.addEventListener('click', purpleTheme)
+purple.addEventListener('click', purpleTheme);
 
 
 // Blue Theme
@@ -15785,7 +15783,7 @@ function blueTheme() {
 
 }
 const blue = document.getElementById('blue');
-blue.addEventListener('click', blueTheme)
+blue.addEventListener('click', blueTheme);
 
 
 // Red Theme
@@ -15796,7 +15794,7 @@ function redTheme() {
 
 }
 const red = document.getElementById('red');
-red.addEventListener('click', redTheme)
+red.addEventListener('click', redTheme);
 
 
 
@@ -15805,7 +15803,7 @@ red.addEventListener('click', redTheme)
 const statisticsButton = document.getElementById('statistics-button');
 const statistics = document.getElementById('statistics-parent-container');
 const statisticsCloseButton = document.getElementById('statistics-close');
-const overlay = document.getElementById('overlay')
+const overlay = document.getElementById('overlay');
 
 // Function to open statistics menu.
 
