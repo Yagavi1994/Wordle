@@ -7,38 +7,13 @@ The link to the game can be found [HERE](https://yagavi1994.github.io/Wordle/)
 
 ## Tabel of Contents
 + [User Experience](#user-experience "User Experience")
-  + [Existing User Goals](#existing-user-goals "Existing User Goals")
-  + [New User Goals](#new-user-goals "New User Goals")
 + [Design](#design "Design")
-  + [Wireframe](#wireframes "Wireframes")
-  + [Colour Scheme](#colour-scheme "Colour Scheme")
-  + [Typography](#typography "Typography")
-  + [Imagery](#imagery "Imagery")
 + [Features](#features "Features")
-  + [Landing Page](#landing-page "Landing Page")
-  + [Services](#services "Services")
-  + [Reviews](Reviews "Reviews")
-  + [Portfolio](#portfolio "Portfolio")
-  + [Contact](#contact "Contact")
-  + [Thank You Page](#thank-you-page "Thank You Page")
-  + [404 Error Page](#404-error-page "404 Error Page")
-  + [Footer](#footer "Footer")
-  + [Existing Features](#existing-features "Existing Features")
-  + [Future Features](#future-features "Future Features")
-+ [Testing and Challenges](#testing-and-challenges "Testing and Challenges")
-  + [Validator Testing](#validator-testing "Validator Testing")
-  + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
++ [Testing](#testing "Testing")
 + [Technologies Used](#technologies-used "Technologies Used")
-  + [Main Languages Used](#main-languages-used "Main Languages Used")
-  + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
 + [Deployment](#deployment "Deployment")
-  + [How to Fork](#how-to-fork "How to Fork")
-  + [How to Clone](#how-to-clone "How to Clone")
 + [Credits](#credits "Credits")
-  + [Content](#content "Content")
-  + [Media](#media "Media")
-  + [Youtube](#youtube "Youtube")
-
+ 
 ## User Experience
 
 ### First time player:
@@ -205,7 +180,10 @@ These alert messages assist the user by providing feedback and guidance througho
 ![Alert Messages]()
 
 #### Keyboard Area:
-The keyboard area comprises a keyboard interface that allows users to input letters into the tiles either by clicking or touching them, depending on the device they are using. The colors of the keyboard dynamically change between dark grey and half-white based on the selected dark and light mode themes. This ensures consistency with the overall color scheme of the interface, providing a visually cohesive experience for the user across different modes.
+ - The keyboard area comprises a keyboard interface that allows users to input letters into the tiles either by clicking or touching them, depending on the device they are using. 
+ - The colors of the keyboard dynamically change between dark grey and half-white based on the selected dark and light mode themes. This ensures consistency with the overall color scheme of the interface, providing a visually cohesive experience for the user across different modes. 
+ - The color of the keys changes to green, yellow, and grey, matching the tiles. This helps the user to identify which letters are in the right place, wrong place, or not in the game to play more effectively.
+ - The color of key changes when hovered over for the user to identify on which key the mouse is in to type easily.
 
 ![Keyboard Area]()
 
@@ -230,51 +208,62 @@ Incorporating a login feature to enable users to save their game statistics and 
 ##### Expanded Theme Selection: 
 Adding more themes with vibrant colors and diverse designs to enhance the visual appeal of the gameplay. Offering a variety of themes allows users to customize their gaming experience according to their preferences and mood.
 
-## Testing and Challenges:
-- I came across many challenges while creating this website. One of the major challenge which I kept facing again and again was positioning the contents in the centre of the page. Then after many trial and errors, I learnt to create a parent div and give flex values to it helped me to centre the content in many places.
-- I was confused at many places about what unit to use for size of the contents. Then I figured out using percentage helps in places where responsiveness is needed and in other places I mostly went with pixels.
-- Initially I struggled a lot with images since it was not uploading when I added it to the images folder and used it's relative path. Then I remebered studying somewhere in lessons about image hosting site. I googled about the same and came across "Imgbb.com" website for image hosting, which helped to host my image and solve all my issues with it.
-- Whenever I felt like my code is not giving the desired style I want, I would google my query and mostly I would find my answer in it.
-- For Portfolio I wanted to create a gallery which when clicked should open and display the full image. I found a YouTube tutorial for the same and followed it to achieve the desired result.
-- Similarly, to create the Masonry Grid of my Portfolio too I followed a YouTube tutorial.
-- In contact page, the contact information was too long for small screens, so when was confused about what to do, got an idea of adding scroll bar to overflowing content which was learnt in lessons helped.
-- I was not aware of creating a form-dump page when clicked submit in the form, my mentor Martina pointed that out and after which I added a customised form-dump page to my form.
-- It was quite hard designing 404 page when compared to others because any changes made to it can be seen only after deploying it in the github. So it took me more time designing this page for me when compared to others.
-- I tested my website in all 4 screen sizes and which seems to work responsively without any error.
-- I tested all my external links which also opens fine in new tabs.
-- All my images seems to load perfectly without any delay in all browsers and devices.
-- I tested my codes in validator, initially there was few errors about not to use "h1" anywhere other than main heading, stray tags, to use div instead of sections etc., and I corrected all those errors and recieved pass in the same for both HTML and CSS.
-- Tested the site which opens in Chrome & Safari without issues.
-
+## Testing:
+##### Browser Compatibility:
+  - Tested playing the game in Chrome, Firefox, and Safari browsers.
+  - Confirmed that the game functions smoothly across different browsers without any issues.
+##### Responsive Design:
+  - Played the game on various devices including mobile phones, laptops, and desktop computers.
+  - Ensured that the game is responsive and adapts well to different screen sizes.
+#### Accessibility:
+  - Ran Lighthouse tests to evaluate the accessibility of the website.
+  - Verified that the website has a high accessibility rating, ensuring inclusivity for all users.
+##### Gameplay Features:
+  - Tested all the features of the gameplay, including entering guesses, resetting the game, and changing themes.
+  - Confirmed that the gameplay mechanics work as expected without any errors.
+##### Theme Compatibility:
+  - Played the game multiple times with different themes to ensure compatibility.
+  - Verified that the gameplay flows smoothly with all theme options without encountering any issues.
+##### Modal and Menu Functionality:
+  - Verified that modals and menus open and close properly when clicking the respective icons.
+  - Ensured that all modal content and menu options are displayed correctly.
+##### Animations and Alert Messages:
+  - Confirmed that animations, alert messages, and tile colors change appropriately during gameplay interactions.
+##### Game Controls:
+  - Tested the functionality of the reset button, mode toggle button, and keyboard keys.
+  - Ensured that the page reloads when clicking the reset button and toggles between light and dark modes when clicking the mode button.
+  - Verified that all keyboard keys function correctly and change colors according to tile statuses.
+##### Theme Consistency:
+  - Checked that the color of the tiles and background of the "How to Play" modal change accordingly based on the selected theme.
+  - Confirmed that theme changes are reflected consistently throughout the gameplay interface.
+##### Statistics Update:
+  - Checked that the statistics are updated accurately in the statistics menu after each gameplay session.
+  - Verified that statistics such as win percentage are displayed correctly and reflect the user's progress.
+##### Conclusion:
+  - Overall, the testing confirms that Wordle functions smoothly, providing an enjoyable, colorful and error-free gaming experience across different browsers, devices, and themes.
 
 ### Validator Testing:
 - HTML files pass through the [W3C validator](https://validator.w3.org/) with no issues found.
+
    - Result for index.html
-   ![index.html](https://i.ibb.co/WKFTTG2/Screenshot-2024-02-08-at-11-21-14-am.png)
-   - Result for portfolio.html
-   ![portfolio.html](https://i.ibb.co/vZ0X4qm/Screenshot-2024-02-08-at-11-26-46-am.png)
-   - Result for contact.html
-   ![Contact](https://i.ibb.co/VBBTQP4/Screenshot-2024-02-08-at-11-28-01-am.png)
-   - Result for thankyou.html
-   ![Thank You](https://i.ibb.co/gzgj2sX/Screenshot-2024-02-08-at-11-34-49-am.png)
-   - Result for 404.html
-   ![404](https://i.ibb.co/31k4rm0/Screenshot-2024-02-10-at-5-16-31-pm.png)
+   ![index.html]()
 
+- CSS files pass through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues found.
 
-- CSS files pass through the [Jigsaw validator](rs ) with no issues found.
-![Jigsaw validator message](https://i.ibb.co/v4kgHKD/Screenshot-2024-02-08-at-11-42-47-am.png)
+   - Result for CSS.
+   ![CSS]()
 
-- All pages has a good Accessibility rating in Lighthouse
-   - Result for index.html
-   ![index.html](https://i.ibb.co/fGF4c6Y/Screenshot-2024-02-08-at-11-09-22-pm.png)
-   - Result for portfolio.html
-   ![portfolio.html](https://i.ibb.co/9cXvwt9/Screenshot-2024-02-08-at-11-13-46-pm.png)
-   - Result for contact.html
-   ![Contact](https://i.ibb.co/k9MDQJw/Screenshot-2024-02-08-at-11-10-04-pm.png)
-   - Result for thankyou.html
-   ![Thank You](https://i.ibb.co/k9RTYFP/Screenshot-2024-02-08-at-11-11-18-pm.png)
-   - Result for 404.html
-   ![404](https://i.ibb.co/X5y4S6v/Screenshot-2024-02-10-at-5-54-05-pm.png)
+- The Javascript files passed through the validator testing with some warnings from [Javascript validator](https://jshint.com/)
+
+   - Result for Javascript.
+   ![Javascript]()
+
+- All pages has a good Accessibility rating in Lighthouse.
+
+   - Result for Lighthouse testing.
+   ![Lighthouse]()
+
+### Bugs:
 
 
 ### Unfixed Bugs:
@@ -283,15 +272,16 @@ Adding more themes with vibrant colors and diverse designs to enhance the visual
 ### Main Languages Used:
 - HTML5
 - CSS3
+- Javascript
 
 ### Frameworks, Libraries & Programs Used:
-- Google Fonts - for the font families: Karla was used for font. San-serif was used as a default font.
-- Font Awesome - to add icons to the social links in the footer element and home icon in Thank You Page.
-- GitPod - to creat my html files & styling sheet before pushing the project to Github.
-- GitHub - to store my repository for submission.
-- Adobe Photoshop - were used to edit images and create mockups of the project in various devices.
-- Imgbb - to host my images, since directly adding my images to assets was not working as the size of images were huge.
-- Rgbacolorpicker - to pick color for the website.
+- Font Awesome - To add icons to the nav bar and close button in themes menu and statistics modal.
+- GitPod - To create my html files & styling sheet before pushing the project to Github.
+- GitHub - To store my repository for submission.
+- Figma - To create wireframe for project.
+- Coolors - To pick color for the website.
+- Vistaprint - To create logo for the website.
+- Am I responsive - To see the responsiveness of the screen.
 
 ## Deployment
 1. In the GitHub repositories, navigate your way to the settings tab
@@ -300,16 +290,16 @@ Adding more themes with vibrant colors and diverse designs to enhance the visual
 4. Then underneath that select 'main' and 'root' 
 5. Click save
 6. Your page should refresh automatically or manually with a link to your deployed website. 
-7. The link can be found here: [Siihraz Shades](https://yagavi1994.github.io/Siihraz-Shades/)
+7. The link can be found here: [Wordle](https://yagavi1994.github.io/Wordle/)
 
 ### How to Fork:
 - Log in (or sign up) to [Github](https://github.com/).
-- Go to respository for this project [Siihraz-Shades](https://github.com/Yagavi1994/Siihraz-Shades).
+- Go to respository for this project [Wordle](https://github.com/Yagavi1994/Wordle).
 - Click the fork button in the top right corner.
 
 ### How to Clone:
 - Log in (or sign up) to [Github](https://github.com/).
-- Go to respository for this project [Siihraz-Shades](https://github.com/Yagavi1994/Siihraz-Shades).
+- Go to respository for this project [Wordle](https://github.com/Yagavi1994/Wordle).
 - Click on the code button, select whether you would like to clone with HTTPS, SSH, GitHub CLI and copy the link shown.
 - Open the terminal in your code editor and change the current working directory to the location you want to use for the clone directory.
 - Type 'git clone' into terminal and then paste the link you copied in step 3.
