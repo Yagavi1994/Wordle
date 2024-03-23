@@ -1,7 +1,7 @@
 # WORDLE
 Wordle is a well-known word-guessing game. The basic concept of the game is to guess the secret word in six tries, based on the color of the changing tile, which indicates the accuracy of our guess. By default, Wordle has a black and white color theme for dark and light modes. As a user, I wished it had more colorful themes. Therefore, as a developer, I decided to recreate the game with vibrant themes.
 
-![Site view across devices](Add screenshot of Am I Responsive?)
+![Site-view-across-devices](Add screenshot of Am I Responsive?)
 
 The link to the game can be found [HERE](https://yagavi1994.github.io/Wordle/)
 
@@ -57,6 +57,8 @@ The link to the game can be found [HERE](https://yagavi1994.github.io/Wordle/)
 
 - For frequent players, ensuring the website's responsiveness across various screen sizes is crucial for seamless gameplay experiences.
 
+- Adding fun animations keeps the gameplay engaging and interesting.
+
 - Tracking and displaying the best scores across multiple sessions adds motivation for frequent players, allowing them to monitor their progress and strive for improvement.
 
 - Offering a variety of colorful themes helps maintain engagement for frequent players, preventing monotony and enhancing the overall user experience.
@@ -71,8 +73,8 @@ The link to the game can be found [HERE](https://yagavi1994.github.io/Wordle/)
 
 I made my wireframe for the game using Figma.
 
-![Mobile-Wireframe]()
-![Desktop-Wireframe]()
+![Mobile Wireframe]()
+![Desktop Wireframe]()
 
 ### Colour Scheme:
 
@@ -81,6 +83,9 @@ The primary enhancement to the game from its original version is the inclusion o
 Conversely, in the dark mode, deeper and richer shades of purple and blue were implemented to cater to players who prefer a very dark background. This contrasts with the lighter tones of orange and red, which offer a touch of brightness to the dark-mode interface without being overly intense. The goal was to provide options for players with varying preferences regarding the darkness of the background.
 
 Throughout both light and dark modes, the emphasis was placed on avoiding excessively bright or harsh colors that could strain the player's eyes. By maintaining a balance between aesthetics and visual comfort, the game aims to enhance the overall gaming experience for players, regardless of their chosen mode.
+
+![Light Mode]()
+![Dark Mode]()
 
 ### Typography:
 
@@ -93,73 +98,137 @@ The decision to avoid excessive styling aligns with the goal of keeping the game
 ## Features
 
 ### Existing Features
-#### Navigation bar:
-This is included across all three pages, and provides people with an easy reference to navigate between the 'Home', 'Services' 'Reviews' 'Portfolio' & 'Contact' pages.
-
-![Navigation bar](https://i.ibb.co/sQL7hQM/Screenshot-2024-02-08-at-10-36-13-am.png)
 
 #### Landing Page:
-The landing page has the Logo Image which is displayed like a cover image at the top of the Home page.
+The landing page is the main and sole page of the web application. It features a navigation bar at the top, providing access to various functionalities. In the middle of the landing page lies the game area, comprising a grid of tiles where users can input letters either by typing or clicking. Directly below the game area is a keyboard interface, allowing users to select letters to form words for guessing. Finally, at the bottom of the page, there is a footer displaying a copyright message.
 
-I photoshopped the image with the official logo of the makeup artists company Siihraz Shades Makeover in it. The logo image defines the feel of the website, providing the user with an image that they can easily associate to what the company is & does.
+![Landing Page]()
 
-![Logo image](https://i.ibb.co/JFGw7ZD/Screenshot-2024-02-08-at-10-37-33-am.png)
+#### Navigation bar:
+The navigation bar on the landing page features the logo on the right side, serving as a visual identifier for the web application. On the left side of the navigation bar, users can find how to play, reset, mode, themes and statistics icons representing different functionalities to interact with the web application.
 
-The About me section is listed right beneath the Logo Image. It has the photo of the makeup artist and a brief explanation about her and her work.
+> "The user interface should be welcoming and intuitive, making it easy for first-time players to navigate and interact with the game."
 
-![About me](https://i.ibb.co/0sm59J5/Screenshot-2024-02-08-at-10-39-43-am.png)
+![Navigation Bar]()
 
-The Landing Page also got Services and Reviews in it.
+The features of those icons are explained as follows.
 
-#### Services
+#### How to Play: 
+When clicked, this icon opens a modal that offers comprehensive instructions on how to play the game. It encompasses details about the game's objective, rules, and tips for achieving success during gameplay. Additionally, the background color of the "How to Play" modal dynamically adjusts according to the current theme selected by the user. This feature enhances the overall visual appeal of the game, making it more vibrant and engaging for players.
 
-The Services section explains about the different services done by the makeup artist with a picture of a model and brief explanation about it underneath.
+> "The game should offer straightforward instructions on how to play, ensuring new players understand the mechanics without confusion."
 
-![Services](https://i.ibb.co/KqsjbNj/Screenshot-2024-02-08-at-10-43-13-am.png)
+> "Clear explanations should be given regarding the conditions for winning or losing the game, helping new players set their objectives."
 
-#### Reviews
+![How To Play]()
 
-And when you scroll below the Services section, there comes Reviews section which has few reviews about the makeup artist given by her clients.
+#### Reset: 
+This icon allows users to reset the game or start a new round. Upon clicking, any ongoing game progress is cleared, and the game board is reset to its initial state, ready for a fresh gameplay session.
 
-![Reviews](https://i.ibb.co/MgWbDrX/Screenshot-2024-02-08-at-10-45-10-am.png)
+> "Facilitating easy game resets allows frequent players to quickly start new rounds, promoting replayability and continuous enjoyment of the game."
 
-#### Portfolio:
-The portfolio page consists of masonry grid of images of makeup artist's clients to display her work. The images can be clicked to open and view. Below that, there will be a youtube video of the makeup artist working with her client. The masonry grid was made to present the portfolio pictures in a attractive way to the audience.
+![Reset]()
 
-![Portfolio](https://i.ibb.co/Bsv7mTz/Screenshot-2024-02-08-at-10-48-14-am.png)
-![Video](https://i.ibb.co/SK1Hpkq/Screenshot-2024-02-08-at-10-48-36-am.png)
+#### Mode: 
+Clicking on this icon toggles between different display modes, such as light mode and dark mode. Users can select their preferred mode for optimal viewing comfort, depending on their surroundings or personal preferences.
 
-#### Contact:
-The contact page consists of form to fill for the audience to reach out to the makeup artist for consultation and below that there is contact information of the makeup artist to book an appointment with her. In small devices like mobile I have added scroll bar for the contact information, as the mail id and address seems to be very large for small screens. A google map of her location is added below it.
+> "Implementing a toggle between dark and light modes caters to frequent players' preferences for comfortable viewing, especially during extended gameplay sessions."
 
-![Contact Form](https://i.ibb.co/z2pfxdX/Screenshot-2024-02-08-at-11-44-12-am.png)
-![Contact Information](https://i.ibb.co/47D3s21/Screenshot-2024-02-08-at-10-52-10-am.png)
-![Google Maps](https://i.ibb.co/413TbGV/Screenshot-2024-02-08-at-10-52-29-am.png)
+![Mode]()
 
-#### Thank You Page
-A customised 'form dump' page saying 'Thank You' has been included to Thank the users who took their time to fill out the form and share their information. The Thank-You page opens once the user clicks the send button after fulfilling the required information in the form.
+#### Themes: 
+This icon provides access to a panel where users can choose from various color themes for the game interface. By selecting a theme, users can customize the appearance of the game according to their preferences or mood.
 
-![Thank-You-Page](https://i.ibb.co/sbRbsvn/Screenshot-2024-02-08-at-11-32-56-pm.png)
+> "Offering a variety of colorful themes helps maintain engagement for frequent players, preventing monotony and enhancing the overall user experience."
 
-#### 404 Error Page:
-I have also added a customised 404 error page which can be seen when anything is typed at the end of the URL and pressed enter. This page would add a little fun element to the website and the users.
-![404-Page](https://i.ibb.co/hWF49sB/Screenshot-2024-02-12-at-11-11-37-am.png)
+![Themes]()
+
+#### Statistics: 
+Clicking on this icon opens a modal displaying game statistics of player's achievements. It includes information such as number of games played, win percentage, games won and games lost for tracking progress and performance.
+
+> "Tracking and displaying the best scores across multiple sessions adds motivation for frequent players, allowing them to monitor their progress and strive for improvement."
+
+
+![Statistics]()
+
+#### Game Area:
+The game area consists of grid of tiles in which the user can enter the letters to guess the word. The color of the tiles can be changed by choosing a color in the themes menu. The background of the game area will be changed between black and half-white according to dark and light mode.
+Apart from this the tiles also performs various animations and shows alert messages as follows.
+
+![Game Area]()
+
+##### Flip Animation:
+When the user enters a valid guess, the tiles in the game area perform a flipping animation to visually indicate the validation of the guess. The game then proceeds to validate the guess against the correct answer. Based on this validation, each tile receives a class that determines its color and visual representation:
+
+- Green Tiles: Tiles representing letters that are present in the word and in the correct position are assigned a class that gives them a green color. This indicates that the user has guessed these letters correctly.
+
+- Yellow Tiles: Tiles representing letters that are present in the word but not in the correct position are assigned a class that gives them a yellow color. This indicates that the user has guessed these letters correctly but in the wrong position.
+
+- Grey Tiles: Tiles representing letters that are not present in the word are assigned a class that gives them a grey color. This indicates that the user has guessed these letters incorrectly.
+
+By assigning these classes and colors to the tiles, the game provides clear visual feedback to the user, helping them understand the correctness of their guess and guiding them in subsequent attempts. Additionally, the flipping animation adds a engaging element to the gameplay experience, enhancing user immersion and enjoyment.
+
+> "Adding fun animations keeps the gameplay engaging and interesting."
+
+![Flip Animation]()
+
+##### Shake Animation:
+If a word not in the list of valid words for gameplay is entered by the user, the tiles in the game area respond with a shake animation to indicate an invalid guess. This visual cue helps users recognize that their input does not match any valid words in the game's vocabulary, prompting them to try another word.
+
+> "Adding fun animations keeps the gameplay engaging and interesting."
+
+![Shake Animation]()
+
+##### Dance Tile Animation:
+When the user guesses the correct word, the tiles perform a dance animation, celebrating the user's victory. This animated display adds a touch of excitement and reward to the gameplay experience, reinforcing the user's success and creating a positive interaction with the game.
+
+> "Adding fun animations keeps the gameplay engaging and interesting."
+
+![Dance Animation]()
+
+##### Alert Messages:
+
+Alert messages are displayed on the tiles for various scenarios to guide the user to play more effectively:
+
+When the user enters an invalid guess, an alert message stating "Not in word list." is displayed. This informs the user that the entered word is not valid for the game.
+
+If the user submits a word before entering 5 letters, an alert message displays "Not enough letters." This reminds the user to input a complete word before submitting.
+
+When the user correctly guesses the word, an alert message appears saying "Congratulations, You win." to celebrate the user's victory.
+
+If the user is unable to guess the word after 6 attempts, an alert message displays "Oops.. You missed it.. The correct word is ' [correct word] '." This informs the user of the correct word, providing closure to the game round.
+
+These alert messages assist the user by providing feedback and guidance throughout the gameplay, ensuring a smoother and more engaging experience.
+
+> "- The user interface should be welcoming and intuitive, making it easy for first-time players to navigate and interact with the game."
+
+![Alert Messages]()
+
+#### Keyboard Area:
+The keyboard area comprises a keyboard interface that allows users to input letters into the tiles either by clicking or touching them, depending on the device they are using. The colors of the keyboard dynamically change between dark grey and half-white based on the selected dark and light mode themes. This ensures consistency with the overall color scheme of the interface, providing a visually cohesive experience for the user across different modes.
+
+![Keyboard Area]()
 
 #### Footer:
-#### Social Links
-Links of Facebook and Instagram will take to the makeup artist's social media page which can be found on the bottom of each page at the footer. Youtube and Twitter links will take the user to the respective social media platform in a new tab.
+The footer of the landing page contains a copyright message positioned at the bottom of the page.
 
-![Social-Links](https://i.ibb.co/6NhkFBf/Screenshot-2024-02-08-at-10-45-21-am.png)
-
-#### Footer Comment
-A comment has been added to the footer to indicate that the site is intended for educational purposes only. This has been done as the logo-image used was sourced from a google search, and I do not have the rights to the image. The image has been credited in this document.
+![Footer]()
 
 ### Future Features:
-- Upgraded gallery with left and right buttons to navigate between images.
-- A calender page of the artist to check her availability.
-- A brochure of services provided by her with it's price range.
-- To update with discounts during seasonal time.
-- More rich and classy looking website.
+##### Sound Effects: 
+Implementing sound effects to enhance the gaming experience, making it more enjoyable and immersive for users.
+
+##### Difficulty Modes: 
+Introducing easy and hard modes to cater to varying skill levels and preferences among players. This allows users to adjust the game's difficulty according to their proficiency and desired level of challenge.
+
+##### Guess Distribution Graph: 
+Adding a graphical representation of guess distribution in the statistics section, similar to the original Wordle version. This feature provides insights into the user's guessing patterns and performance over time.
+
+##### Login Feature: 
+Incorporating a login feature to enable users to save their game statistics and progress to their account. This allows users to access their data from different devices and continue their gameplay seamlessly.
+
+##### Expanded Theme Selection: 
+Adding more themes with vibrant colors and diverse designs to enhance the visual appeal of the gameplay. Offering a variety of themes allows users to customize their gaming experience according to their preferences and mood.
 
 ## Testing and Challenges:
 - I came across many challenges while creating this website. One of the major challenge which I kept facing again and again was positioning the contents in the centre of the page. Then after many trial and errors, I learnt to create a parent div and give flex values to it helped me to centre the content in many places.
