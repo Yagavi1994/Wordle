@@ -1,7 +1,7 @@
 # WORDLE
 Wordle is a well-known word-guessing game. The basic concept of the game is to guess the secret word in six tries, based on the color of the changing tile, which indicates the accuracy of our guess. By default, Wordle has a black and white color theme for dark and light modes. As a user, I wished it had more colorful themes. Therefore, as a developer, I decided to recreate the game with vibrant themes.
 
-![Site view across devices](documentation/Responsive Screen.png)
+![Site view across devices](documentation/responsive-screen.png)
 
 The link to the game can be found [HERE](https://yagavi1994.github.io/Wordle/)
 
@@ -48,8 +48,10 @@ The link to the game can be found [HERE](https://yagavi1994.github.io/Wordle/)
 
 I made my wireframe for the game using Figma.
 
-![Mobile Wireframe](documentation/Mobile - Wireframe.png)
-![Game Area](documentation/Game Area - Wireframe.png)
+![Mobile Wireframe](documentation/mobile-wireframe.png)
+![Game Area](documentation/game-area-wireframe.png)
+![How to play](documentation/how-to-play-wireframe.png)
+![Statistics](documentation/statistics-wireframe.png)
 
 ### Colour Scheme:
 
@@ -59,8 +61,8 @@ Conversely, in the dark mode, deeper and richer shades of purple and blue were i
 
 Throughout both light and dark modes, the emphasis was placed on avoiding excessively bright or harsh colors that could strain the player's eyes. By maintaining a balance between aesthetics and visual comfort, the game aims to enhance the overall gaming experience for players, regardless of their chosen mode.
 
-![Light Mode]()
-![Dark Mode]()
+![Light Mode](documentation/light-mode-palette.png)
+![Dark Mode](documentation/dark-mode-palette.png)
 
 ### Typography:
 
@@ -77,14 +79,14 @@ The decision to avoid excessive styling aligns with the goal of keeping the game
 #### Landing Page:
 The landing page is the main and sole page of the web application. It features a navigation bar at the top, providing access to various functionalities. In the middle of the landing page lies the game area, comprising a grid of tiles where users can input letters either by typing or clicking. Directly below the game area is a keyboard interface, allowing users to select letters to form words for guessing. Finally, at the bottom of the page, there is a footer displaying a copyright message.
 
-![Landing Page]()
+![Landing Page](documentation/landing-page.png)
 
 #### Navigation bar:
 The navigation bar on the landing page features the logo on the right side, serving as a visual identifier for the web application. On the left side of the navigation bar, users can find how to play, reset, mode, themes and statistics icons representing different functionalities to interact with the web application.
 
 > "The user interface should be welcoming and intuitive, making it easy for first-time players to navigate and interact with the game."
 
-![Navigation Bar]()
+![Navigation Bar](documentation/nav-bar.png)
 
 The features of those icons are explained as follows.
 
@@ -197,7 +199,7 @@ These alert messages assist the user by providing feedback and guidance througho
 #### Footer:
 The footer of the landing page contains a copyright message positioned at the bottom of the page.
 
-![Footer]()
+![Footer](documentation/footer.png)
 
 ### Future Features:
 ##### Sound Effects: 
@@ -253,22 +255,26 @@ Adding more themes with vibrant colors and diverse designs to enhance the visual
 - HTML files pass through the [W3C validator](https://validator.w3.org/) with no issues found.
 
    - Result for index.html
-   ![index.html]()
+   ![index.html](documentation/html-validator.png)
 
 - CSS files pass through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues found.
 
    - Result for CSS.
-   ![CSS]()
+   ![CSS](documentation/css-validator.png)
 
 - The Javascript files passed through the validator testing with some warnings from [Javascript validator](https://jshint.com/)
 
    - Result for Javascript.
-   ![Javascript]()
+   ![Javascript](documentation/javascript-validator.png)
 
 - All pages has a good Accessibility rating in Lighthouse.
 
    - Result for Lighthouse testing.
-   ![Lighthouse]()
+   ##### Light Mode:
+   ![Light Mode Lighthouse](documentation/light-mode-palette.png)
+
+   ##### Dark Mode:
+   ![Dark Mode Lighthouse](documentation/dark-mode-palette.png)
 
 ### Bugs:
 ##### Tile Color Change Bug: 
