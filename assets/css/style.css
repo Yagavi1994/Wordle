@@ -481,6 +481,7 @@ button:hover {
     justify-content: center;
     user-select: none;
     transition: transform 250ms linear;
+    transition: background-color 0.3s ease;
 }
 
 /* Colors themes for tiles ---------------------------------------------------------------------------------------------- */
@@ -653,6 +654,8 @@ button:hover {
     box-shadow: 1px 1px #494646;
     cursor: pointer;
     font-weight: 600;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
 }
 
 .key-large {
