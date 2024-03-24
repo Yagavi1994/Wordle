@@ -481,7 +481,6 @@ button:hover {
     justify-content: center;
     user-select: none;
     transition: transform 250ms linear;
-    transition: background-color 0.3s ease;
 }
 
 /* Colors themes for tiles ---------------------------------------------------------------------------------------------- */
