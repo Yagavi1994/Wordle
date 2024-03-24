@@ -15503,7 +15503,7 @@ function handleGameResult(result, word) {
         showAlert(`Congratulation, You Win`, 5000);
         setTimeout(() => {
             openStatistics();
-        }, 3000);
+        }, 5000);
     }
     else if (result === "lose") {
 
