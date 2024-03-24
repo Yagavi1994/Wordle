@@ -46,9 +46,14 @@ The link to the game can be found [HERE](https://yagavi1994.github.io/Wordle/)
 
 ### Wireframes:
 
-I made my wireframe for the game using Figma.
+I made wireframes for the game using Figma.
+
+##### Mobile Wireframe:
 
 ![Mobile Wireframe](documentation/mobile-wireframe.png)
+
+##### Desktop Wireframes:
+
 ![Game Area](documentation/game-area-wireframe.png)
 ![How to play](documentation/how-to-play-wireframe.png)
 ![Statistics](documentation/statistics-wireframe.png)
@@ -61,7 +66,11 @@ Conversely, in the dark mode, deeper and richer shades of purple and blue were i
 
 Throughout both light and dark modes, the emphasis was placed on avoiding excessively bright or harsh colors that could strain the player's eyes. By maintaining a balance between aesthetics and visual comfort, the game aims to enhance the overall gaming experience for players, regardless of their chosen mode.
 
+##### Light Mode:
+
 ![Light Mode](documentation/light-mode-palette.png)
+
+##### Dark Mode:
 ![Dark Mode](documentation/dark-mode-palette.png)
 
 ### Typography:
@@ -103,8 +112,6 @@ When clicked, this icon opens a modal that offers comprehensive instructions on 
 This icon allows users to reset the game or start a new round. Upon clicking, any ongoing game progress is cleared, and the game board is reset to its initial state, ready for a fresh gameplay session.
 
 > "Facilitating easy game resets allows frequent players to quickly start new rounds, promoting replayability and continuous enjoyment of the game."
-
-![Reset]()
 
 #### Mode: 
 Clicking on this icon toggles between different display modes, such as light mode and dark mode. Users can select their preferred mode for optimal viewing comfort, depending on their surroundings or personal preferences.
@@ -271,10 +278,10 @@ Adding more themes with vibrant colors and diverse designs to enhance the visual
 
    - Result for Lighthouse testing.
    ##### Light Mode:
-   ![Light Mode Lighthouse](documentation/light-mode-palette.png)
+   ![Light Mode Lighthouse](documentation/lighthouse-lightmode.png)
 
    ##### Dark Mode:
-   ![Dark Mode Lighthouse](documentation/dark-mode-palette.png)
+   ![Dark Mode Lighthouse](documentation/lighthouse-darkmode.png)
 
 ### Bugs:
 ##### Tile Color Change Bug: 
