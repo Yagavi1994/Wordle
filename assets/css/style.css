@@ -209,7 +209,7 @@ button:hover {
 #htp-body {
     margin: auto;
     display: flex;
-    max-width: 0x;
+    max-width: 0px;
     max-height: 0px;
     flex-direction: column;
     align-items: center;
@@ -537,7 +537,7 @@ button:hover {
 .red .tile[data-state="wrong"],
 .dark-mode .tile[data-state="wrong"],
 .tile[data-state="wrong"] {
-    border-color: none;
+    border: none;
     background-color: #494646;
 }
 
@@ -547,7 +547,7 @@ button:hover {
 .red .tile[data-state="wrong-location"],
 .dark-mode .tile[data-state="wrong-location"],
 .tile[data-state="wrong-location"] {
-    border-color: none;
+    border: none;
     background-color: #ceb40f;
 }
 
@@ -557,7 +557,7 @@ button:hover {
 .red .tile[data-state="correct"],
 .dark-mode .tile[data-state="correct"],
 .tile[data-state="correct"] {
-    border-color: none;
+    border: none;
     background-color: #058425;
 }
 

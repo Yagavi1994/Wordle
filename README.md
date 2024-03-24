@@ -1,7 +1,7 @@
 # WORDLE
 Wordle is a well-known word-guessing game. The basic concept of the game is to guess the secret word in six tries, based on the color of the changing tile, which indicates the accuracy of our guess. By default, Wordle has a black and white color theme for dark and light modes. As a user, I wished it had more colorful themes. Therefore, as a developer, I decided to recreate the game with vibrant themes.
 
-![Site-view-across-devices](Add screenshot of Am I Responsive?)
+![Site view across devices](documentation/Responsive Screen.png)
 
 The link to the game can be found [HERE](https://yagavi1994.github.io/Wordle/)
 
@@ -48,8 +48,8 @@ The link to the game can be found [HERE](https://yagavi1994.github.io/Wordle/)
 
 I made my wireframe for the game using Figma.
 
-![Mobile Wireframe]()
-![Desktop Wireframe]()
+![Mobile Wireframe](documentation/Mobile - Wireframe.png)
+![Game Area](documentation/Game Area - Wireframe.png)
 
 ### Colour Scheme:
 
@@ -335,6 +335,9 @@ These bug fixes and debugging efforts contribute to a smoother and more seamless
 - I would like to credit the [Wordle](https://www.nytimes.com/games/wordle/index.html) game, which served as inspiration for this project. Wordle has been a favorite pastime for me, and its gameplay mechanics influenced the development of this project.
 - I extend my gratitude to my mentor, Martina Terlevic, for her invaluable guidance and support throughout the project. Her encouragement and feedback played a significant role in shaping the project and boosting my confidence.
 - Special thanks to my husband, who is a game designer, for his constructive criticism and attention to detail in the UI and UX aspects of the project. His insights greatly contributed to the refinement of the project.
-- I would like to credit my cousin, a developer, for his assistance in resolving JavaScript bugs and adding the confetti animation to the game. His technical expertise was instrumental in overcoming challenges during the development process.
-- I appreciate the valuable inputs provided by Dajana Isbaner during the peer code review. 
+- I would like to credit my cousin, a developer, for his assistance in resolving some JavaScript bugs and adding the confetti animation to the game.
+- I appreciate the valuable inputs provided by a fellow student  Dajana Isbaner in the peer code review. 
+
+#### Code
+- I would like to credit [Web Dev Simplified](https://www.youtube.com/watch?v=Wak7iN4JZzU) for their helpful tutorial, which provided guidance and assistance in writing the code for the main function of the game.
 
