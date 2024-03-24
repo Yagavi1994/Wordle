@@ -15296,6 +15296,7 @@ const dictionary = [
     "shave"
 ]
 
+
 // Global Variables
 
 const WORD_LENGTH = 5;
@@ -15396,7 +15397,20 @@ function deleteKey() {
     delete lastTile.dataset.letter;
 }
 
-
+// Function to get letter counts for given word
+// Learnt this code from my cousin
+const getLetterCount = (word) => {
+    const map = {}
+    const wordArr = [...word]
+    wordArr.forEach((letter) => {
+        if(letter in map) {
+            map[letter] += 1
+        } else {
+            map[letter] = 1
+        }
+    })
+    return map
+}
 
 /** Function to submit the word when pressed enter and
  * check whether enough letters are entered.
@@ -15422,13 +15436,49 @@ function submitGuess() {
         shakeTiles(activeTiles);
         return;
     }
+    // Learnt this code from my cousin
+    // Holds count of each letter in target word
+    // Eg: LLAMA will have {"L": 2, "A": 2, "M": 1}
+    const targetLetterCount = getLetterCount(targetWord)
+
+    // Holds state (ie., correct/wrong/wrong-location) of each letter
+    const letterStateArr = Array(WORD_LENGTH)
+
+    // Handle correct letters
+    for(let i = 0; i < WORD_LENGTH; i++) {
+        const targetLetter = targetWord[i]
+        const inputLetter = activeTiles[i].dataset.letter
+        if(targetLetter === inputLetter) {
+            // Decrease the remaining letter by 1
+            targetLetterCount[targetLetter] -= 1
+            // Mark the letter position as correct
+            letterStateArr[i] = 'correct'
+        }
+    }
+
+    // Handle incorrect letters
+    for(let i = 0; i < WORD_LENGTH; i++) {
+        // Continue with next iteration, if letter is already marked correct
+        if(letterStateArr[i]) {
+            continue;
+        }
+        const inputLetter = activeTiles[i].dataset.letter
+        // If the remaining letter count is 0, it is wrong, else it's in wrong-location
+        if(inputLetter in targetLetterCount && targetLetterCount[inputLetter] > 0) {
+            letterStateArr[i] = 'wrong-location'
+        } else {
+            letterStateArr[i] = 'wrong'
+        }
+    }
 
     if (guess === targetWord) {
-        activeTiles.forEach((...params) => flipTile(...params, guess));
+        activeTiles.forEach((...params) => flipTile(...params, letterStateArr));
         setTimeout(() => {
             danceTiles(activeTiles);
         }, FLIP_ANIMATION_DURATION * 5);
         stopInteraction();
+        // Pop confetti
+        jsConfetti.addConfetti();
         handleGameResult("win", guess);
         return;
     }
@@ -15440,7 +15490,7 @@ function submitGuess() {
     }
 
     stopInteraction();
-    activeTiles.forEach((...params) => flipTile(...params, guess));
+    activeTiles.forEach((...params) => flipTile(...params, letterStateArr));
 }
 
 
@@ -15471,9 +15521,7 @@ function handleGameResult(result, word) {
  * Checks whether the letters in the word is in correct or wrong location and adds respective classes to them.
  */
 
-function flipTile(tile, index, array, guess) {
-    const letter = tile.dataset.letter;
-    const key = keyboard.querySelector(`[data-key="${letter}"i]`);
+function flipTile(tile, index, array, letterStateArr) {
     setTimeout(() => {
         tile.classList.add("flip");
     }, (index * FLIP_ANIMATION_DURATION) / 2);
@@ -15481,18 +15529,7 @@ function flipTile(tile, index, array, guess) {
     tile.addEventListener("transitionend", () => {
         tile.classList.remove("flip");
 
-        if (targetWord[index] === letter) {
-            tile.dataset.state = "correct";
-            key.classList.add("correct");
-        }
-        else if (targetWord.includes(letter)) {
-            tile.dataset.state = "wrong-location";
-            key.classList.add("wrong-location");
-        }
-        else {
-            tile.dataset.state = "wrong";
-            key.classList.add("wrong");
-        }
+        tile.dataset.state = letterStateArr[index]
 
         if (index === array.length - 1) {
             tile.addEventListener("transitionend", () => {
@@ -15622,50 +15659,34 @@ if (isLightMode) {
 // Function to reset the page without resetting the theme
 
 function resetPageWithoutThemeReset() {
-
-    // Save the current theme preference to localStorage
-    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-
-    // Save the current tile color preference to localStorage
-    const tileColor = document.body.classList.value;
-    localStorage.setItem('tileColor', tileColor);
-
     location.reload();
-
 }
 
 
 
-// Function to Initialize theme
-
-function initializeTheme() {
+// Initializes sun/moon icon classes
+function initializeSunMoon() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
         sunIcon.classList.remove('hidden');
         moonIcon.classList.add('hidden');
     } else {
-        document.body.classList.remove('dark-mode');
         sunIcon.classList.add('hidden');
         moonIcon.classList.remove('hidden');
     }
-
-
-    // Initialize the tile colors
-    const savedTileColor = localStorage.getItem('tileColor');
-    document.body.className = savedTileColor || ''; // Restore the saved tile colors
 }
 
-// Call initializeTheme function when the page loads
-window.addEventListener('load', initializeTheme);
+// Initialize sun/moon icons on load
+window.addEventListener('load', initializeSunMoon);
 
 
 // Attach event listeners to reset button.
 
 let resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", resetPageWithoutThemeReset);
-initializeTheme();
+
+// Initialize confetti instance
+const jsConfetti = new JSConfetti()
 
 
 
@@ -15758,10 +15779,7 @@ document.body.addEventListener("click", function (event) {
 function orangeTheme() {
     document.body.classList.remove('purple', 'blue', 'red');
     document.body.classList.add('orange');
-
-    const tileColor = document.body.classList.value;
-    localStorage.setItem('tileColor', tileColor);
-
+    localStorage.setItem('tileColor', 'orange');
 }
 const orange = document.getElementById('orange');
 orange.addEventListener('click', orangeTheme);
@@ -15772,9 +15790,7 @@ orange.addEventListener('click', orangeTheme);
 function purpleTheme() {
     document.body.classList.remove('orange', 'blue', 'red');
     document.body.classList.add('purple');
-
-    const tileColor = document.body.classList.value;
-    localStorage.setItem('tileColor', tileColor);
+    localStorage.setItem('tileColor', 'purple');
 
 }
 const purple = document.getElementById('purple');
@@ -15786,10 +15802,7 @@ purple.addEventListener('click', purpleTheme);
 function blueTheme() {
     document.body.classList.remove('purple', 'orange', 'red');
     document.body.classList.add('blue');
-
-    const tileColor = document.body.classList.value;
-    localStorage.setItem('tileColor', tileColor);
-
+    localStorage.setItem('tileColor', 'blue');
 }
 const blue = document.getElementById('blue');
 blue.addEventListener('click', blueTheme);
@@ -15800,10 +15813,7 @@ blue.addEventListener('click', blueTheme);
 function redTheme() {
     document.body.classList.remove('purple', 'orange', 'blue');
     document.body.classList.add('red');
-
-    const tileColor = document.body.classList.value;
-    localStorage.setItem('tileColor', tileColor);
-
+    localStorage.setItem('tileColor', 'red');
 }
 const red = document.getElementById('red');
 red.addEventListener('click', redTheme);

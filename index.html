@@ -8,10 +8,28 @@
     <meta name="keywords" content="words, puzzle, letters, game">
     <link rel="icon" type="image/png" href="assets/images/title-logo.png">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Library to enable confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <title>Wordle</title>
 </head>
 
 <body>
+    <script>
+        // Keeping this script here: 
+        // Since the classes has to be set before the HTML parses to avoid theme flashes
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+
+        // Initialize the tile colors
+        const savedTileColor = localStorage.getItem('tileColor');
+        if (savedTileColor) {
+            document.body.classList.add(savedTileColor);
+        }
+    </script>
 <!-- Header --------------------------------------------------------------------------------------------------------->
     <header>
         <div id="overlay" class="hidden"></div>
