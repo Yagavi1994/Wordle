@@ -378,7 +378,7 @@ button:hover {
     transform: translate(-50%) scale(1);
     border-radius: 2%;
     box-shadow: 5px 5px 5px #0b0b0b;
-    transition: height 0.5s ease-out, opacity 1s ease-out;
+    transition: height 0.7s ease-out, opacity 1s ease-out;
     opacity: 1;
 
 }

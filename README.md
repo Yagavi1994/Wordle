@@ -132,7 +132,7 @@ Apart from this the tiles also performs various animations and shows alert messa
 
 ![Game Area]()
 
-##### Flip Animation:
+#### Flip Animation:
 When the user enters a valid guess, the tiles in the game area perform a flipping animation to visually indicate the validation of the guess. The game then proceeds to validate the guess against the correct answer. Based on this validation, each tile receives a class that determines its color and visual representation:
 
 - Green Tiles: Tiles representing letters that are present in the word and in the correct position are assigned a class that gives them a green color. This indicates that the user has guessed these letters correctly.
@@ -147,21 +147,28 @@ By assigning these classes and colors to the tiles, the game provides clear visu
 
 ![Flip Animation]()
 
-##### Shake Animation:
+#### Shake Animation:
 If a word not in the list of valid words for gameplay is entered by the user, the tiles in the game area respond with a shake animation to indicate an invalid guess. This visual cue helps users recognize that their input does not match any valid words in the game's vocabulary, prompting them to try another word.
 
 > "Adding fun animations keeps the gameplay engaging and interesting."
 
 ![Shake Animation]()
 
-##### Dance Tile Animation:
+#### Dance Tile Animation:
 When the user guesses the correct word, the tiles perform a dance animation, celebrating the user's victory. This animated display adds a touch of excitement and reward to the gameplay experience, reinforcing the user's success and creating a positive interaction with the game.
 
 > "Adding fun animations keeps the gameplay engaging and interesting."
 
 ![Dance Animation]()
 
-##### Alert Messages:
+#### Confetti Animation:
+A confetti animation is played when the user guesses the right word and wins the game to celebrate their victory.
+
+> "Adding fun animations keeps the gameplay engaging and interesting."
+
+![Confetti Animation]()
+
+#### Alert Messages:
 
 Alert messages are displayed on the tiles for various scenarios to guide the user to play more effectively:
 
@@ -306,20 +313,9 @@ Adding more themes with vibrant colors and diverse designs to enhance the visual
 - Press enter.
 
 ## Credits
-- I would like to credit my mentor Martina Terlevic for her guidance and support. To help me identify whether have I fulfilled all the criterias required for the project to be complete and for sharing me the links of websites that would be helpful while creating website.
-- I would credit the Love Running project walkthrough, which helped a lot in creating the basic structure of my website. I wouldn't have been able to create that drop-down nav toggle menu without it.
-- My husband supported me and helped a lot with this project by giving his constant constructive feedbacks and helping me with photoshopping images wherever required, so I would like to thank him for his help and support.
-- I got a friend through slack named Harry. I would like to thank him for giving his idea to create a customised 404 error page. He also helped me in clarifying my doubts when I didn't know how to make the 404 error page work.
-- The Youtube tutorial I followed to create [The Portfolio Masonry Grid](https://youtu.be/3TN9J3pCn6k?si=pVdm875MrmF8zwGU)
-- Another youtube tutorial followed to create [The Pop-up Image Gallery](https://youtu.be/uxYfxLsUuP0?si=SdAEH1rWO-zgVJ6N)
-- The Wix website template which acted as a wireframe for my project [Wix Template](https://rb.gy/384srs)
-- My dear friend Sindhu, for whom I created this website. Who believed in me and gave permission to create this website for her and provided me with all the necessary informations and images.
+- I would like to credit the [Wordle](https://www.nytimes.com/games/wordle/index.html) game, which served as inspiration for this project. Wordle has been a favorite pastime for me, and its gameplay mechanics influenced the development of this project.
+- I extend my gratitude to my mentor, Martina Terlevic, for her invaluable guidance and support throughout the project. Her encouragement and feedback played a significant role in shaping the project and boosting my confidence.
+- Special thanks to my husband, who is a game designer, for his constructive criticism and attention to detail in the UI and UX aspects of the project. His insights greatly contributed to the refinement of the project.
+- I would like to credit my cousin, a developer, for his assistance in resolving JavaScript bugs and adding the confetti animation to the game. His technical expertise was instrumental in overcoming challenges during the development process.
+- I appreciate the valuable inputs provided by Dajana Isbaner during the peer code review. 
 
-### Media:
-- [The Logo Image](https://rb.gy/pp143q)
-- [Freepik.com](https://www.freepik.com/)
-
-### Youtube:
-
-- [Masonry Grid](https://youtu.be/3TN9J3pCn6k?si=pVdm875MrmF8zwGU)
-- [Pop-up Image](https://youtu.be/uxYfxLsUuP0?si=SdAEH1rWO-zgVJ6N)
