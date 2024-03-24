@@ -15759,6 +15759,9 @@ function orangeTheme() {
     document.body.classList.remove('purple', 'blue', 'red');
     document.body.classList.add('orange');
 
+    const tileColor = document.body.classList.value;
+    localStorage.setItem('tileColor', tileColor);
+
 }
 const orange = document.getElementById('orange');
 orange.addEventListener('click', orangeTheme);
@@ -15769,6 +15772,9 @@ orange.addEventListener('click', orangeTheme);
 function purpleTheme() {
     document.body.classList.remove('orange', 'blue', 'red');
     document.body.classList.add('purple');
+
+    const tileColor = document.body.classList.value;
+    localStorage.setItem('tileColor', tileColor);
 
 }
 const purple = document.getElementById('purple');
@@ -15781,6 +15787,9 @@ function blueTheme() {
     document.body.classList.remove('purple', 'orange', 'red');
     document.body.classList.add('blue');
 
+    const tileColor = document.body.classList.value;
+    localStorage.setItem('tileColor', tileColor);
+
 }
 const blue = document.getElementById('blue');
 blue.addEventListener('click', blueTheme);
@@ -15791,6 +15800,9 @@ blue.addEventListener('click', blueTheme);
 function redTheme() {
     document.body.classList.remove('purple', 'orange', 'blue');
     document.body.classList.add('red');
+
+    const tileColor = document.body.classList.value;
+    localStorage.setItem('tileColor', tileColor);
 
 }
 const red = document.getElementById('red');
