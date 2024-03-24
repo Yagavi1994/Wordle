@@ -271,9 +271,28 @@ Adding more themes with vibrant colors and diverse designs to enhance the visual
    ![Lighthouse]()
 
 ### Bugs:
+##### Tile Color Change Bug: 
+Initially, the tiles were not changing colors after flipping when different themes were set. Upon investigation, it was discovered that the respective color theme classes were not added to the tiles in the JavaScript code. Adding these classes resolved the issue.
 
+##### Overlay Effect Disappearance: 
+The overlay effect applied to the "How to Play" and "Statistics" modals disappeared when clicking anywhere inside the modals. Assigning different overlay classes to each modal solved this problem, ensuring the overlay effect remained intact.
+
+##### Close Button Dysfunctionality: 
+On smaller screens, the close button in the "How to Play" modal was not functioning properly. Increasing the z-index of the modal resolved this issue, allowing users to close the modal seamlessly.
+
+##### Unintended Modal Opening: 
+While the themes menu was open, users could click on other icons and open additional modals without closing the themes menu. To address this bug, a transparent overlay was created to block access to other icons when the themes menu is open, ensuring proper behavior.
+
+##### Theme and Mode Reset Bug: 
+Themes and modes were reverting to default settings upon page reset. Implementing local storage to save theme and mode selections ensured that these preferences persisted across page resets.
+
+##### Flash of White Background: 
+When the reset icon was pressed in dark mode, there was a brief flash of white background. This issue was debugged by moving the theme reset code to the top of the HTML, eliminating the flash of white background upon reset.
+
+These bug fixes and debugging efforts contribute to a smoother and more seamless user experience, ensuring that the game functions as intended across different scenarios and interactions.
 
 ### Unfixed Bugs:
+- There is no unfixed bugs to my knowledge.
 
 ## Technologies Used
 ### Main Languages Used:
