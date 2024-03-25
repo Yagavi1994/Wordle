@@ -106,7 +106,7 @@ When clicked, this icon opens a modal that offers comprehensive instructions on 
 
 > "Clear explanations should be given regarding the conditions for winning or losing the game, helping new players set their objectives."
 
-![How To Play](documentation/how-to-play.mp4)
+![How To Play](documentation/how-to-play.gif)
 
 #### Reset: 
 This icon allows users to reset the game or start a new round. Upon clicking, any ongoing game progress is cleared, and the game board is reset to its initial state, ready for a fresh gameplay session.
@@ -118,14 +118,14 @@ Clicking on this icon toggles between different display modes, such as light mod
 
 > "Implementing a toggle between dark and light modes caters to frequent players' preferences for comfortable viewing, especially during extended gameplay sessions."
 
-![Mode](documentation/mode.mp4)
+![Mode](documentation/mode.gif)
 
 #### Themes: 
 This icon provides access to a panel where users can choose from various color themes for the game interface. By selecting a theme, users can customize the appearance of the game according to their preferences or mood.
 
 > "Offering a variety of colorful themes helps maintain engagement for frequent players, preventing monotony and enhancing the overall user experience."
 
-![Themes](documentation/themes.mp4)
+![Themes](documentation/themes.gif)
 
 #### Statistics: 
 Clicking on this icon opens a modal displaying game statistics of player's achievements. It includes information such as number of games played, win percentage, games won and games lost for tracking progress and performance.
@@ -133,7 +133,7 @@ Clicking on this icon opens a modal displaying game statistics of player's achie
 > "Tracking and displaying the best scores across multiple sessions adds motivation for frequent players, allowing them to monitor their progress and strive for improvement."
 
 
-![Statistics](documentation/statistics.mp4)
+![Statistics](documentation/statistics.gif)
 
 #### Game Area:
 The game area consists of grid of tiles in which the user can enter the letters to guess the word. The color of the tiles can be changed by choosing a color in the themes menu. The background of the game area will be changed between black and half-white according to dark and light mode.
@@ -154,28 +154,28 @@ By assigning these classes and colors to the tiles, the game provides clear visu
 
 > "Adding fun animations keeps the gameplay engaging and interesting."
 
-![Flip Animation](documentation/flip.mp4)
+![Flip Animation](documentation/flip.gif)
 
 #### Shake Animation:
 If a word not in the list of valid words for gameplay is entered by the user, the tiles in the game area respond with a shake animation to indicate an invalid guess. This visual cue helps users recognize that their input does not match any valid words in the game's vocabulary, prompting them to try another word.
 
 > "Adding fun animations keeps the gameplay engaging and interesting."
 
-![Shake Animation](documentation/shake.mp4)
+![Shake Animation](documentation/shake.gif)
 
 #### Dance Tile Animation:
 When the user guesses the correct word, the tiles perform a dance animation, celebrating the user's victory. This animated display adds a touch of excitement and reward to the gameplay experience, reinforcing the user's success and creating a positive interaction with the game.
 
 > "Adding fun animations keeps the gameplay engaging and interesting."
 
-![Dance Animation](documentation/dance.mp4)
+![Dance Animation](documentation/dance.gif)
 
 #### Confetti Animation:
 A confetti animation is played when the user guesses the right word and wins the game to celebrate their victory.
 
 > "Adding fun animations keeps the gameplay engaging and interesting."
 
-![Confetti Animation](documentation/confetti.mp4)
+![Confetti Animation](documentation/confetti.gif)
 
 #### Alert Messages:
 
