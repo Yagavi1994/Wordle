@@ -80,6 +80,7 @@ function handlePressKey(e) {
 }
 
 
+
 // Function to enter the letter in the guess grid when it's clicked or pressed in the keyboard.
 
 function pressKey(key) {
@@ -104,8 +105,10 @@ function deleteKey() {
     delete lastTile.dataset.letter;
 }
 
+
+
 // Function to get letter counts for given word
-// Learnt this code from my cousin
+
 const getLetterCount = (word) => {
     const map = {}
     const wordArr = [...word]
@@ -119,11 +122,14 @@ const getLetterCount = (word) => {
     return map
 }
 
+
+
 /** Function to submit the word when pressed enter and
  * check whether enough letters are entered.
  * whether the entered guess is a valid word from dictionary.
- * show alert when the word guessed is equal to the target word.
- * and if no remaining tiles are there, shows the target word in the alert.
+ * check if number of times a letter present in the guess is equal to number of times it is present in target word.
+ * check whether the word guessed is equal to the target word to see has the player won.
+ * and if no remaining tiles are there to see has the player lost the game.
 */
 
 function submitGuess() {
@@ -143,7 +149,7 @@ function submitGuess() {
         shakeTiles(activeTiles);
         return;
     }
-    // Learnt this code from my cousin
+   
     // Holds count of each letter in target word
     // Eg: LLAMA will have {"L": 2, "A": 2, "M": 1}
     const targetLetterCount = getLetterCount(targetWord)
@@ -202,7 +208,7 @@ function submitGuess() {
 
 
 
-// Function to show alert and open statistics.
+// Function to show alert based on whether the player has won or lost and open statistics.
 
 function handleGameResult(result, word) {
     if (result === "win") {
@@ -360,13 +366,6 @@ function toggleTheme() {
     localStorage.setItem('theme', theme);
 }
 
-// Check if the user previously selected light mode and apply it
-const isLightMode = JSON.parse(localStorage.getItem('isLightMode'));
-if (isLightMode) {
-    document.body.classList.add('light-mode');
-}
-
-
 
 // Function to reset the page without resetting the theme
 
@@ -376,7 +375,8 @@ function resetPageWithoutThemeReset() {
 
 
 
-// Initializes sun/moon icon classes
+// Function to initialize sun/moon icon classes
+
 function initializeSunMoon() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -393,7 +393,6 @@ window.addEventListener('load', initializeSunMoon);
 
 
 // Attach event listeners to reset button.
-
 let resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", resetPageWithoutThemeReset);
 
@@ -409,6 +408,7 @@ const htpBody = document.getElementById("htp-body");
 const closeButton = document.getElementById("close");
 const rulesBoxOverlay = document.getElementById("rules-box-overlay");
 
+
 // Function to open rule box
 
 function openRulesBox() {
@@ -416,14 +416,16 @@ function openRulesBox() {
     rulesBoxOverlay.classList.remove("hidden");
 }
 
-// Attach event listeners to open and close the rules box
 
 howToPlayBtn.addEventListener("click", function (event) {
     event.stopPropagation(); // Prevent event from bubbling up
     openRulesBox();
 });
 
+
+
 // Function to close rule box
+
 function closeRulesBox() {
     htpBody.setAttribute("data-display-container", "false");
     rulesBoxOverlay.classList.add("hidden");
@@ -435,7 +437,6 @@ closeButton.addEventListener("click", function (event) {
 });
 
 // Event listener to close rules box when clicked outside of it
-
 document.body.addEventListener("click", function (event) {
     if (!htpBody.contains(event.target) && event.target !== howToPlayBtn) {
         closeRulesBox();
@@ -455,7 +456,7 @@ const transparentOverlay = document.getElementById('transparent-overlay');
 
 function openThemesMenu() {
     themesMenu.classList.remove("hidden");
-    transparentOverlay.classList.remove("hidden"); // Added a new overlay to prevent other menus from opening while themes menu is open.
+    transparentOverlay.classList.remove("hidden"); // Added a new overlay to prevent other modals from opening while themes menu is open.
 
 }
 
@@ -474,8 +475,7 @@ function closeThemesMenu() {
 
 themesCloseButton.addEventListener("click", closeThemesMenu);
 
-// Event listener to close themes menu when clicking outside of it or on close button
-
+// Event listener to close themes menu when clicking outside of it
 document.body.addEventListener("click", function (event) {
     if (event.target !== themesButton && !themesMenu.contains(event.target)) {
         closeThemesMenu();
@@ -558,21 +558,18 @@ function closeStatistics() {
     overlay.classList.add("hidden");
 }
 
-// Event listener to close statistics menu when the close button is clicked.
 
 statisticsCloseButton.addEventListener("click", function (event) {
     event.stopPropagation();
     closeStatistics();
 });
 
-// Event listener to close statistics menu when clicking outside of it or on the overlay
-
+// Event listener to close statistics menu when clicked outside of it
 document.body.addEventListener("click", function (event) {
     if (!statistics.contains(event.target) && event.target !== statisticsButton) {
         closeStatistics();
     }
 });
-
 
 
 
