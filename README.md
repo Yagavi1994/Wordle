@@ -62,7 +62,7 @@ I made wireframes for the game using Figma.
 
 The primary enhancement to the game from its original version is the inclusion of themed color palettes for the tiles. Key colors such as purple, orange, blue, and red have been carefully curated for this purpose. In the light mode, gentle and muted hues of these colors were chosen to create a soothing visual experience for players.
 
-Conversely, in the dark mode, deeper and richer shades of purple and blue were implemented to cater to players who prefer a very dark background. This contrasts with the lighter tones of orange and red, which offer a touch of brightness to the dark-mode interface without being overly intense. The goal was to provide options for players with varying preferences regarding the darkness of the background.
+Conversely, in the dark mode, deeper and richer shades of purple and blue were implemented to cater to players who prefer a very dark background. This contrasts with the darker tones of orange and red, which offer a touch of brightness to the dark-mode interface without being overly intense. The goal was to provide options for players with varying preferences regarding the darkness of the background.
 
 Throughout both light and dark modes, the emphasis was placed on avoiding excessively bright or harsh colors that could strain the player's eyes. By maintaining a balance between aesthetics and visual comfort, the game aims to enhance the overall gaming experience for players, regardless of their chosen mode.
 
@@ -86,12 +86,12 @@ The decision to avoid excessive styling aligns with the goal of keeping the game
 ### Existing Features
 
 #### Landing Page:
-The landing page is the main and sole page of the web application. It features a navigation bar at the top, providing access to various functionalities. In the middle of the landing page lies the game area, comprising a grid of tiles where users can input letters either by typing or clicking. Directly below the game area is a keyboard interface, allowing users to select letters to form words for guessing. Finally, at the bottom of the page, there is a footer displaying a copyright message.
+The landing page is the main and sole page of the web application. It features a navigation bar at the top, providing access to various functionalities. In the middle of the landing page lies the game area, comprising a grid of tiles where users can input letters. Directly below the game area is a keyboard interface, allowing users to type letters to form words for guessing. Finally, at the bottom of the page, there is a footer displaying a copyright message.
 
 ![Landing Page](documentation/landing-page.png)
 
 #### Navigation bar:
-The navigation bar on the landing page features the logo on the right side, serving as a visual identifier for the web application. On the left side of the navigation bar, users can find how to play, reset, mode, themes and statistics icons representing different functionalities to interact with the web application.
+The navigation bar on the landing page features the logo on the left side, serving as a visual identifier for the web application. On the right side of the navigation bar, users can find how to play, reset, mode, themes and statistics icons representing different functionalities to interact with the web application.
 
 > "The user interface should be welcoming and intuitive, making it easy for first-time players to navigate and interact with the game."
 
@@ -144,11 +144,11 @@ Apart from this the tiles also performs various animations and shows alert messa
 #### Flip Animation:
 When the user enters a valid guess, the tiles in the game area perform a flipping animation to visually indicate the validation of the guess. The game then proceeds to validate the guess against the correct answer. Based on this validation, each tile receives a class that determines its color and visual representation:
 
-- Green Tiles: Tiles representing letters that are present in the word and in the correct position are assigned a class that gives them a green color. This indicates that the user has guessed these letters correctly.
+- **Green Tiles**: Tiles representing letters that are present in the word and in the correct position are assigned a class that gives them a green color. This indicates that the user has guessed these letters correctly.
 
-- Yellow Tiles: Tiles representing letters that are present in the word but not in the correct position are assigned a class that gives them a yellow color. This indicates that the user has guessed these letters correctly but in the wrong position.
+- **Yellow Tiles**: Tiles representing letters that are present in the word but not in the correct position are assigned a class that gives them a yellow color. This indicates that the user has guessed these letters correctly but in the wrong position.
 
-- Grey Tiles: Tiles representing letters that are not present in the word are assigned a class that gives them a grey color. This indicates that the user has guessed these letters incorrectly.
+- **Grey Tiles**: Tiles representing letters that are not present in the word are assigned a class that gives them a grey color. This indicates that the user has guessed these letters incorrectly.
 
 By assigning these classes and colors to the tiles, the game provides clear visual feedback to the user, helping them understand the correctness of their guess and guiding them in subsequent attempts. Additionally, the flipping animation adds a engaging element to the gameplay experience, enhancing user immersion and enjoyment.
 
@@ -181,30 +181,30 @@ A confetti animation is played when the user guesses the right word and wins the
 
 Alert messages are displayed on the tiles for various scenarios to guide the user to play more effectively:
 
-When the user enters an invalid guess, an alert message stating "Not in word list." is displayed. This informs the user that the entered word is not valid for the game.
+- When the user enters an invalid guess, an alert message stating "Not in word list." is displayed. This informs the user that the entered word is not valid for the game.
 
-If the user submits a word before entering 5 letters, an alert message displays "Not enough letters." This reminds the user to input a complete word before submitting.
+- If the user submits a word before entering 5 letters, an alert message displays "Not enough letters." This reminds the user to input a complete word before submitting.
 
-When the user correctly guesses the word, an alert message appears saying "Congratulations, You win." to celebrate the user's victory.
+- When the user correctly guesses the word, an alert message appears saying "Congratulations, You win." to celebrate the user's victory.
 
-If the user is unable to guess the word after 6 attempts, an alert message displays "Oops.. You missed it.. The correct word is ' [correct word] '." This informs the user of the correct word, providing closure to the game round.
+- If the user is unable to guess the word after 6 attempts, an alert message displays "Oops.. You missed it.. The correct word is ' [correct word] '." This informs the user of the correct word, providing closure to the game round.
 
 These alert messages assist the user by providing feedback and guidance throughout the gameplay, ensuring a smoother and more engaging experience.
 
 > "- The user interface should be welcoming and intuitive, making it easy for first-time players to navigate and interact with the game."
 
-![Alert Messages](documentation/alert.mp4)
+![Alert Messages](documentation/alert.gif)
 
 #### Keyboard Area:
  - The keyboard area comprises a keyboard interface that allows users to input letters into the tiles either by clicking or touching them, depending on the device they are using. 
- - The colors of the keyboard dynamically change between dark grey and half-white based on the selected dark and light mode themes. This ensures consistency with the overall color scheme of the interface, providing a visually cohesive experience for the user across different modes. 
+ - The colors of the keyboard dynamically change between dark grey and white based on the selected dark and light mode themes. This ensures consistency with the overall color scheme of the interface, providing a visually cohesive experience for the user across different modes. 
  - The color of the keys changes to green, yellow, and grey, matching the tiles. This helps the user to identify which letters are in the right place, wrong place, or not in the game to play more effectively.
  - The color of key changes when hovered over for the user to identify on which key the mouse is in to type easily.
 
 ![Keyboard Area](documentation/keyboard.png)
 
 #### Footer:
-The footer of the landing page contains a copyright message positioned at the bottom of the page.
+The footer of the landing page which is at the bottom, contains a copyright message.
 
 ![Footer](documentation/footer.png)
 
@@ -269,7 +269,7 @@ Adding more themes with vibrant colors and diverse designs to enhance the visual
    - Result for CSS.
    ![CSS](documentation/css-validator.png)
 
-- The Javascript files passed through the validator testing with some warnings from [Javascript validator](https://jshint.com/)
+- The Javascript files passed through the [Javascript validator](https://jshint.com/) testing.
 
    - Result for Javascript.
    ![Javascript](documentation/javascript-validator.png)
@@ -277,15 +277,15 @@ Adding more themes with vibrant colors and diverse designs to enhance the visual
 - All pages has a good Accessibility rating in Lighthouse.
 
    - Result for Lighthouse testing.
-   ##### Light Mode:
-   ![Light Mode Lighthouse](documentation/lighthouse-lightmode.png)
+      ##### Light Mode:
+      ![Light Mode Lighthouse](documentation/lighthouse-lightmode.png)
 
-   ##### Dark Mode:
-   ![Dark Mode Lighthouse](documentation/lighthouse-darkmode.png)
+      ##### Dark Mode:
+      ![Dark Mode Lighthouse](documentation/lighthouse-darkmode.png)
 
 ### Bugs:
 ##### Tile Color Change Bug: 
-Initially, the tiles were not changing colors after flipping when different themes were set. Upon investigation, it was discovered that the respective color theme classes were not added to the tiles in the JavaScript code. Adding these classes resolved the issue.
+Initially, the tiles were not changing colors after flipping when different themes were set. Upon investigation, it was discovered that the respective color theme classes were not added to the tiles in the CSS. Adding these classes resolved the issue.
 
 ##### Overlay Effect Disappearance: 
 The overlay effect applied to the "How to Play" and "Statistics" modals disappeared when clicking anywhere inside the modals. Assigning different overlay classes to each modal solved this problem, ensuring the overlay effect remained intact.
@@ -315,7 +315,7 @@ These bug fixes and debugging efforts contribute to a smoother and more seamless
 
 ### Frameworks, Libraries & Programs Used:
 - Font Awesome - To add icons to the nav bar and close button in themes menu and statistics modal.
-- GitPod - To create my html files & styling sheet before pushing the project to Github.
+- GitPod - To create my html files, stylesheet and javascript before pushing the project to Github.
 - GitHub - To store my repository for submission.
 - Figma - To create wireframe for project.
 - Coolors - To pick color for the website.
@@ -348,7 +348,7 @@ These bug fixes and debugging efforts contribute to a smoother and more seamless
 - I would like to credit the [Wordle](https://www.nytimes.com/games/wordle/index.html) game, which served as inspiration for this project. Wordle has been a favorite pastime for me, and its gameplay mechanics influenced the development of this project.
 - I extend my gratitude to my mentor, Martina Terlevic, for her invaluable guidance and support throughout the project. Her encouragement and feedback played a significant role in shaping the project and boosting my confidence.
 - Special thanks to my husband, who is a game designer, for his constructive criticism and attention to detail in the UI and UX aspects of the project. His insights greatly contributed to the refinement of the project.
-- I would like to credit my cousin, a developer, for his assistance in resolving some JavaScript bugs and adding the confetti animation to the game.
+- I would like to credit my cousin who is a developer, for his assistance in resolving some JavaScript bugs and adding the confetti animation to the game.
 - I appreciate the valuable inputs provided by a fellow student  Dajana Isbaner in the peer code review. 
 
 #### Code
