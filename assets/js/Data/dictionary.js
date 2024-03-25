@@ -1,4 +1,4 @@
-[
+export default [
     "aahed",
     "aalii",
     "aargh",
