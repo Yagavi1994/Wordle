@@ -1,8 +1,8 @@
 //Learnt the following codes for Wordle Game from Web Dev Simplified Youtube Tutorial.
 
 // The words from targetWords.json and dictionary.json which are used to play the Game.
-import dictionary from "./Data/dictionary.js";
-import targetWords from "./Data/targetwords.js";
+import dictionary from "./data/dictionary.js";
+import targetWords from "./data/targetwords.js";
 
 // Global Variables
 

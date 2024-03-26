@@ -149,9 +149,7 @@ li {
 #weary p,
 #pills p,
 #vague p {
-    border: 2px solid #242323;
-    border-left: 2px solid #242323;
-    border-right: 2px solid #242323;
+
     width: 30px;
     height: 30px;
     align-items: center;
@@ -175,8 +173,14 @@ li {
 
 }
 
-#W,
-#I {
+#weary {
+
+    margin-top: 10px;
+
+}
+
+
+#W {
     color: #fff;
     background-color: #058425;
     border: none;
@@ -189,10 +193,11 @@ li {
 }
 
 
-#vague p {
+.grey p {
+    
     color: #fff;
     background-color: #494646;
-    border: none;
+
 }
 
 button:hover {
