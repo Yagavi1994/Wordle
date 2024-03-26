@@ -194,7 +194,7 @@ li {
 
 
 .grey p {
-    
+
     color: #fff;
     background-color: #494646;
 
@@ -366,7 +366,7 @@ button:hover {
 
 #statistics-parent-container {
 
-    position: absolute;
+    position: fixed;
     background-color: #272626;
     color: #fff;
     display: flex;
